@@ -1,0 +1,66 @@
+{
+  "nodes":[
+    {"name":"Punjab","group":1},
+    {"name":"Gajar ka halwa","group":1},
+    {"name":"Lassi","group":1},
+    {"name":"Aloo gobi","group":1},
+    {"name":"Aloo tikki","group":1},
+    {"name":"Aloo matar","group":1},
+    {"name":"Aloo methi","group":1},
+
+    {"name":"Gujarat","group":2},
+    {"name":"Basundi","group":2},
+    {"name":"Doodhpak","group":2},
+    {"name":"Saath","group":2},
+    {"name":"Bajri no rotlo","group":2},
+    {"name":"Chevdo","group":2},
+    {"name":"Chorafali","group":2},
+
+    {"name":"Maharashtra","group":3},
+    {"name":"Sheera","group":3},
+    {"name":"Sohan papdi","group":3},
+    {"name":"Chikki","group":3},
+    {"name":"Anarsa","group":3},
+    {"name":"Dhondas","group":3},
+    {"name":"Mahim halwa","group":3},
+
+    {"name":"West Bengal","group":4},
+    {"name":"Balu shahi","group":4},
+    {"name":"Imarti","group":4},
+    {"name":"Kalakand","group":4},
+    {"name":"Cham cham","group":4},
+    {"name":"Ledikeni","group":4},
+    {"name":"Mihidana","group":4}
+
+  ],
+  "links":[
+    {"source":0,"target":0,"weight":1},
+    {"source":0,"target":1,"weight":1},
+    {"source":0,"target":2,"weight":1},
+    {"source":0,"target":3,"weight":1},
+    {"source":0,"target":4,"weight":1},
+    {"source":0,"target":5,"weight":1},
+    {"source":0,"target":6,"weight":1},
+
+    {"source":7,"target":8,"weight":1},
+    {"source":7,"target":9,"weight":1},
+    {"source":7,"target":10,"weight":1},
+    {"source":7,"target":11,"weight":1},
+    {"source":7,"target":12,"weight":1},
+    {"source":7,"target":13,"weight":1},
+
+    {"source":14,"target":15,"weight":1},
+    {"source":14,"target":16,"weight":1},
+    {"source":14,"target":17,"weight":1},
+    {"source":14,"target":18,"weight":1},
+    {"source":14,"target":19,"weight":1},
+    {"source":14,"target":20,"weight":1},
+
+    {"source":21,"target":22,"weight":1},
+    {"source":21,"target":23,"weight":1},
+    {"source":21,"target":24,"weight":1},
+    {"source":21,"target":25,"weight":1},
+    {"source":21,"target":26,"weight":1},
+    {"source":21,"target":27,"weight":1}
+  ]
+}
