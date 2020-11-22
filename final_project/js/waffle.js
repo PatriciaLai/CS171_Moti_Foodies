@@ -72,12 +72,12 @@ let WaffleChart = function() {
             domain.push(d[$_keys[0]]);
         });
 
-        let red = "#1C5E9B";
+        let red = "#03B5AA";
 
         let color = d3.scale.linear()
             .domain([1, _obj.data.length - 1])
             .interpolate(d3.interpolateRgb)
-            .range(["#402A2C", "#D9B8C4"]);
+            .range(["#D9B8C4", "#402A2C"]);
 
         // add label
 

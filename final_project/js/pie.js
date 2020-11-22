@@ -1,8 +1,8 @@
 
 // set the dimensions and margins of the graph
 let width = 450
-    height = 450
-    margin = 40
+height = 450
+margin = 40;
 
 // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
 let radius = Math.min(width, height) / 2 - margin
@@ -16,6 +16,7 @@ let svg = d3.select("#my_pie")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
 // Create dummy data
+// from https://www.kaggle.com/nehaprabhavalkar/indian-food-101
 let data = {veg: 89, nonveg: 11}
 
 // set the color scale
@@ -56,3 +57,6 @@ svg
     .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")";  })
     .style("text-anchor", "middle")
     .style("font-size", 17)
+
+// source: https://www.d3-graph-gallery.com/graph/pie_annotation.html
+// dataset: https://www.kaggle.com/nehaprabhavalkar/indian-food-101

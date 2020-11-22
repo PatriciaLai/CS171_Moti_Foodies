@@ -5,10 +5,10 @@ d3.csv("data/religion.csv", function(err, data) {
         console.error(err);
     } else {
         let waffle = new WaffleChart()
-            .selector(".religion_chart")
+            .selector("#religion_chart")
             .data(data)
             .useWidth(false)
-            .label("Religion in India, 2011 Census")
+            .label("")
             .size(12)
             .gap(2)
             .rows(30)
