@@ -8,7 +8,7 @@ margin = 40;
 let radius = Math.min(width, height) / 2 - margin
 
 // append the svg object to the div called 'my_dataviz'
-let svg = d3.select("#my_pie")
+let svg = d3V4.select("#my_pie")
     .append("svg")
     .attr("width", width)
     .attr("height", height)
@@ -20,18 +20,18 @@ let svg = d3.select("#my_pie")
 let data = {veg: 89, nonveg: 11}
 
 // set the color scale
-let color = d3.scaleOrdinal()
+let color = d3V4.scaleOrdinal()
     .domain(data)
     .range(["#98abc5", "#a05d56"])
 
 // Compute the position of each group on the pie:
-let pie = d3.pie()
+let pie = d3V4.pie()
     .value(function(d) {return d.value; })
-let data_ready = pie(d3.entries(data))
+let data_ready = pie(d3V4.entries(data))
 // Now I know that group A goes from 0 degrees to x degrees and so on.
 
 // shape helper to build arcs:
-let arcGenerator = d3.arc()
+let arcGenerator = d3V4.arc()
     .innerRadius(0)
     .outerRadius(radius)
 

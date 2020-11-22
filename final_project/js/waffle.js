@@ -21,7 +21,7 @@ let WaffleChart = function() {
 
     function generatedWaffleChart() {
 
-        $_keys = d3.keys($_data[0]);
+        $_keys = d3V3.keys($_data[0]);
 
         let obj = {
             selector: $_selector,
@@ -49,10 +49,10 @@ let WaffleChart = function() {
         let formattedData = [];
         let domain = [];
         let value = $_keys[$_keys.length - 1];
-        let total = d3.sum(_obj.data, function(d) { return d[value]; });
+        let total = d3V3.sum(_obj.data, function(d) { return d[value]; });
 
         if ($_useWidth) {
-            let forcedWidth = d3.select(_obj.selector).node().getBoundingClientRect().width;
+            let forcedWidth = d3V3.select(_obj.selector).node().getBoundingClientRect().width;
             _obj.columns = Math.floor(forcedWidth / (_obj.size + _obj.gap));
         }
 
@@ -74,15 +74,15 @@ let WaffleChart = function() {
 
         let red = "#03B5AA";
 
-        let color = d3.scale.linear()
+        let color = d3V3.scale.linear()
             .domain([1, _obj.data.length - 1])
-            .interpolate(d3.interpolateRgb)
+            .interpolate(d3V3.interpolateRgb)
             .range(["#D9B8C4", "#402A2C"]);
 
         // add label
 
         if (_obj.label) {
-            d3.select(_obj.selector)
+            d3V3.select(_obj.selector)
                 .append("div")
                 .attr("class", "label")
                 .text(_obj.label);
@@ -90,7 +90,7 @@ let WaffleChart = function() {
 
         // add legend
 
-        let legend = d3.select($_selector)
+        let legend = d3V3.select($_selector)
             .append("div")
             .attr("class", "legend");
 
@@ -127,10 +127,10 @@ let WaffleChart = function() {
         let height = (_obj.size * _obj.rows) + (_obj.rows * _obj.gap) - _obj.gap;
 
         if ($_useWidth) {
-            width = d3.select(_obj.selector).node().getBoundingClientRect().width;
+            width = d3V3.select(_obj.selector).node().getBoundingClientRect().width;
         }
 
-        let svg = d3.select(_obj.selector)
+        let svg = d3V3.select(_obj.selector)
             .append("svg")
             .attr("class", "waffle")
             .attr("width", width)

@@ -60,11 +60,11 @@ function bubbleChart() {
   // Here we create a force layout and
   // @v4 We create a force simulation now and
   //  add forces to it.
-  let simulation = d3.forceSimulation()
+  let simulation = d3V4.forceSimulation()
     .velocityDecay(0.2)
-    .force('x', d3.forceX().strength(forceStrength).x(center.x))
-    .force('y', d3.forceY().strength(forceStrength).y(center.y))
-    .force('charge', d3.forceManyBody().strength(charge))
+    .force('x', d3V4.forceX().strength(forceStrength).x(center.x))
+    .force('y', d3V4.forceY().strength(forceStrength).y(center.y))
+    .force('charge', d3V4.forceManyBody().strength(charge))
     .on('tick', ticked);
 
   // @v4 Force starts up automatically,
@@ -73,7 +73,7 @@ function bubbleChart() {
 
   // Nice looking colors - no reason to buck the trend
   // @v4 scales now have a flattened naming scheme
-  let fillColor = d3.scaleOrdinal()
+  let fillColor = d3V4.scaleOrdinal()
     .domain(['vegetarian', 'non vegetarian'])
     .range(['#E1BC29', '#AA300E']);
 
@@ -92,11 +92,11 @@ function bubbleChart() {
   function createNodes(rawData) {
     // Use the max total_amount in the data as the max in the scale's domain
     // note we have to ensure the total_amount is a number.
-    let maxAmount = d3.max(rawData, function (d) { return +d.cook_time; });
+    let maxAmount = d3V4.max(rawData, function (d) { return +d.cook_time; });
 
     // Sizes bubbles based on area.
     // @v4: new flattened scale names.
-    let radiusScale = d3.scalePow()
+    let radiusScale = d3V4.scalePow()
       .exponent(0.5)
       .range([2, 70])
       .domain([0, maxAmount]);
@@ -144,7 +144,7 @@ function bubbleChart() {
 
     // Create a SVG element inside the provided selector
     // with desired size.
-    svg = d3.select(selector)
+    svg = d3V4.select(selector)
       .append('svg')
       .attr('width', width)
       .attr('height', height);
@@ -162,7 +162,7 @@ function bubbleChart() {
       .classed('bubble', true)
       .attr('r', 0)
       .attr('fill', function (d) { return fillColor(d.group); })
-      .attr('stroke', function (d) { return d3.rgb(fillColor(d.group)).darker(); })
+      .attr('stroke', function (d) { return d3V4.rgb(fillColor(d.group)).darker(); })
       .attr('stroke-width', 2)
       .on('mouseover', showDetail)
       .on('mouseout', hideDetail);
@@ -216,7 +216,7 @@ function bubbleChart() {
     hideYearTitles();
 
     // @v4 Reset the 'x' force to draw the bubbles to the center.
-    simulation.force('x', d3.forceX().strength(forceStrength).x(center.x));
+    simulation.force('x', d3V4.forceX().strength(forceStrength).x(center.x));
 
     // @v4 We can reset the alpha value and restart the simulation
     simulation.alpha(1).restart();
@@ -233,7 +233,7 @@ function bubbleChart() {
     showYearTitles();
 
     // @v4 Reset the 'x' force to draw the bubbles to their year centers
-    simulation.force('x', d3.forceX().strength(forceStrength).x(nodeYearPos));
+    simulation.force('x', d3V4.forceX().strength(forceStrength).x(nodeYearPos));
 
     // @v4 We can reset the alpha value and restart the simulation
     simulation.alpha(1).restart();
@@ -252,7 +252,7 @@ function bubbleChart() {
   function showYearTitles() {
     // Another way to do this would be to create
     // the year texts once and then just hide them.
-    let yearsData = d3.keys(yearsTitleX);
+    let yearsData = d3V4.keys(yearsTitleX);
     let years = svg.selectAll('.year')
       .data(yearsData);
 
@@ -271,7 +271,7 @@ function bubbleChart() {
    */
   function showDetail(d) {
     // change outline to indicate hover state.
-    d3.select(this).attr('stroke', 'black');
+    d3V4.select(this).attr('stroke', 'black');
 
     let content = '<span class="name">Name: </span><span class="value">' +
                   d.name + '</span><br/>' +
@@ -285,7 +285,7 @@ function bubbleChart() {
                   '<span class="name">Region: </span><span class="value">' +
                   d.year + '</span>';
 
-    tooltip.showTooltip(content, d3.event);
+    tooltip.showTooltip(content, d3V4.event);
   }
 
   /*
@@ -293,8 +293,8 @@ function bubbleChart() {
    */
   function hideDetail(d) {
     // reset outline
-    d3.select(this)
-      .attr('stroke', d3.rgb(fillColor(d.group)).darker());
+    d3V4.select(this)
+      .attr('stroke', d3V4.rgb(fillColor(d.group)).darker());
 
     tooltip.hideTooltip();
   }
@@ -342,13 +342,13 @@ function display(error, data) {
  * Sets up the layout buttons to allow for toggling between view modes.
  */
 function setupButtons() {
-  d3.select('#toolbar')
+  d3V4.select('#toolbar')
     .selectAll('.button')
     .on('click', function () {
       // Remove active class from all buttons
-      d3.selectAll('.button').classed('active', false);
+      d3V4.selectAll('.button').classed('active', false);
       // Find the button just clicked
-      let button = d3.select(this);
+      let button = d3V4.select(this);
 
       // Set it as the active button
       button.classed('active', true);
@@ -363,7 +363,7 @@ function setupButtons() {
 }
 
 // Load the data.
-d3.csv('data/indian_food_copy.csv', display);
+d3V4.csv('data/indian_food_copy.csv', display);
 
 // setup the buttons.
 setupButtons();

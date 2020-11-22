@@ -70,6 +70,12 @@
         <div class="col-med">
             <h1>Does climate and agriculture have any influence on food in India?</h1>
         </div>
+        <div class="button_area">
+            <button id="rainfall_btn" type="button" value="rainfall">Rainfall</button>
+            <button id="temperature_btn" type="button" value="temperature_F">Temperature</button>
+        </div>
+        <div id="mapDiv"></div>
+
     </div>
     <br>
     <br>
@@ -229,10 +235,28 @@
 <!-- d3 -->
 <!--Need to figure out how to load multiple versions of D3 here-->
 <!--<script js="http://d3js.org/d3.v3.min.js"></script>-->
-<script src="http://d3js.org/d3.v4.min.js"></script>
+<!--<script src="http://d3js.org/d3.v4.min.js"></script>-->
 <!--<script js="https://d3js.org/d3.v6.min.js"></script>-->
 
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+    d3V3 = d3
+    window.d3 = null
+    console.log('v4', d3V3.version)
+</script>
+<script src="http://d3js.org/d3.v4.min.js"></script>
+<script>
+    d3V4 = d3
+    window.d3 = null
+    console.log('v4', d3V4.version)
+</script>
+<script src="https://d3js.org/d3.v6.min.js"></script>
+
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+<script src="https://d3js.org/d3-geo.v1.min.js"></script>
 
 <!-- OWN JS -->
 <script src="js/waffle.js"></script>
@@ -240,6 +264,8 @@
 <script src="js/pie.js"></script>
 <script src="js/bubble_tooltip.js"></script>
 <script src="js/bubble_chart.js"></script>
+<script src="js/mapVis.js"></script>
+<script src="js/map_main.js"></script>
 
 </body>
 </html>

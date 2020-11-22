@@ -1,6 +1,6 @@
 // Importing data
 
-d3.csv("data/religion.csv", function(err, data) {
+d3V3.csv("data/religion.csv", function(err, data) {
     if (err) {
         console.error(err);
     } else {
