@@ -56,6 +56,7 @@
     </div>
 </nav>
 
+<!-- SECTION 1: HOMEPAGE-->
 <div id="section1" class="container-fluid">
     <h1 style="font-size: 100px">Hindustani Khana</h1>
     <h2>Exploring food culture in India</h2>
@@ -65,11 +66,16 @@
     <p>"Guests are equivalent to God"</p>
 </div>
 
+<!-- SECTION 2: CLIMATE (MAP + LINKED BAR CHART) -->
 <div id="section2" class="container-fluid">
     <div class="row">
         <div class="col-med">
             <h1>Does climate and agriculture have any influence on food in India?</h1>
         </div>
+        <div style="padding: 10px 0px">
+            <h4>Temperature, soil and rainfall have a major impact on the coffee and tea culture across India.</h4>
+        </div>
+
         <div class="button_area">
             <button id="rainfall_btn" type="button" value="rainfall">Rainfall</button>
             <button id="temperature_btn" type="button" value="temperature_F">Temperature</button>
@@ -77,75 +83,158 @@
         <div id="mapDiv"></div>
 
     </div>
-    <br>
-    <br>
-    <div class="row">
-        <div class="col-med">
-            <p>insert visualization here!</p>
-        </div>
-        <div class="col-xs-6">
-            <p></p>
-        </div>
-    </div>
-    <!--Yes, there's a better way to do this. Please help!-->
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <div class="row">
-        <div class="col-med">
-            <p>Temperature, soil and rainfall have a major impact on the coffee and tea culture across India.</p>
-        </div>
-    </div>
+<!--    <br>-->
+<!--    <br>-->
+<!--&lt;!&ndash;    <div class="row">&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="col-med">&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            <p>insert visualization here!</p>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="col-xs-6">&ndash;&gt;-->
+<!--&lt;!&ndash;            <p></p>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--    &lt;!&ndash;Yes, there's a better way to do this. Please help!&ndash;&gt;-->
+<!--    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>-->
+
 </div>
 
+
+<!-- SECTION 3: MILK INDUSTRY (BAR CHART)-->
 <div id="section3" class="container-fluid">
     <div class="row">
         <div class="col-med">
             <h1>How does the dairy industry influence Indian cuisine?</h1>
         </div>
-    </div>
-    <br>
-    <br>
-    <div class="row">
-        <div class="col-med">
-            <p>insert visualization here!</p>
+
+        <div class="row" style="height: 100vh">
+            <div style = "width: 30vw">
+                <!-- left column-->
+                <div class="col-6" style="height: 100%">
+                    <div class="align-self-center">
+                        <div>
+                            <h3>Statewise Milk Production in India</h3>
+                        </div>
+                        <div>
+                            <!-- drop down menu -->
+                            <div class="row justify-content-center">
+                                <div class="align-self-center">
+                                    <div class="user-control">
+                                        <div class="form-group">
+                                            <label for="state-category">Choose Category:</label>
+                                            <select id="state-category" class="form-control" onchange="dataManipulation()">
+                                                <option value="all">All States</option>
+                                                <!--                        <option value="Water Park">Water Park</option>-->
+                                                <!--                        <option value="Museum">Museum</option>-->
+                                                <!--                        <option value="Theme Park">Theme Park</option>-->
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Parent container of our bar chart -->
+                            <div class="row">
+                                <div class="col-8 offset-2">
+                                    <div id="my_dataviz2"></div>
+                                    <div id="tooltipBarState" class="hidden">
+                                        <p><span id="BarStateValue"></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- right column-->
+                <div class="col-6" style="height: 100%">
+                    <div class="row justify-content-center">
+                        <div class="align-self-center">
+                            <div>
+                                <h3>Species Distribution</h3>
+                                <p>Cows are the primary source of milk, however, in various parts of India milk is sourced from goats, buffaloes, camels, and yaks.</p>
+                            </div>
+                            <!-- Parent container of our bar chart -->
+                            <div class="row">
+                                <div class="col-8 offset-2">
+                                    <div id="my_dataviz"></div>
+                                    <div id="tooltipBarSpecies" class="hidden">
+                                        <p><span id="BarSpeciesValue"></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-xs-6">
-            <p></p>
-        </div>
-    </div>
-    <!--Yes, there's a better way to do this. Please help!-->
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <div class="row">
-        <div class="col-med">
-            <p>Cows are the primary source of milk, however, in various parts of India milk is sourced from goats, buffaloes, camels, and yaks.</p>
-        </div>
+
     </div>
 </div>
 
-<div id="section4" class="container-fluid">
+<!--    <br>-->
+<!--    <br>-->
+<!--    <div class="row">-->
+<!--        <div class="col-med">-->
+<!--            <p>insert visualization here!</p>-->
+<!--        </div>-->
+<!--        <div class="col-xs-6">-->
+<!--            <p></p>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;Yes, there's a better way to do this. Please help!&ndash;&gt;-->
+<!--    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>-->
+<!--    <div class="row">-->
+<!--        <div class="col-med"></div>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<!-- SECTION 4: GLOBALIZATION & MARRIAGE (TREE DIAGRAM)-->
+<div id="section4" class="container-fluid marriageStyle">
     <div class="row">
         <div class="col-med">
             <h1>How is globalization influencing Indian cuisine?</h1>
         </div>
-    </div>
-    <br>
-    <br>
-    <div class="row">
-        <div class="col-med">
-            <p>insert visualization here!</p>
+
+        <div class="section nav-section" >
+            <div class="row align-items-center" data-aos="fade-in">
+                <div class="col-md-3" style="padding-right: 3vw; padding-bottom: 100px;">
+                    <h5>Influence:</h5>
+                    <p>
+                        <em>Weddings and Indian Food<br><br></em>
+                    <p>As you can see, from this dataset of an Indian catering company's wedding menu, there are quite a few international dishes as listed options!</p>
+                    <div class="note">
+                        <p>*There will be dishes name on the tree map, with different color indicating international dishes</p>
+                    </div>
+                </div>
+
+                <div class="col-md-9">
+                    <div class="yiptree"></div>
+                </div>
+            </div>
         </div>
-        <div class="col-xs-6">
-            <p></p>
-        </div>
+
+
     </div>
-    <!--Yes, there's a better way to do this. Please help!-->
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <div class="row">
-        <div class="col-med">
-            <p>As you can see, from this dataset of an Indian catering company's wedding menu, there are quite a few international dishes as listed options!</p>
-        </div>
-    </div>
+<!--    <br>-->
+<!--    <br>-->
+<!--    <div class="row">-->
+<!--        <div class="col-med">-->
+<!--            <p>insert visualization here!</p>-->
+<!--        </div>-->
+<!--        <div class="col-xs-6">-->
+<!--            <p></p>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;Yes, there's a better way to do this. Please help!&ndash;&gt;-->
+<!--    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>-->
+<!--    <div class="row">-->
+<!--        <div class="col-med">-->
+<!--        </div>-->
+<!--    </div>-->
 </div>
 
+
+<!-- SECTION 5: RELIGION (WAFFLE CHART)-->
 <div id="section5" class="container-fluid">
     <div class="row">
         <div class="col-med">
@@ -173,6 +262,8 @@
     </div>
 </div>
 
+
+<!-- SECTION 6: VEGETARIAN (PIE CHART)-->
 <div id="section6" class="container-fluid">
     <div class="row">
         <div class="col-med">
@@ -198,6 +289,8 @@
     </div>
 </div>
 
+
+<!-- SECTION 7: FOOD EXPLORATION (BUBBLE CHART)-->
 <div id="section7" class="container-fluid">
     <div class="row">
         <div class="col-med">
@@ -227,6 +320,7 @@
 </div>
 
 
+
 <!-- BOOTSTRAP -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
@@ -238,6 +332,7 @@
 <!--<script src="http://d3js.org/d3.v4.min.js"></script>-->
 <!--<script js="https://d3js.org/d3.v6.min.js"></script>-->
 
+<script src="js/d3.min.js"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
@@ -259,6 +354,9 @@
 <script src="https://d3js.org/d3-geo.v1.min.js"></script>
 
 <!-- OWN JS -->
+<script src="js/milkState_main.js"></script>
+<script src="js/milkAnimal_main.js"></script>
+<script src="js/marriage_tree.js"></script>
 <script src="js/waffle.js"></script>
 <script src="js/waffle_main.js"></script>
 <script src="js/pie.js"></script>

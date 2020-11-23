@@ -1,0 +1,996 @@
+{
+  "name": "Indian Weddings",
+  "info": "Influence on Food",
+  "children": [
+    {
+      "Meal course": "High Tea",
+      "parent": "Indian Weddings",
+      "children": [
+        {
+          "Category": "Snacks",
+          "parent": "High Tea",
+          "children": [
+            {
+              "Food": "Chicken samosa",
+              "parent": "Snacks"
+            },
+            {
+              "Food": "Crispy spinach pakoras",
+              "parent": "Snacks"
+            },
+            {
+              "Food": "Shrimp and lentil salad with chili oil",
+              "parent": "Snacks"
+            },
+            {
+              "Food": "Fish finger",
+              "parent": "Snacks"
+            },
+            {
+              "Food": "Chole Bhatura",
+              "parent": "Snacks"
+            },
+            {
+              "Food": "Corn fritters",
+              "parent": "Snacks"
+            },
+            {
+              "Food": "Vegetable samosa",
+              "parent": "Snacks"
+            },
+            {
+              "Food": "Stuffed chili pokoda",
+              "parent": "Snacks"
+            },
+            {
+              "Food": "Rice paper fresh spring roll",
+              "parent": "Snacks"
+            },
+            {
+              "Food": "Mini assorted pizza",
+              "parent": "Snacks"
+            },
+            {
+              "Food": "Masala sandwich",
+              "parent": "Snacks"
+            },
+            {
+              "Food": "Risotto ball",
+              "parent": "Snacks"
+            },
+            {
+              "Food": "Mutton samosa",
+              "parent": "Snacks"
+            },
+            {
+              "Food": "Chicken kathi roll",
+              "parent": "Snacks"
+            },
+            {
+              "Food": "Aloo bonda",
+              "parent": "Snacks"
+            },
+            {
+              "Food": "Mozzarella and tomato skewers with basil",
+              "parent": "Snacks"
+            },
+            {
+              "Food": "Spicy grilled eggplant salad with shrimp",
+              "parent": "Snacks"
+            },
+            {
+              "Food": "Cherry tomatoes filled with guacamole",
+              "parent": "Snacks"
+            }
+          ]
+        },
+        {
+          "Category": "Vegetable Station",
+          "children": [
+            {
+              "Food": "Potato masala, palak, soya bean"
+            },
+            {
+              "Food": "Coconut chutney sambar"
+            },
+            {
+              "Food": "Grilled chicken"
+            },
+            {
+              "Food": "Toasted shrimp"
+            },
+            {
+              "Food": "Home-made breads"
+            },
+            {
+              "Food": "Black channa"
+            },
+            {
+              "Food": "Roasted tandoori lamb"
+            },
+            {
+              "Food": "Minced chicken/ mutton"
+            },
+            {
+              "Food": "Lamb sheek kebab"
+            },
+            {
+              "Food": "Soft bada (moong dhal)"
+            },
+            {
+              "Food": "Papri "
+            },
+            {
+              "Food": "Bhel puri"
+            },
+            {
+              "Food": "Tandoori tikka"
+            },
+            {
+              "Food": "Aloo tikki"
+            },
+            {
+              "Food": "Paneer chat"
+            }
+          ]
+        },
+        {
+          "Category": "Dessert",
+          "children": [
+            {
+              "Food": "Gajar ka halwa"
+            },
+            {
+              "Food": "Rice kheer"
+            },
+            {
+              "Food": "Rasgulla"
+            },
+            {
+              "Food": "Citrus tart with clotted cream"
+            },
+            {
+              "Food": "Pistachio nut creme brulee"
+            },
+            {
+              "Food": "Seasonal sliced tropical Thai fruit"
+            },
+            {
+              "Food": "Beson ladoo"
+            },
+            {
+              "Food": "Kulfi faludaa"
+            },
+            {
+              "Food": "Pistachio nut creme brulee"
+            },
+            {
+              "Food": "Mango panna cotta"
+            },
+            {
+              "Food": "Chocolate mousse tart with hazelnut crust"
+            },
+            {
+              "Food": "Seasonal sliced tropical Thai fruit"
+            },
+            {
+              "Food": "Variety of ice cream"
+            },
+            {
+              "Food": "Guiab jamun"
+            },
+            {
+              "Food": "Rasmalai"
+            },
+            {
+              "Food": "Raspberry bavarois with berry sauce"
+            },
+            {
+              "Food": "Passionfruit and chocolate tart"
+            },
+            {
+              "Food": "Creme caramel"
+            },
+            {
+              "Food": "Seasonal sliced tropical Thai fruit"
+            }
+          ]
+        },
+        {
+          "Category": "Beverage",
+          "children": [
+            {
+              "Food": "Masala tea"
+            },
+            {
+              "Food": "Black tea"
+            },
+            {
+              "Food": "Coffee"
+            },
+            {
+              "Food": "Sweet lassi"
+            },
+            {
+              "Food": "Salty lassi"
+            },
+            {
+              "Food": "Mango lassi"
+            },
+            {
+              "Food": "Tandai"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Meal course": "Lunch Menu",
+      "children": [
+        {
+          "Category": "Appetizers",
+          "children": [
+            {
+              "Food": "Spring rolls"
+            },
+            {
+              "Food": "Corn cakes"
+            },
+            {
+              "Food": "Aloo tikki"
+            },
+            {
+              "Food": "Tandoori mushroom"
+            },
+            {
+              "Food": "Chicken Bangara kebab"
+            },
+            {
+              "Food": "Mutton malai tikka"
+            },
+            {
+              "Food": "Achaari prawn tikka"
+            },
+            {
+              "Food": "Paneer tikka"
+            },
+            {
+              "Food": "Tandoori Aloo tikka"
+            },
+            {
+              "Food": "Mix vegetable pakora"
+            },
+            {
+              "Food": "Mutton tikka"
+            },
+            {
+              "Food": "Chicken kali murg"
+            },
+            {
+              "Food": "Fish Amritsari fry"
+            },
+            {
+              "Food": "Deep fried crab rolls"
+            },
+            {
+              "Food": "Deep fried shrimp cakes"
+            },
+            {
+              "Food": "Prawn cocktail with mango salsa"
+            },
+            {
+              "Food": "Roast chicken with pineapple"
+            },
+            {
+              "Food": "Kashoori mehti kebab"
+            },
+            {
+              "Food": "Chicken malai tikka"
+            },
+            {
+              "Food": "Mint paneer tikka"
+            },
+            {
+              "Food": "Dahi ke kebab"
+            },
+            {
+              "Food": "Mutton sheek kebab"
+            },
+            {
+              "Food": "Dry chilli chicken"
+            },
+            {
+              "Food": "Shrimp and lentil salad with chili oil"
+            }
+          ]
+        },
+        {
+          "Category": "Salads",
+          "children": [
+            {
+              "Food": "Salad bar with dressings"
+            },
+            {
+              "Food": "Thai papaya salad"
+            },
+            {
+              "Food": "Wing bean salad"
+            },
+            {
+              "Food": "Thai chicken minced salad with crispy rice"
+            },
+            {
+              "Food": "Tandoori chicken salad"
+            },
+            {
+              "Food": "Standard salad bar with dressing"
+            },
+            {
+              "Food": "Pomelo salad"
+            },
+            {
+              "Food": "Mushroom salad"
+            },
+            {
+              "Food": "Tossed tuna salad with beans and tomatoes"
+            },
+            {
+              "Food": "Spicy grilled river prawn salad with lemongrass"
+            },
+            {
+              "Food": "Chickpea salad"
+            },
+            {
+              "Food": "Standard salad bar with dressing"
+            },
+            {
+              "Food": "Pasta salad with chicken"
+            },
+            {
+              "Food": "White cabbage salad with caraway seeds"
+            },
+            {
+              "Food": "Potato and cucumber salad"
+            },
+            {
+              "Food": "Tomato salad with fresh basil"
+            },
+            {
+              "Food": "Cucumber and tomato salad"
+            },
+            {
+              "Food": "Asparagus salad"
+            }
+          ]
+        },
+        {
+          "Category": "Soups",
+          "children": [
+            {
+              "Food": "Mushroom soup"
+            },
+            {
+              "Food": "Tomato ka soorba"
+            },
+            {
+              "Food": "Spicy soup with vegetables"
+            },
+            {
+              "Food": "Sweet corn soup with chicken"
+            },
+            {
+              "Food": "Spicy chicken and coconut milk soup "
+            },
+            {
+              "Food": "Asparagus cream soup with smoked meatloaf"
+            }
+          ]
+        },
+        {
+          "Category": "Main Course",
+          "children": [
+            {
+              "Food": "Panchwati dhal fry"
+            },
+            {
+              "Food": "Dhal makhani"
+            },
+            {
+              "Food": "Thai vegetable green curry"
+            },
+            {
+              "Food": "Stir fried black pepper tofu"
+            },
+            {
+              "Food": "Chicken masala"
+            },
+            {
+              "Food": "Mutton vindaloo"
+            },
+            {
+              "Food": "Chicken masaman curry"
+            },
+            {
+              "Food": "Steamed rice"
+            },
+            {
+              "Food": "Jeera rice"
+            },
+            {
+              "Food": "Mix riata"
+            },
+            {
+              "Food": "Prawn biryani"
+            },
+            {
+              "Food": "Papad"
+            },
+            {
+              "Food": "Naan, Roti"
+            },
+            {
+              "Food": "Dal fry"
+            },
+            {
+              "Food": "Punjabi chole masala"
+            },
+            {
+              "Food": "Gatta curry"
+            },
+            {
+              "Food": "Paneer butter masala"
+            },
+            {
+              "Food": "Kadai mix vegetable"
+            },
+            {
+              "Food": "Stir fried chicken"
+            },
+            {
+              "Food": "Stir fried morning glory"
+            },
+            {
+              "Food": "Goan fish curry"
+            },
+            {
+              "Food": "Saag chicken"
+            },
+            {
+              "Food": "Mutton curry"
+            },
+            {
+              "Food": "Steamed rice"
+            },
+            {
+              "Food": "Pea's pullao"
+            },
+            {
+              "Food": "Mix vegetable Raita"
+            },
+            {
+              "Food": "Naan bread, roti"
+            },
+            {
+              "Food": "Papad,achaar"
+            },
+            {
+              "Food": "Roasted chicken"
+            },
+            {
+              "Food": "Fish Rogani curry"
+            },
+            {
+              "Food": "Roasted rosemary potatoes"
+            },
+            {
+              "Food": "Channa dhal fry"
+            },
+            {
+              "Food": "Matter mushroom"
+            },
+            {
+              "Food": "Paneer do payzza"
+            },
+            {
+              "Food": "Bhindi Aloo masala"
+            },
+            {
+              "Food": "Butter chicken"
+            },
+            {
+              "Food": "Mutton kofta kebab"
+            },
+            {
+              "Food": "Jeera rice"
+            }
+          ]
+        },
+        {
+          "Category": "Dessert",
+          "children": [
+            {
+              "Food": "Seasonal sliced tropical Thai fruit"
+            },
+            {
+              "Food": "Selection of freshly baked pies"
+            },
+            {
+              "Food": "Mini French pastries and fruit jelly"
+            },
+            {
+              "Food": "Variety of ice cream"
+            },
+            {
+              "Food": "Mango Rasmalai"
+            },
+            {
+              "Food": "Gajar ka Halwa"
+            },
+            {
+              "Food": "A selection of cakes and pastries"
+            },
+            {
+              "Food": "Assorted Thai desserts"
+            },
+            {
+              "Food": "Seasonal sliced tropical Thai fruit"
+            },
+            {
+              "Food": "Coconut pineapple cake"
+            },
+            {
+              "Food": "Lemon meringue pie"
+            },
+            {
+              "Food": "Strawberry Rasmalai"
+            },
+            {
+              "Food": "Kheer, Kulfi falooda"
+            },
+            {
+              "Food": "Gulab Jamun"
+            },
+            {
+              "Food": "Moong dhal halwa"
+            },
+            {
+              "Food": "Opera cake"
+            },
+            {
+              "Food": "Dark and white chocolate mousse cups"
+            },
+            {
+              "Food": "Chocolate chili cake with clotted cream"
+            },
+            {
+              "Food": "Mini bread and butter pudding"
+            },
+            {
+              "Food": "Mango and sticky rice"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Category": "Dinner Menu",
+      "parent": "Indian Weddings",
+      "children": [
+        {
+          "Category": "Appetizers",
+          "parent": "Dinner Menu",
+          "children": [
+            {
+              "Food": "Couscous, red onion, tomatoes, mussels, clams, prawns, parsley"
+            },
+            {
+              "Food": "Smoked pork loin, fresh herbs, ricotta cheese salad"
+            },
+            {
+              "Food": "Chicken ajwani tikka"
+            },
+            {
+              "Food": "Prawn taka tak"
+            },
+            {
+              "Food": "Corn cheese balls"
+            },
+            {
+              "Food": "Crispy lamb"
+            },
+            {
+              "Food": "Fish tikka"
+            },
+            {
+              "Food": "Paneer and spinach kebab"
+            },
+            {
+              "Food": "Chickpea kebab"
+            },
+            {
+              "Food": "Mushroom tikka"
+            },
+            {
+              "Food": "Papad paneer kebab"
+            },
+            {
+              "Food": "Potato tikka kebab"
+            },
+            {
+              "Food": "Matar tikki kebab"
+            },
+            {
+              "Food": "Plalak kebab tikki"
+            },
+            {
+              "Food": "Deep fried idli kebab"
+            },
+            {
+              "Food": "Green curry chicken tikka"
+            },
+            {
+              "Food": "Kashtoori mehti fish tikka"
+            },
+            {
+              "Food": "Crispy rice cakes with minced pork"
+            },
+            {
+              "Food": "California rolls, wasabi, soy sauce"
+            },
+            {
+              "Food": "Potato chips, mixed nuts, prawn crackers"
+            },
+            {
+              "Food": "Vegetable cocktail samosa"
+            },
+            {
+              "Food": "Haryali kebab"
+            },
+            {
+              "Food": "Paneer tikka"
+            },
+            {
+              "Food": "Vegetable kebab"
+            },
+            {
+              "Food": "Tandoori Gobi tikka"
+            },
+            {
+              "Food": "Vegetable shami kebab"
+            },
+            {
+              "Food": "Lamb sheek kebab"
+            }
+          ]
+        },
+        {
+          "Category": "Salads",
+          "parent": "Dinner Menu",
+          "children": [
+            {
+              "Food": "Standard salad bar with dressing"
+            },
+            {
+              "Food": "Caesar salad, traditional condiments and diced chicken"
+            },
+            {
+              "Food": "Potato salad with fried shallots"
+            },
+            {
+              "Food": "Pasta salad with tomato, tuna and basil"
+            },
+            {
+              "Food": "Spicy grilled chicken salad"
+            },
+            {
+              "Food": "Spicy tuna salad with lemongrass,"
+            },
+            {
+              "Food": "Spicy minced duck salad with crispy rice"
+            },
+            {
+              "Food": "Thai papaya salad with peanuts"
+            },
+            {
+              "Food": "Salad bar with hydro leaves,"
+            },
+            {
+              "Food": "Channa salad"
+            },
+            {
+              "Food": "Spicy minced soya bean salad"
+            },
+            {
+              "Food": "Spicy wing bean salad with shrimp"
+            },
+            {
+              "Food": "Kachoori chat salad"
+            },
+            {
+              "Food": "Guacamole with prawns"
+            },
+            {
+              "Food": "Lobster and scallop salad"
+            },
+            {
+              "Food": "Aloo salad"
+            },
+            {
+              "Food": "Salad bar with hydro leaves, fresh vegetables and assorted dressings"
+            },
+            {
+              "Food": "Squid, tomato, bell peppers and basil salad"
+            },
+            {
+              "Food": "Prawn and fresh mango salad with"
+            },
+            {
+              "Food": "Moong dhal salad"
+            },
+            {
+              "Food": "Potato salad with chicken and spring onions"
+            },
+            {
+              "Food": "Spicy roast duck salad"
+            },
+            {
+              "Food": "Spicy glass noodle salad with seafood"
+            }
+          ]
+        },
+        {
+          "Category": "Soups",
+          "parent": "Dinner Menu",
+          "children": [
+            {
+              "Food": "Tomato cream soup with fresh oregano"
+            },
+            {
+              "Food": "Chicken soup with lemon grass and coconut milk"
+            },
+            {
+              "Food": "Hot and sour vegetable soup"
+            },
+            {
+              "Food": "Pumpkin soup"
+            },
+            {
+              "Food": "Chicken soup with coconut milk"
+            },
+            {
+              "Food": "Mushroom soup"
+            }
+          ]
+        },
+        {
+          "Category": "Main Course",
+          "parent": "Dinner Menu",
+          "children": [
+            {
+              "Food": "Paneer butter masala"
+            },
+            {
+              "Food": "Matter mehti malai"
+            },
+            {
+              "Food": "Palak Rajma"
+            },
+            {
+              "Food": "Baby corn Jhalfrezi"
+            },
+            {
+              "Food": "Chicken korma"
+            },
+            {
+              "Food": "Prawn tikka masala"
+            },
+            {
+              "Food": "Lamb masala"
+            },
+            {
+              "Food": "Stir fried chicken, Panaeng cream curry sauce"
+            },
+            {
+              "Food": "Deep-fried fish with chili sauce"
+            },
+            {
+              "Food": "Stir-fried mixed vegetables with oyster sauce"
+            },
+            {
+              "Food": "Stir-fried rice noodles, chicken, garlic, chili and hot basil sauce"
+            },
+            {
+              "Food": "Fried rice with egg"
+            },
+            {
+              "Food": "Steamed jasmine rice"
+            },
+            {
+              "Food": "Naan bread, Roti"
+            },
+            {
+              "Food": "Papad, cucumber rita, mixed pickles"
+            },
+            {
+              "Food": "Panchwati dhal"
+            },
+            {
+              "Food": "Kadai mix vegetables"
+            },
+            {
+              "Food": "Chaana masala"
+            },
+            {
+              "Food": "Bhindi tomato masala"
+            },
+            {
+              "Food": "Paneer makhani wala"
+            },
+            {
+              "Food": "Stuffed capsicum masala"
+            },
+            {
+              "Food": "Mutton keema masala"
+            },
+            {
+              "Food": "Chicken adaraki curry"
+            },
+            {
+              "Food": "Punjabi fish wali"
+            },
+            {
+              "Food": "Gatta curry"
+            },
+            {
+              "Food": "Slow cooked shrimp curry with lime leaves"
+            },
+            {
+              "Food": "Stir-fried spaghetti, chicken, chili,"
+            },
+            {
+              "Food": "Deep fried tofu and vegetables with soya sauce"
+            },
+            {
+              "Food": "Green chicken curry"
+            },
+            {
+              "Food": "Vegetable fried rice"
+            },
+            {
+              "Food": "Steamed jasmine rice"
+            },
+            {
+              "Food": "Kashmiri pulao"
+            },
+            {
+              "Food": "Naan, Roti, Rumali Roti"
+            },
+            {
+              "Food": "Onion Rita"
+            },
+            {
+              "Food": "Dhal fry"
+            },
+            {
+              "Food": "Gobhi masala with long bean"
+            },
+            {
+              "Food": "Kolapuri sabzi"
+            },
+            {
+              "Food": "Punjabi paneer masala"
+            },
+            {
+              "Food": "Palak kofta curry"
+            },
+            {
+              "Food": "South Indian bhaji"
+            },
+            {
+              "Food": "Methi matar malai"
+            },
+            {
+              "Food": "Phindi Channa"
+            },
+            {
+              "Food": "Mutton curry"
+            },
+            {
+              "Food": "Chicken vindaloo"
+            },
+            {
+              "Food": "Goan prawn curry"
+            },
+            {
+              "Food": "Green pea pulao"
+            },
+            {
+              "Food": "Mutton biryani"
+            },
+            {
+              "Food": "Thai curry station"
+            },
+            {
+              "Food": "Plain, Rawa, Uttapam, Masala Dosa"
+            }
+          ]
+        },
+        {
+          "Category": "Dessert",
+          "parent": "Dinner Menu",
+          "children": [
+            {
+              "Food": "Bread and butter pudding"
+            },
+            {
+              "Food": "Fruit tartlets"
+            },
+            {
+              "Food": "Opera cake"
+            },
+            {
+              "Food": "Dark and white chocolate mousse cups"
+            },
+            {
+              "Food": "Seasonal sliced tropical Thai fruit"
+            },
+            {
+              "Food": "Strawberry Rasmalai"
+            },
+            {
+              "Food": "Guiab jamun"
+            },
+            {
+              "Food": "Vanilla ice cream"
+            },
+            {
+              "Food": "Chocolate ice cream"
+            },
+            {
+              "Food": "Lemon meringue pie"
+            },
+            {
+              "Food": "Dark and white chocolate mousse cups"
+            },
+            {
+              "Food": "Mini opera cake"
+            },
+            {
+              "Food": "Jalebi with rabri"
+            },
+            {
+              "Food": "Moong dhal halwa"
+            },
+            {
+              "Food": "Rajasthan Rasgulla"
+            },
+            {
+              "Food": "Rasmalai"
+            },
+            {
+              "Food": "Gajar ka halwa"
+            },
+            {
+              "Food": "Barfi"
+            },
+            {
+              "Food": "Seasonal sliced tropical Thai fruit"
+            },
+            {
+              "Food": "Apple crumble"
+            },
+            {
+              "Food": "Blueberry cheesecake"
+            },
+            {
+              "Food": "Tiramisu"
+            },
+            {
+              "Food": "Ice cream"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
