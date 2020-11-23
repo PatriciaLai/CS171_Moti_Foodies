@@ -94,11 +94,11 @@ class MapVis {
         vis.legendScale = d3.scaleLinear()
             .range([0, 150])
 
-        // == TOOLTIP ==
-        // Append tooltip
-        vis.tooltip = d3.select("body").append('div')
-            .attr('class', "tooltip")
-            .attr('id', 'pieTooltip')
+        // // == TOOLTIP ==
+        // // Append tooltip
+        // vis.tooltip = d3.select("body").append('div')
+        //     .attr('class', "tooltip")
+        //     .attr('id', 'pieTooltip')
 
 
         vis.wrangleData()
