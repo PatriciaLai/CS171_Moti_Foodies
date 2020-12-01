@@ -24,8 +24,8 @@
         #section3 {padding-top:100px; padding-left:100px; height:900px;color: #fff; background-color: #009688;}
         #section4 {padding-top:100px; padding-left:100px; height:900px;color: #fff; background-color: #00bcd4;}
         #section5 {padding-top:100px; padding-left:100px; height:900px;color: white; background-color: #132C53;}
-        #section6 {padding-top:100px; padding-left:100px; height:900px;color: #fff; background-color: #00bcd4;}
-        #section7 {padding-top:100px; padding-left:100px; height:1100px;color: #fff; background-color: #570000;}
+        /*#section6 {padding-top:100px; padding-left:100px; height:900px;color: #fff; background-color: #00bcd4;}*/
+        #section6 {padding-top:100px; padding-left:100px; height:1100px;color: black; background-color: white;}
     </style>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -48,8 +48,8 @@
                     <li><a href="#section3">Section 3</a></li>
                     <li><a href="#section4">Section 4</a></li>
                     <li><a href="#section5">Section 5</a></li>
+<!--                    <li><a href="#section6">Section 6</a></li>-->
                     <li><a href="#section6">Section 6</a></li>
-                    <li><a href="#section7">Section 7</a></li>
                 </ul>
             </div>
         </div>
@@ -253,10 +253,12 @@
             <!-- Create a div for WAFFLE -->
             <div id="religion_chart"></div>
             <br>
-            <p>India has a diverse mix of religions, with a Hindu majority (79.80%). Dietary restrictions due to religion influence popularity of dishes in regions.</p>
+
+            <p>India has a diverse mix of religions, with a Hindu majority (79.80%).</p>
+            <p>Between 23-37% of Hindus are vegetarian. Most Hindus do not eat beef and most Muslims do not eat pork. These dietary restrictions influence the ingredients used within dishes.</p>
+
         </div>
         <div class="col-xs-6">
-            <p></p>
         </div>
     </div>
     <!--Yes, there's a better way to do this. Please help!-->
@@ -268,41 +270,45 @@
 </div>
 
 
-<!-- SECTION 6: VEGETARIAN (PIE CHART)-->
-<div id="section6" class="container-fluid">
-    <div class="row">
-        <div class="col-med">
-            <h1>What’s the ratio of vegetarian/non-vegetarian food in this dataset?</h1>
-        </div>
-    </div>
-    <br>
-    <br>
-    <div class="row">
-        <div class="col-xs-6">
-            <!-- Create a div for PIE -->
-            <div id = "my_pie"></div>
-            <p>Eighty-nine percent of this dataset contains vegetarian dishes. However, it's interesting to note that only between 23-37% of Hindus are vegetarian.</p>
-        </div>
-        <div class="col-xs-6">
-        </div>
-    </div>
-    <!--Yes, there's a better way to do this. Please help!-->
-    <br><br><br><br><br><br>
-    <div class="row">
-        <div class="col-med">
-        </div>
-    </div>
-</div>
+<!--&lt;!&ndash; SECTION 6: VEGETARIAN (PIE CHART)&ndash;&gt;-->
+<!--<div id="section6" class="container-fluid">-->
+<!--    <div class="row">-->
+<!--        <div class="col-med">-->
+<!--            <h1>What’s the ratio of vegetarian/non-vegetarian food in this dataset?</h1>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <div class="row">-->
+<!--        <div class="col-xs-6">-->
+<!--            &lt;!&ndash; Create a div for PIE &ndash;&gt;-->
+<!--            <div id = "my_pie"></div>-->
+<!--            <p>Eighty-nine percent of this dataset contains vegetarian dishes. However, it's interesting to note that only between 23-37% of Hindus are vegetarian.</p>-->
+<!--        </div>-->
+<!--        <div class="col-xs-6">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;Yes, there's a better way to do this. Please help!&ndash;&gt;-->
+<!--    <br><br><br><br><br><br>-->
+<!--    <div class="row">-->
+<!--        <div class="col-med">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 
 <!-- SECTION 7: FOOD EXPLORATION (BUBBLE CHART)-->
-<div id="section7" class="container-fluid">
+<div id="section6" class="container-fluid">
     <div class="row">
         <div class="col-med">
             <h1>Explore the cuisines!</h1>
             <br>
-            <p>So far we have talked some factors that influence the food culture in India. Feel free to explore the cuisines of India!</p>
-<!--            <p>Now you can explore the main Indian dishes by (MAYBE) filtering the region, ingredient, diet, course, and time.</p>-->
+            <p>So far we have talked about some factors that influence the food culture in India. Feel free to explore the cuisines of India by region!</p>
+            <br>
+            <div id="toolbar">
+                <a href="#section6" id="all" class="button active">All Courses</a>
+                <a href="#section6" id="year" class="button">Courses By Region</a>
+            </div>
         </div>
     </div>
     <br>
