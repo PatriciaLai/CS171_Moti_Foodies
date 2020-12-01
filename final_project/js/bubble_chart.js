@@ -8,31 +8,39 @@
  */
 function bubbleChart() {
   // Constants for sizing
-  let width = 900;
-  let height = 600;
+  let width = 1400;
+  let height = 700;
 
   // tooltip for mouseover functionality
-  let tooltip = floatingTooltip('gates_tooltip', 240);
+  let tooltip = floatingTooltip('bubble_tooltip', 240);
 
   // Locations to move bubbles towards, depending
   // on which view mode is selected.
   let center = { x: width / 2, y: height / 2 };
 
   let yearCenters = {
-    2008: { x: width / 3, y: height / 2 },
-    2009: { x: width / 2, y: height / 2 },
-    2010: { x: 2 * width / 3, y: height / 2 }
+    1: { x: width / 7 + 75, y: height / 2 }, // N bubbles
+    2: { x: width / 7 + 150, y: height / 2 }, // NE
+    3: { x: width / 7 + 275,  y: height / 2 }, // E
+    4: { x: width / 7 + 375, y: height / 2 }, // C
+    5: { x: width / 7 + 550, y: height / 2 }, // S
+    6: { x: width / 7 + 700, y: height / 2 }, // W
+    7: { x: width / 7 + 850, y: height / 2 } // NONE!
   };
 
   // X locations of the year titles.
   let yearsTitleX = {
-    2008: 160,
-    2009: width / 2,
-    2010: width - 160
+    1: 150, // N text
+    2: width / 7 + 100, // NE
+    3: width / 7 + 250, // E
+    4: width / 7 + 400, // C
+    5: width / 7 + 550, // S
+    6: width / 7 + 800, // W
+    7: width / 7 + 1000 // None
   };
 
   // @v4 strength to apply to the position forces
-  let forceStrength = 0.03;
+  let forceStrength = 0.05;
 
   // These will be set in create_nodes and create_vis
   let svg = null;
@@ -61,11 +69,11 @@ function bubbleChart() {
   // @v4 We create a force simulation now and
   //  add forces to it.
   let simulation = d3V4.forceSimulation()
-    .velocityDecay(0.2)
-    .force('x', d3V4.forceX().strength(forceStrength).x(center.x))
-    .force('y', d3V4.forceY().strength(forceStrength).y(center.y))
-    .force('charge', d3V4.forceManyBody().strength(charge))
-    .on('tick', ticked);
+      .velocityDecay(0.2)
+      .force('x', d3V4.forceX().strength(forceStrength).x(center.x))
+      .force('y', d3V4.forceY().strength(forceStrength).y(center.y))
+      .force('charge', d3V4.forceManyBody().strength(charge))
+      .on('tick', ticked);
 
   // @v4 Force starts up automatically,
   //  which we don't want as there aren't any nodes yet.
@@ -74,8 +82,8 @@ function bubbleChart() {
   // Nice looking colors - no reason to buck the trend
   // @v4 scales now have a flattened naming scheme
   let fillColor = d3V4.scaleOrdinal()
-    .domain(['vegetarian', 'non vegetarian'])
-    .range(['#E1BC29', '#AA300E']);
+      .domain(['vegetarian', 'non vegetarian'])
+      .range(['#E1BC29', '#AA300E']);
 
   /*
    * This data manipulation function takes the raw data from
@@ -97,9 +105,9 @@ function bubbleChart() {
     // Sizes bubbles based on area.
     // @v4: new flattened scale names.
     let radiusScale = d3V4.scalePow()
-      .exponent(0.5)
-      .range([2, 70])
-      .domain([0, maxAmount]);
+        .exponent(0.5)
+        .range([2, 70])
+        .domain([0, maxAmount]);
 
     // Use map() to convert raw data into node data.
     // Checkout http://learnjsdata.com/ for more on
@@ -113,7 +121,8 @@ function bubbleChart() {
         ingredients: d.ingredients,
         diet: d.diet,
         group: d.diet,
-        year: d.region,
+        year: +d.region2,
+        region: d.region,
         x: Math.random() * 900,
         y: Math.random() * 800
       };
@@ -145,13 +154,13 @@ function bubbleChart() {
     // Create a SVG element inside the provided selector
     // with desired size.
     svg = d3V4.select(selector)
-      .append('svg')
-      .attr('width', width)
-      .attr('height', height);
+        .append('svg')
+        .attr('width', width)
+        .attr('height', height);
 
     // Bind nodes data to what will become DOM elements to represent them.
     bubbles = svg.selectAll('.bubble')
-      .data(nodes, function (d) { return d.id; });
+        .data(nodes, function (d) { return d.id; });
 
     // Create new circle elements each with class `bubble`.
     // There will be one circle.bubble for each object in the nodes array.
@@ -159,13 +168,13 @@ function bubbleChart() {
     // @v4 Selections are immutable, so lets capture the
     //  enter selection to apply our transition to below.
     let bubblesE = bubbles.enter().append('circle')
-      .classed('bubble', true)
-      .attr('r', 0)
-      .attr('fill', function (d) { return fillColor(d.group); })
-      .attr('stroke', function (d) { return d3V4.rgb(fillColor(d.group)).darker(); })
-      .attr('stroke-width', 2)
-      .on('mouseover', showDetail)
-      .on('mouseout', hideDetail);
+        .classed('bubble', true)
+        .attr('r', 0)
+        .attr('fill', function (d) { return fillColor(d.group); })
+        .attr('stroke', function (d) { return d3V4.rgb(fillColor(d.group)).darker(); })
+        .attr('stroke-width', 2)
+        .on('mouseover', showDetail)
+        .on('mouseout', hideDetail);
 
     // @v4 Merge the original empty selection and the enter selection
     bubbles = bubbles.merge(bubblesE);
@@ -173,8 +182,8 @@ function bubbleChart() {
     // Fancy transition to make bubbles appear, ending with the
     // correct radius
     bubbles.transition()
-      .duration(3000)
-      .attr('r', function (d) { return d.radius; });
+        .duration(3000)
+        .attr('r', function (d) { return d.radius; });
 
     // Set the simulation's nodes to our newly created nodes array.
     // @v4 Once we set the nodes, the simulation will start running automatically!
@@ -193,8 +202,8 @@ function bubbleChart() {
    */
   function ticked() {
     bubbles
-      .attr('cx', function (d) { return d.x; })
-      .attr('cy', function (d) { return d.y; });
+        .attr('cx', function (d) { return d.x; })
+        .attr('cy', function (d) { return d.y; });
   }
 
   /*
@@ -254,15 +263,50 @@ function bubbleChart() {
     // the year texts once and then just hide them.
     let yearsData = d3V4.keys(yearsTitleX);
     let years = svg.selectAll('.year')
-      .data(yearsData);
+        .data(yearsData);
 
     years.enter().append('text')
-      .attr('class', 'year')
-      .attr('x', function (d) { return yearsTitleX[d]; })
-      .attr('y', 40)
-      .attr('text-anchor', 'middle')
-      .text(function (d) { return d; });
+        .attr('class', 'year')
+        .attr('x', function (d) {
+          console.log(yearsTitleX[d])
+          return yearsTitleX[d]; })
+        .attr('y', 40)
+        .attr('text-anchor', 'middle')
+        .text(function (d) {
+          console.log(d)
+
+          if (d === "1") {
+            return "North";
+          }
+          if (d === "2") {
+            return "North East";
+          }
+          if (d === "3") {
+            return "East";
+          }
+          if (d === "4") {
+            return "Central";
+          }
+          if (d === "5") {
+            return "South";
+          }
+          if (d === "6") {
+            return "West";
+          }
+          if (d === "7") {
+            return "No region!";
+          }
+        });
+
   }
+
+  chart.toggleDisplay = function (displayName) {
+    if (displayName === 'year') {
+      splitBubbles();
+    } else {
+      groupBubbles();
+    }
+  };
 
 
   /*
@@ -274,16 +318,16 @@ function bubbleChart() {
     d3V4.select(this).attr('stroke', 'black');
 
     let content = '<span class="name">Name: </span><span class="value">' +
-                  d.name + '</span><br/>' +
-                  '<span class="name">Ingredients: </span><span class="value">' +
-                  d.ingredients + '</span><br/>' +
-                  '<span class="name">Diet: </span><span class="value">' +
-                  d.diet + '</span><br/>' +
-                  '<span class="name">Cook Time: </span><span class="value">' +
-                  d.cook_time + ' minutes' +
-                  '</span><br/>' +
-                  '<span class="name">Region: </span><span class="value">' +
-                  d.year + '</span>';
+        d.name + '</span><br/>' +
+        '<span class="name">Ingredients: </span><span class="value">' +
+        d.ingredients + '</span><br/>' +
+        '<span class="name">Diet: </span><span class="value">' +
+        d.diet + '</span><br/>' +
+        '<span class="name">Cook Time: </span><span class="value">' +
+        d.cook_time + ' minutes' +
+        '</span><br/>' +
+        '<span class="name">Region: </span><span class="value">' +
+        d.region + '</span>';
 
     tooltip.showTooltip(content, d3V4.event);
   }
@@ -294,7 +338,7 @@ function bubbleChart() {
   function hideDetail(d) {
     // reset outline
     d3V4.select(this)
-      .attr('stroke', d3V4.rgb(fillColor(d.group)).darker());
+        .attr('stroke', d3V4.rgb(fillColor(d.group)).darker());
 
     tooltip.hideTooltip();
   }
@@ -343,27 +387,28 @@ function display(error, data) {
  */
 function setupButtons() {
   d3V4.select('#toolbar')
-    .selectAll('.button')
-    .on('click', function () {
-      // Remove active class from all buttons
-      d3V4.selectAll('.button').classed('active', false);
-      // Find the button just clicked
-      let button = d3V4.select(this);
+      .selectAll('.button')
+      .on('click', function () {
+        // Remove active class from all buttons
+        d3V4.selectAll('.button').classed('active', false);
+        // Find the button just clicked
+        let button = d3V4.select(this);
 
-      // Set it as the active button
-      button.classed('active', true);
+        // Set it as the active button
+        button.classed('active', true);
 
-      // Get the id of the button
-      let buttonId = button.attr('id');
+        // Get the id of the button
+        let buttonId = button.attr('id');
 
-      // Toggle the bubble chart based on
-      // the currently clicked button.
-      myBubbleChart.toggleDisplay(buttonId);
-    });
+        // Toggle the bubble chart based on
+        // the currently clicked button.
+        myBubbleChart.toggleDisplay(buttonId);
+      });
 }
 
 // Load the data.
-d3V4.csv('data/indian_food_copy.csv', display);
+d3V4.csv('data/indian_food_copy_2.csv', display);
 
 // setup the buttons.
 setupButtons();
+
