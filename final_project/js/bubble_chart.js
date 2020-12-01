@@ -8,39 +8,31 @@
  */
 function bubbleChart() {
   // Constants for sizing
-  let width = 1400;
-  let height = 700;
+  let width = 900;
+  let height = 600;
 
   // tooltip for mouseover functionality
-  let tooltip = floatingTooltip('bubble_tooltip', 240);
+  let tooltip = floatingTooltip('gates_tooltip', 240);
 
   // Locations to move bubbles towards, depending
   // on which view mode is selected.
   let center = { x: width / 2, y: height / 2 };
 
   let yearCenters = {
-    1: { x: width / 7 + 75, y: height / 2 }, // N bubbles
-    2: { x: width / 7 + 150, y: height / 2 }, // NE
-    3: { x: width / 7 + 275,  y: height / 2 }, // E
-    4: { x: width / 7 + 375, y: height / 2 }, // C
-    5: { x: width / 7 + 550, y: height / 2 }, // S
-    6: { x: width / 7 + 700, y: height / 2 }, // W
-    7: { x: width / 7 + 850, y: height / 2 } // NONE!
+    2008: { x: width / 3, y: height / 2 },
+    2009: { x: width / 2, y: height / 2 },
+    2010: { x: 2 * width / 3, y: height / 2 }
   };
 
   // X locations of the year titles.
   let yearsTitleX = {
-    1: 150, // N text
-    2: width / 7 + 100, // NE
-    3: width / 7 + 250, // E
-    4: width / 7 + 400, // C
-    5: width / 7 + 550, // S
-    6: width / 7 + 800, // W
-    7: width / 7 + 1000 // None
+    2008: 160,
+    2009: width / 2,
+    2010: width - 160
   };
 
   // @v4 strength to apply to the position forces
-  let forceStrength = 0.05;
+  let forceStrength = 0.03;
 
   // These will be set in create_nodes and create_vis
   let svg = null;
@@ -121,8 +113,7 @@ function bubbleChart() {
         ingredients: d.ingredients,
         diet: d.diet,
         group: d.diet,
-        year: +d.region2,
-        region: d.region,
+        year: d.region,
         x: Math.random() * 900,
         y: Math.random() * 800
       };
@@ -266,47 +257,12 @@ function bubbleChart() {
       .data(yearsData);
 
     years.enter().append('text')
-        .attr('class', 'year')
-        .attr('x', function (d) {
-          console.log(yearsTitleX[d])
-          return yearsTitleX[d]; })
-        .attr('y', 40)
-        .attr('text-anchor', 'middle')
-        .text(function (d) {
-          console.log(d)
-
-          if (d === "1") {
-            return "North";
-          }
-          if (d === "2") {
-            return "North East";
-          }
-          if (d === "3") {
-            return "East";
-          }
-          if (d === "4") {
-            return "Central";
-          }
-          if (d === "5") {
-            return "South";
-          }
-          if (d === "6") {
-            return "West";
-          }
-          if (d === "7") {
-            return "No region!";
-          }
-        });
-
+      .attr('class', 'year')
+      .attr('x', function (d) { return yearsTitleX[d]; })
+      .attr('y', 40)
+      .attr('text-anchor', 'middle')
+      .text(function (d) { return d; });
   }
-
-  chart.toggleDisplay = function (displayName) {
-    if (displayName === 'year') {
-      splitBubbles();
-    } else {
-      groupBubbles();
-    }
-  };
 
 
   /*
@@ -327,7 +283,7 @@ function bubbleChart() {
                   d.cook_time + ' minutes' +
                   '</span><br/>' +
                   '<span class="name">Region: </span><span class="value">' +
-                  d.region + '</span>';
+                  d.year + '</span>';
 
     tooltip.showTooltip(content, d3V4.event);
   }
@@ -407,7 +363,7 @@ function setupButtons() {
 }
 
 // Load the data.
-d3V4.csv('data/indian_food_copy_2.csv', display);
+d3V4.csv('data/indian_food_copy.csv', display);
 
 // setup the buttons.
 setupButtons();

@@ -14,9 +14,9 @@ class MapVis {
         let vis = this;
 
         // == SVG == //
-        vis.margin = {top: 20, right: 20, bottom: 20, left: 20};
+        vis.margin = {top: 10, right: 20, bottom: 20, left: 20};
         vis.width = 600
-        vis.height = 500
+        vis.height = 480
 
         // init drawing area
         vis.svg = d3.select("#" + vis.parentElement).append("svg")
@@ -50,7 +50,7 @@ class MapVis {
 
         // define color scale
         vis.colorScale = d3.scaleLinear()
-            .range(['#ffffff', '#136D70'])
+            .range(['#ffffff', '#176A61'])
 
         // == LEGEND == //
         // [legend bar]
@@ -81,7 +81,7 @@ class MapVis {
         // Set the color for the end (100%)
         vis.linearGradient.append("stop")
             .attr("offset", "100%")
-            .attr("stop-color", "#136D70"); //dark blue
+            .attr("stop-color", "#176A61"); //dark blue
 
         // draw the rectangle and fill with gradient
         vis.legend.append("rect")
@@ -162,7 +162,7 @@ class MapVis {
             // hover effect
             .on('mouseover', function(event, d){
                 d3.select(this)
-                    .attr("fill", "#ad3513")
+                    .attr("fill", "#E99C3A")
 
                 vis.tooltip
                     .style("opacity", 0.85)

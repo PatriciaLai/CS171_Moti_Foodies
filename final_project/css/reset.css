@@ -9,7 +9,7 @@ audio:not([controls]) { display: none; }
 
 html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 body { margin: 0; font-size: 15px; line-height: 1.231; }
-body, button, input, select, textarea { font-family: "Roboto", serif; color: #222; }
+body, button, input, select, textarea { font-family: Mulish, serif; color: #222; }
 
 ::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
 ::selection { background: #fe57a1; color: #fff; text-shadow: none; }
@@ -109,12 +109,12 @@ td { vertical-align: top; }
 /* ==|== print styles ======================================================= */
  
 @media print {
-  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } 
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; }
   a, a:visited { text-decoration: underline; }
   a[href]:after { content: " (" attr(href) ")"; }
   abbr[title]:after { content: " (" attr(title) ")"; }
   .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; } 
-  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  pre, blockquote { border: 1px solid #999999; page-break-inside: avoid; }
   thead { display: table-header-group; }
   tr, img { page-break-inside: avoid; }
   img { max-width: 100% !important; }

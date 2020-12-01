@@ -6,11 +6,11 @@
 }
 
 
-body {
-    font-family: "Roboto", serif;
-    font-size: 16px;
-    color: #333;
-}
+/*body {*/
+/*    font-family: "Roboto", serif;*/
+/*    font-size: 16px;*/
+/*    color: #333;*/
+/*}*/
 
 .religion_chart {
     margin: 40px;
@@ -494,4 +494,92 @@ ul {
     -o-transform-origin: 100% 50%;
     transform-origin: 100% 50%;
     z-index:0;
+}
+
+/* PATRICIA STYLING */
+
+/* = color palette =  */
+/* #45958C - green*/
+/* #B43E83 - purple*/
+/* #E83F26 - orange*/
+/* #E99C3A - gold*/
+/* #F3E4AE - light yellow*/
+
+/* = body preset = */
+body {
+    position: relative;
+}
+
+#section1 {padding-top:200px; padding-left:100px; height:100vh;color: #222;background-color: whitesmoke;}
+#section2 {padding-top:50px; padding-left:100px; height:100vh;color: #222; background-color: whitesmoke;}
+#section3 {padding-top:70px; padding-left:100px; height:100vh;color: #222; background-color: whitesmoke;}
+#section4 {padding-top:70px; padding-left:100px; height:100vh;color: #222; background-color: whitesmoke;}
+#section5 {padding-top:70px; padding-left:100px; height:100vh;color: #222; background-color: whitesmoke;}
+#section6 {padding-top:70px; padding-left:100px; height:100vh;color: #222; background-color: whitesmoke;}
+#section7 {padding-top:70px; padding-left:100px; height:1100px;color: #222; background-color: whitesmoke;}
+
+/* = top bar = */
+/* bar color */
+.navbar-default{
+    background-color: #B43E83;
+    opacity: 0.95;
+}
+/* link color */
+.navbar-default .navbar-nav > li > a {
+    color: whitesmoke;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #333;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #E99C3A;
+    background-color: #45958C;
+}
+
+/* = homepage-transparent background = */
+.homepage{
+    position: relative;
+    width: 100%;
+}
+.homepage img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
+    margin: auto;
+    z-index: 1;
+    opacity: .3;
+}
+
+/* = two column design = */
+.row{
+    padding: 40px 0px;
+}
+.column{
+    float: left;
+    width: 50%;
+    Padding-right:30px;
+}
+
+/* = button = */
+button{
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 2px solid #B43E83;
+    transition-duration: 0.4s;
+}
+button:hover {
+    background-color: #B43E83;
+    color: white;
+}
+button:focus {
+    outline:0;
+    background-color: #B43E83;
+    color: white;
+    border: 2px solid #B43E83;
 }
