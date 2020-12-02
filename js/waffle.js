@@ -72,7 +72,7 @@ let WaffleChart = function() {
             domain.push(d[$_keys[0]]);
         });
 
-        let red = "#03B5AA";
+        let main_color = "#03B5AA";
 
         let color = d3V3.scale.linear()
             .domain([1, _obj.data.length - 1])
@@ -107,7 +107,7 @@ let WaffleChart = function() {
             .attr("class", "legend_item_icon")
             .style("background-color", function(d, i) {
                 if (i === 0) {
-                    return red;
+                    return main_color;
                 } else {
                     return color(i);
                 }
@@ -151,7 +151,7 @@ let WaffleChart = function() {
             .attr("height", _obj.size)
             .attr("fill", function(d) {
                 if (d.groupIndex === 0) {
-                    return red;
+                    return main_color;
                 } else {
                     return color(d.groupIndex);
                 }

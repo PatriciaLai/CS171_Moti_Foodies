@@ -217,17 +217,18 @@
             <div id="toolbar">
                 <a href="#section6" id="all" class="button active">All Courses</a>
                 <a href="#section6" id="year" class="button">Courses By Region</a>
+                <br>
+                <br>
+                <br>
+                <div id="bubble_vis"></div>
+                <div id="my_bubble_legend"></div>
             </div>
         </div>
     </div>
-    <br>
-    <br>
     <div class="row">
-        <div class="col-med">
-            <div id="bubble_vis"></div>
+        <div class="col-xs-6">
         </div>
         <div class="col-xs-6">
-            <p></p>
         </div>
     </div>
     <!--Yes, there's a better way to do this. Please help!-->
@@ -240,19 +241,12 @@
 </div>
 
 
-
 <!-- BOOTSTRAP -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
-<!-- d3 -->
-<!--Need to figure out how to load multiple versions of D3 here-->
-<!--<script js="http://d3js.org/d3.v3.min.js"></script>-->
-<!--<script src="http://d3js.org/d3.v4.min.js"></script>-->
-<!--<script js="https://d3js.org/d3.v6.min.js"></script>-->
-
-<script src="js/d3.min.js"></script>
+<!--<script src="js/d3.min.js"></script>-->
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 
 <script src="https://d3js.org/d3.v3.min.js"></script>
@@ -282,6 +276,7 @@
 <script src="js/pie.js"></script>
 <script src="js/bubble_tooltip.js"></script>
 <script src="js/bubble_chart.js"></script>
+<script src="js/bubble_chart_legend.js"></script>
 <script src="js/mapVis.js"></script>
 <script src="js/map_main.js"></script>
 

@@ -8,20 +8,20 @@
  */
 function bubbleChart() {
   // Constants for sizing
-  let width = 1400;
-  let height = 700;
+  let width = 1300;
+  let height = 615;
 
   // tooltip for mouseover functionality
   let tooltip = floatingTooltip('bubble_tooltip', 240);
 
   // Locations to move bubbles towards, depending
   // on which view mode is selected.
-  let center = { x: width / 2, y: height / 2 };
+  let center = { x: width / 2, y: height / 3 + 100 };
 
   let yearCenters = {
     1: { x: width / 7 + 75, y: height / 2 }, // N bubbles
     2: { x: width / 7 + 150, y: height / 2 }, // NE
-    3: { x: width / 7 + 275,  y: height / 2 }, // E
+    3: { x: width / 7 + 275, y: height / 2 }, // E
     4: { x: width / 7 + 375, y: height / 2 }, // C
     5: { x: width / 7 + 550, y: height / 2 }, // S
     6: { x: width / 7 + 700, y: height / 2 }, // W
@@ -270,7 +270,7 @@ function bubbleChart() {
         .attr('x', function (d) {
           console.log(yearsTitleX[d])
           return yearsTitleX[d]; })
-        .attr('y', 40)
+        .attr('y', 20)
         .attr('text-anchor', 'middle')
         .text(function (d) {
           console.log(d)
@@ -294,7 +294,7 @@ function bubbleChart() {
             return "West";
           }
           if (d === "7") {
-            return "No region!";
+            return "No region";
           }
         });
 
@@ -411,4 +411,6 @@ d3V4.csv('data/indian_food_copy_2.csv', display);
 
 // setup the buttons.
 setupButtons();
+
+
 
