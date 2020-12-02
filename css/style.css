@@ -573,13 +573,15 @@ button{
     border: 2px solid #B43E83;
     transition-duration: 0.4s;
 }
-button:hover {
-    background-color: #B43E83;
-    color: white;
-}
+/*button:hover {*/
+/*    background-color: #B43E83;*/
+/*    color: white;*/
+/*}*/
 button:focus {
     outline:0;
-    background-color: #B43E83;
+}
+
+.rainfallButton{
     color: white;
-    border: 2px solid #B43E83;
+    background-color: #B43E83;
 }

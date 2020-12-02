@@ -52,20 +52,39 @@
 
         <!--left column-->
         <div class="column">
-            <h1 style="padding-bottom: 30px">What's the climate impacts on agriculture and food supply in India?</h1>
-            <h4 style="line-height: 1.5">India is a land of diversity, not only culturally but also for its topography and climate. The variety of temperature and rainfall have a major impact on divers cash crops grown in India, and lead to a rich food culture here.</h4>
+            <div>
+                <h1 style="padding-bottom: 12px">What's the climate impacts on agriculture and food supply in India?</h1>
+                <h5 style="line-height: 1.5; padding-bottom: 10px">India is a land of diversity, not only culturally but also for its topography and climate. The variety of temperature and rainfall have a major impact on divers cash crops grown in India, and lead to a rich food culture here.</h5>
+            </div>
+            <div id= "Rice" style="float: left"></div>
+            <div id= "Wheat" style="float: left"></div>
+            <div id= "Maize" style="float: left"></div>
+            <div id= "Ragi" style="float: left"></div>
+            <div id= "Coffee" style="float: left"></div>
+            <div id= "Tea" style="float: left"></div>
+
         </div>
         <!--right column-->
         <div class="column">
             <div class="button_area">
-                <button id="rainfall_btn" type="button" value="rainfall">Rainfall</button>
-                <!--rainfall_btn default selected-->
+                <button id="rainfall_btn" type="button" value="rainfall" class="rainfallButton">Rainfall</button>
+                <button id="temperature_btn" type="button" value="temperature_F">Temperature</button>
+
+                <!--rainfall_btn default selected; button keep selected-->
                 <script>
-                    document.addEventListener("DOMContentLoaded", function(event) {
-                        document.getElementById("rainfall_btn").focus();
+
+                    $(document).ready(function(){
+                        $("#rainfall_btn").click(function(){
+                            $(this).css("background-color", "#B43E83").css("color", "white");
+                            $("#temperature_btn").css("background-color", "transparent").css("color", "#222");
+                        });
+                        $("#temperature_btn").click(function(){
+                            $(this).css("background-color", "#B43E83").css("color", "white");
+                            $("#rainfall_btn").css("background-color", "transparent").css("color", "#222");
+                        });
                     });
                 </script>
-                <button id="temperature_btn" type="button" value="temperature_F">Temperature</button>
+
             </div>
             <div id="mapDiv" style="float: left"></div>
         </div>
@@ -74,79 +93,80 @@
 </div>
 
 
-<!-- SECTION 3: MILK INDUSTRY (BAR CHART)-->
-<div id="section3" class="container-fluid">
-<!--    <div class="row">-->
-    <div class="col-med">
-        <h1>How does the dairy industry influence Indian cuisine?</h1>
-    </div>
 
-        <div style="height: 70vh">
-            <div style = "width: 40vw">
-                <!-- left column-->
-                <div class="col-6" style="height: 100%">
-                    <div class="align-self-center">
-                        <div>
-                            <h3>Statewise Milk Production in India</h3>
-                        </div>
-                        <div>
-                            <!-- drop down menu -->
-                            <div class="row justify-content-center">
-                                <div class="align-self-center">
-                                    <div class="user-control">
-                                        <div class="form-group">
-                                            <label for="state-category">Choose Category:</label>
-                                            <select id="state-category" class="form-control" onchange="dataManipulation()">
-                                                <option value="all">All States</option>
-                                                <!--                        <option value="Water Park">Water Park</option>-->
-                                                <!--                        <option value="Museum">Museum</option>-->
-                                                <!--                        <option value="Theme Park">Theme Park</option>-->
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+<!--&lt;!&ndash; SECTION 3: MILK INDUSTRY (BAR CHART)&ndash;&gt;-->
+<!--<div id="section3" class="container-fluid">-->
+<!--&lt;!&ndash;    <div class="row">&ndash;&gt;-->
+<!--    <div class="col-med">-->
+<!--        <h1>How does the dairy industry influence Indian cuisine?</h1>-->
+<!--    </div>-->
 
-                            <!-- Parent container of our bar chart -->
-                            <div class="row">
-                                <div class="col-8 offset-2">
-                                    <div id="my_dataviz2"></div>
-                                    <div id="tooltipBarState" class="hidden">
-                                        <p><span id="BarStateValue"></span></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- right column-->
-                <div class="col-6" style="height: 100%">
-                    <div class="row justify-content-center">
-                        <div class="align-self-center">
-                            <div>
-                                <h3>Species Distribution</h3>
-                                <p>Cows are the primary source of milk, however, in various parts of India milk is sourced from goats, buffaloes, camels, and yaks.</p>
-                            </div>
-                            <!-- Parent container of our bar chart -->
-                            <div class="row">
-                                <div class="col-8 offset-2">
-                                    <div id="my_dataviz"></div>
-                                    <div id="tooltipBarSpecies" class="hidden">
-                                        <p><span id="BarSpeciesValue"></span></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!--        <div style="height: 70vh">-->
+<!--            <div style = "width: 40vw">-->
+<!--                &lt;!&ndash; left column&ndash;&gt;-->
+<!--                <div class="col-6" style="height: 100%">-->
+<!--                    <div class="align-self-center">-->
+<!--                        <div>-->
+<!--                            <h3>Statewise Milk Production in India</h3>-->
+<!--                        </div>-->
+<!--                        <div>-->
+<!--                            &lt;!&ndash; drop down menu &ndash;&gt;-->
+<!--                            <div class="row justify-content-center">-->
+<!--                                <div class="align-self-center">-->
+<!--                                    <div class="user-control">-->
+<!--                                        <div class="form-group">-->
+<!--                                            <label for="state-category">Choose Category:</label>-->
+<!--                                            <select id="state-category" class="form-control" onchange="dataManipulation()">-->
+<!--                                                <option value="all">All States</option>-->
+<!--                                                &lt;!&ndash;                        <option value="Water Park">Water Park</option>&ndash;&gt;-->
+<!--                                                &lt;!&ndash;                        <option value="Museum">Museum</option>&ndash;&gt;-->
+<!--                                                &lt;!&ndash;                        <option value="Theme Park">Theme Park</option>&ndash;&gt;-->
+<!--                                            </select>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
 
-                <div class="note">*There will be one more bar chart for species distribution. </div>
+<!--                            &lt;!&ndash; Parent container of our bar chart &ndash;&gt;-->
+<!--                            <div class="row">-->
+<!--                                <div class="col-8 offset-2">-->
+<!--                                    <div id="my_dataviz2"></div>-->
+<!--                                    <div id="tooltipBarState" class="hidden">-->
+<!--                                        <p><span id="BarStateValue"></span></p>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; right column&ndash;&gt;-->
+<!--                <div class="col-6" style="height: 100%">-->
+<!--                    <div class="row justify-content-center">-->
+<!--                        <div class="align-self-center">-->
+<!--                            <div>-->
+<!--                                <h3>Species Distribution</h3>-->
+<!--                                <p>Cows are the primary source of milk, however, in various parts of India milk is sourced from goats, buffaloes, camels, and yaks.</p>-->
+<!--                            </div>-->
+<!--                            &lt;!&ndash; Parent container of our bar chart &ndash;&gt;-->
+<!--                            <div class="row">-->
+<!--                                <div class="col-8 offset-2">-->
+<!--                                    <div id="my_dataviz"></div>-->
+<!--                                    <div id="tooltipBarSpecies" class="hidden">-->
+<!--                                        <p><span id="BarSpeciesValue"></span></p>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
 
-            </div>
-        </div>
+<!--                <div class="note">*There will be one more bar chart for species distribution. </div>-->
 
-    </div>
-</div>
+<!--            </div>-->
+<!--        </div>-->
+
+<!--    </div>-->
+<!--</div>-->
 
 
 <!-- SECTION 4: GLOBALIZATION & MARRIAGE (TREE DIAGRAM)-->
@@ -268,8 +288,8 @@
 <script src="https://d3js.org/d3-geo.v1.min.js"></script>
 
 <!-- OWN JS -->
-<script src="js/milkState_main.js"></script>
-<script src="js/milkAnimal_main.js"></script>
+<!--<script src="js/milkState_main.js"></script>-->
+<!--<script src="js/milkAnimal_main.js"></script>-->
 <script src="js/marriage_tree.js"></script>
 <script src="js/waffle.js"></script>
 <script src="js/waffle_main.js"></script>
@@ -279,6 +299,7 @@
 <script src="js/bubble_chart_legend.js"></script>
 <script src="js/mapVis.js"></script>
 <script src="js/map_main.js"></script>
+<script src="js/pieVis.js"></script>
 
 </body>
 </html>

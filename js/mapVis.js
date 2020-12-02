@@ -24,7 +24,7 @@ class MapVis {
             .attr("height", vis.height)
             .attr('transform', `translate (${vis.margin.left}, ${vis.margin.top})`)
 
-        // == Map == //
+        // == MAP == //
         // Create a projection
         vis.projection = d3.geoMercator()
             .center([83, 23])
@@ -47,7 +47,6 @@ class MapVis {
             .attr('stroke', '#00272a')
             .attr("d", vis.path)
 
-
         // define color scale
         vis.colorScale = d3.scaleLinear()
             .range(['#ffffff', '#176A61'])
@@ -57,7 +56,7 @@ class MapVis {
         // Add legend group
         vis.legend = vis.svg.append("g")
             .attr('class', 'legend')
-            .attr('transform', `translate(${vis.width * 2.5 / 4}, ${vis.height - 60})`)
+            .attr('transform', `translate(${vis.width * 2.4 / 4}, ${vis.height - 60})`)
 
         // append a defs (for definition) element to SVG
         vis.defs = vis.svg.append("defs");
@@ -93,6 +92,15 @@ class MapVis {
         // - create a legendScale
         vis.legendScale = d3.scaleLinear()
             .range([0, 150])
+
+        // legend unit label
+        vis.legendUnit = vis.svg.append('g')
+            .attr('class', 'map-unit')
+            .append('text')
+            .text('(mm)')
+            .attr('transform', `translate(${vis.width * 3.55 / 4}, ${vis.height - 35})`)
+            .attr('text-anchor', 'middle')
+            .attr('font-size', '9px');
 
         // == TOOLTIP ==
         // Append tooltip
@@ -171,9 +179,9 @@ class MapVis {
                     .html(` 
          <div style="border: thin solid grey; border-radius: 5px; background: lightgrey; padding: 20px">
              <h4> ${vis.displayData[d.id].state} </h4>
-             <p> Rainfall: ${vis.displayData[d.id].rainfall}</p> 
-             <p> Average Temperature(°F): ${vis.displayData[d.id].temperature_F}</p>    
-             <p> Average Temperature(°C): ${vis.displayData[d.id].temperature_C}</p>   
+             <p> Rainfall: ${vis.displayData[d.id].rainfall} mm</p> 
+             <p> Average Temperature (°F): ${vis.displayData[d.id].temperature_F} °F</p>    
+             <p> Average Temperature (°C): ${vis.displayData[d.id].temperature_C} °C</p>   
                     
          </div>`);
             })
@@ -191,6 +199,19 @@ class MapVis {
         // update legend scale
         vis.legendScale.domain([vis.minValue,vis.maxValue])
 
+
+        // update legend unit label
+        changeUnit();
+        function changeUnit(){
+            if (clickedValue === "temperature_F"){
+                vis.legendUnit.text('(°F)')
+            }
+            else{
+                vis.legendUnit.text('(mm)')
+            }
+        }
+
+
         // create a legend axis
         vis.axis = d3.axisBottom()
             .scale(vis.legendScale)
@@ -199,10 +220,12 @@ class MapVis {
         // create a legend axis group
         vis.legendAxis = vis.svg.append("g")
             .attr("class", "legend-axis")
-            .attr('transform', `translate(${vis.width * 2.5 / 4}, ${vis.height - 50})`)
+            .attr('transform', `translate(${vis.width * 2.4 / 4}, ${vis.height - 50})`)
 
         // call the legend axis inside the legend axis group
         vis.svg.select(".legend-axis").call(vis.axis);
+
+
 
 
 
