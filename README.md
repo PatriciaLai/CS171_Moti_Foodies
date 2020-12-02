@@ -1,8 +1,10 @@
+### Links:
+
 Website Link: [add later]
 Video Link: [add later]
 Process Book Link: [add later]
 
-Our Code:
+### Our Code:
 
 index.html
 css/bubble_chart.css
