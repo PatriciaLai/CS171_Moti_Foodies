@@ -7,6 +7,7 @@ let myMapVis,
     myPieVisCoffee,
     myPieVisTea;
 
+
 // click button
 var clickedValue = "rainfall";
 changeMapView();
@@ -19,9 +20,6 @@ function changeMapView(){
 
     })
 }
-
-
-
 
 // load data using promises
 let promises = [
@@ -47,10 +45,20 @@ function initMainPage(dataArray) {
     myPieVisRagi = new PieVis('Ragi', dataArray[2]);
     myPieVisCoffee = new PieVis('Coffee', dataArray[2]);
     myPieVisTea = new PieVis('Tea', dataArray[2]);
-
-
 }
 
+// console.log(selectState);
+// stateLinked();
+// function stateLinked(){
+//
+// }
 
+let stateName;
+getState(state);
+function getState(state) {
+    stateName = state;
+    //console.log(stateName);
+    myPieVisWheat.updateVis();
 
+}
 

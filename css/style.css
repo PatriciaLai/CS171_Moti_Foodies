@@ -1,11 +1,98 @@
-/* NOTE for Amy and Testers */
+/* PATRICIA STYLING */
 
-.note{
-    color: #ec524b;
-    background-color: white;
+/* = color palette =  */
+/* #45958C - green*/
+/* #B43E83 - purple*/
+/* #E83F26 - orange*/
+/* #E99C3A - gold*/
+/* #F3E4AE - light yellow*/
+
+/* = body preset = */
+body {
+    position: relative;
+}
+
+#section1 {padding-top:200px; padding-left:100px; height:100vh;color: #BEAFC2;background-color: #340744;}
+#section2 {padding-top:50px; padding-left:100px; height:110vh;color: #340744; background-color: #E4E5E8;}
+/*#section3 {padding-top:70px; padding-left:100px; height:100vh;color: #BEAFC2; background-color: #340744;}*/
+#section4 {padding-top:70px; padding-left:100px; height:150vh;color: #E4E5E8; background-color: #340744;}
+#section5 {padding-top:70px; padding-left:100px; height:150vh;color: #340744; background-color: #E4E5E8;}
+#section6 {padding-top:70px; padding-left:100px; height:200vh;color: #E4E5E8; background-color: #340744;}
+/*#section7 {padding-top:70px; padding-left:100px; height:1100px;color: #222; background-color: whitesmoke;}*/
+
+/* = top bar = */
+/* bar color */
+.navbar-default{
+    background-color: #260326;
+    opacity: 0.95;
+}
+/* link color */
+.navbar-default .navbar-nav > li > a {
+    color: #BEAFC2;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #9E7F9C;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #FFEEC6;
+    background-color: #774C75;
+}
+
+/* = homepage-transparent background = */
+.homepage{
+    position: relative;
+    width: 100%;
+}
+.homepage img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
+    margin: auto;
+    z-index: 1;
+    opacity: .3;
+}
+
+/* = two column design = */
+.row{
+    padding: 40px 0px;
+}
+.column{
+    float: left;
+    width: 50%;
+    Padding-right:30px;
+}
+
+/* = button = */
+button{
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 2px solid #340744;
+    transition-duration: 0.4s;
+    background-color: transparent;
+    color:#E4E5E8;
+}
+
+button:focus {
+    outline:0;
+}
+
+.rainfallButton{
+    color: #E4E5E8;
+    background-color: #340744;
+}
+.temperatureButton{
+    color:#340744;
 }
 
 
+
+/* OLD STYLING */
 /*body {*/
 /*    font-family: "Roboto", serif;*/
 /*    font-size: 16px;*/
@@ -45,8 +132,37 @@
 }
 
 
-/* Marriage Style */
+
+/* MARRIAGE STYLING - NUPUR */
+/* General */
+/*body{*/
+/*    background-color: #340744 !important;*/
+/*    font-family: 'Roboto', sans-serif;*/
+/*}*/
+
 /* TEXT */
+
+/*h1 {*/
+/*    font-family: 'Roboto', sans-serif !important;*/
+/*    color: #d6ad60;*/
+/*    font-size: 48px !important;*/
+/*    font-weight: 700 !important;*/
+/*    letter-spacing: 0.3em !important;*/
+/*    margin-right: -0.3em !important;*/
+/*    text-align: right;*/
+/*}*/
+
+/*h3 {*/
+/*    font-family: 'Roboto', sans-serif !important;*/
+/*    color: white;*/
+/*    font-size: 36px !important;*/
+/*    font-weight: 700 !important;*/
+/*    letter-spacing: 0.2em !important;*/
+/*    margin-bottom: 30px;*/
+/*    margin-right: -0.2em !important;*/
+/*    text-align: right;*/
+/*}*/
+
 .btn {
     font-family: 'Roboto', sans-serif;
     color: white;
@@ -81,18 +197,23 @@ h3.cursive {
     font-weight: 300 !important;
 }
 
-
+/*h5 {*/
+/*    font-family: 'Roboto', sans-serif !important;*/
+/*    color: white;*/
+/*    font-size: 26px !important;*/
+/*    line-height: 32px !important;*/
+/*    font-weight: 700 !important;*/
+/*    letter-spacing: 0.1em !important;*/
+/*}*/
 
 
 em {
-    font-size: medium;
-    font-weight: bold;
-    color: #31326f;
+    color: #fad02c;
 }
 
 b {
     font-family: 'Roboto', sans-serif;
-    color: #624444;
+    color: white;
     font-weight: 700;
     text-align: right;
 }
@@ -101,42 +222,54 @@ b {
     z-index:99;
 }
 
-
-form{
+p,
+form
+/*.tooltip*/
+{
     font-family: 'Roboto', sans-serif;
-    color: #8293b6 !important;
-    font-size: 16px !important;
-    font-weight: 300 !important;
+    color: #ffffff !important;
+    font-size: 12px !important;
+    font-weight: 200 !important;
     text-align: left;
 }
 
 .yipnode text {
     font-family: 'Roboto', sans-serif;
-    color: #222e47 !important;
-    font-size: 15px;
+    color: #fad02c !important;
+    font-size: 20px;
     font-weight: 300;
     text-align: left;
+    text-space: 5px;
 }
 
 .nodetitle{
-    font-size: 15px !important;
+    font-size: 40px !important;
     letter-spacing: 0.2em !important;
     font-weight: 400 !important;
+    color: #fad02c
 }
 
 p.small {
-    color: #662424;
+    color: white;
     font-size: 12px !important;
 }
 
 a.hyprtxt {
-    color: #ff6666;
+    color: #fad02c;
     font-weight: 700;
 }
 
 .responsive-image {
     width: 100%;
     height: auto;
+}
+
+/* IMAGES */
+
+img.icon {
+    width: 80%;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 
 
@@ -165,38 +298,36 @@ div.section {
     margin-top: 10px;
     margin-bottom: 10px;
     height: 1px;
-    background: #8293b6;
+    background: #b48cc4;
 }
-
-
 
 .yipplaceholder {
     height:20vw;
-    background-color: #ffffff;
+    background-color: black;
     margin-bottom: 20px;
 }
 
 /* TREE */
 .yipnode circle {
-    fill: #8293b6;
+    fill: #fad02c;
     stroke: none;
 }
 
 .yiplink {
     fill: none;
-    stroke: #8293b6;
-    stroke-width: 1px;
+    stroke: #fad02c;
+    stroke-width: 1.5px;
     opacity: 70%;
 }
 
-.yipbaraxis line,
-.yipbaraxis path{
-    stroke: #8293b6;
-}
+/*.yipbaraxis line,*/
+/*.yipbaraxis path{*/
+/*    stroke: #8293b6;*/
+/*}*/
 
 .yipbaraxis text{
-    fill:#8293b6;
-    font-size: 20px;
+    fill: #cbcbcb;
+    font-size: 25px;
 }
 
 /* CONTAINER */
@@ -496,92 +627,3 @@ ul {
     z-index:0;
 }
 
-/* PATRICIA STYLING */
-
-/* = color palette =  */
-/* #45958C - green*/
-/* #B43E83 - purple*/
-/* #E83F26 - orange*/
-/* #E99C3A - gold*/
-/* #F3E4AE - light yellow*/
-
-/* = body preset = */
-body {
-    position: relative;
-}
-
-#section1 {padding-top:200px; padding-left:100px; height:100vh;color: #222;background-color: whitesmoke;}
-#section2 {padding-top:50px; padding-left:100px; height:100vh;color: #222; background-color: whitesmoke;}
-#section3 {padding-top:70px; padding-left:100px; height:100vh;color: #222; background-color: whitesmoke;}
-#section4 {padding-top:70px; padding-left:100px; height:100vh;color: #222; background-color: whitesmoke;}
-#section5 {padding-top:70px; padding-left:100px; height:100vh;color: #222; background-color: whitesmoke;}
-#section6 {padding-top:70px; padding-left:100px; height:100vh;color: #222; background-color: whitesmoke;}
-#section7 {padding-top:70px; padding-left:100px; height:1100px;color: #222; background-color: whitesmoke;}
-
-/* = top bar = */
-/* bar color */
-.navbar-default{
-    background-color: #B43E83;
-    opacity: 0.95;
-}
-/* link color */
-.navbar-default .navbar-nav > li > a {
-    color: whitesmoke;
-}
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-    color: #333;
-}
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-    color: #E99C3A;
-    background-color: #45958C;
-}
-
-/* = homepage-transparent background = */
-.homepage{
-    position: relative;
-    width: 100%;
-}
-.homepage img{
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    max-width: 100%;
-    margin: auto;
-    z-index: 1;
-    opacity: .3;
-}
-
-/* = two column design = */
-.row{
-    padding: 40px 0px;
-}
-.column{
-    float: left;
-    width: 50%;
-    Padding-right:30px;
-}
-
-/* = button = */
-button{
-    padding: 5px 10px;
-    border-radius: 4px;
-    border: 2px solid #B43E83;
-    transition-duration: 0.4s;
-}
-/*button:hover {*/
-/*    background-color: #B43E83;*/
-/*    color: white;*/
-/*}*/
-button:focus {
-    outline:0;
-}
-
-.rainfallButton{
-    color: white;
-    background-color: #B43E83;
-}

@@ -44,12 +44,12 @@ class MapVis {
             .data(vis.geoData.features)
             .enter().append("path")
             .attr('class', 'state')
-            .attr('stroke', '#00272a')
+            .attr('stroke', '#340744')
             .attr("d", vis.path)
 
         // define color scale
         vis.colorScale = d3.scaleLinear()
-            .range(['#ffffff', '#176A61'])
+            .range(['#E0DBE2', '#774C75'])
 
         // == LEGEND == //
         // [legend bar]
@@ -75,12 +75,12 @@ class MapVis {
         //Set the color for the start (0%)
         vis.linearGradient.append("stop")
             .attr("offset", "0%")
-            .attr("stop-color", "#ffffff");
+            .attr("stop-color", "#E0DBE2");
 
         // Set the color for the end (100%)
         vis.linearGradient.append("stop")
             .attr("offset", "100%")
-            .attr("stop-color", "#176A61"); //dark blue
+            .attr("stop-color", "#774C75"); //dark blue
 
         // draw the rectangle and fill with gradient
         vis.legend.append("rect")
@@ -100,7 +100,8 @@ class MapVis {
             .text('(mm)')
             .attr('transform', `translate(${vis.width * 3.55 / 4}, ${vis.height - 35})`)
             .attr('text-anchor', 'middle')
-            .attr('font-size', '9px');
+            .attr('font-size', '9px')
+            .style('fill','#340744');
 
         // == TOOLTIP ==
         // Append tooltip
@@ -145,6 +146,7 @@ class MapVis {
         let vis = this;
         console.log(clickedValue)
 
+
         vis.maxValue = 0;
         Object.keys(vis.displayData).forEach(function(key){
             if (vis.displayData[key][clickedValue]> vis.maxValue){
@@ -170,20 +172,27 @@ class MapVis {
             // hover effect
             .on('mouseover', function(event, d){
                 d3.select(this)
-                    .attr("fill", "#E99C3A")
-
+                    .attr("fill", "#AD2E4F")
                 vis.tooltip
                     .style("opacity", 0.85)
                     .style("left", event.pageX + 20 + "px")
                     .style("top", event.pageY + "px")
                     .html(` 
-         <div style="border: thin solid grey; border-radius: 5px; background: lightgrey; padding: 20px">
-             <h4> ${vis.displayData[d.id].state} </h4>
-             <p> Rainfall: ${vis.displayData[d.id].rainfall} mm</p> 
-             <p> Average Temperature (°F): ${vis.displayData[d.id].temperature_F} °F</p>    
-             <p> Average Temperature (°C): ${vis.displayData[d.id].temperature_C} °C</p>   
-                    
-         </div>`);
+                     <div style="border: thin solid grey; border-radius: 5px; background: lightgrey; padding: 20px">
+                         <h4> ${vis.displayData[d.id].state} </h4>
+                         <p> Rainfall: ${vis.displayData[d.id].rainfall} mm</p> 
+                         <p> Average Temperature (°F): ${vis.displayData[d.id].temperature_F} °F</p>    
+                         <p> Average Temperature (°C): ${vis.displayData[d.id].temperature_C} °C</p>     
+                     </div>
+                    `);
+
+                stateName()
+                function stateName()
+                {
+                    let selectState = vis.displayData[d.id].state;
+                    getState(selectState);
+                }
+
             })
             .on('mouseout', function(event, d){
                 d3.select(this)

@@ -25,7 +25,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="#section1" style="font-weight: bolder;">Hindustani Khana</a></li>
                     <li><a href="#section2">Climate & Indian Food</a></li>
-                    <li><a href="#section3">Section 3</a></li>
+<!--                    <li><a href="#section3">Section 3</a></li>-->
                     <li><a href="#section4">Globalization and Food</a></li>
                     <li><a href="#section5">Religion and Food</a></li>
                     <li><a href="#section6">Explore the Indian Cuisines</a></li>
@@ -37,17 +37,17 @@
 
 <!-- SECTION 1: HOMEPAGE-->
 <div id="section1" class="container-fluid homepage">
-    <div class="title">
-        <h1 style="font-size: 80px; color: #B43E83">Hindustani Khana</h1>
-        <h1>"Indian Food"</h1>
-        <h1 style="padding-left: 100px">- Exploring food culture in India</h1>
+    <div class="title row justify-content-center text-center">
+        <h1 style="font-size: 60px; color: #D6AD60">Hindustani Khana</h1>
+        <h2 style="color: #D6AD60">"Indian Food"</h2>
+        <h3>Exploring food culture in India</h3>
+<!--        <h3 style="padding-left: 100px">- Exploring food culture in India</h3>-->
     </div>
-    <img src="img/home-bg.jpg">
+<!--    <img src="img/home-bg.jpg">-->
 </div>
 
 <!-- SECTION 2: CLIMATE (MAP + LINKED BAR CHART) -->
 <div id="section2" class="container-fluid">
-
     <div class="row">
 
         <!--left column-->
@@ -62,29 +62,27 @@
             <div id= "Ragi" style="float: left"></div>
             <div id= "Coffee" style="float: left"></div>
             <div id= "Tea" style="float: left"></div>
-
         </div>
+
         <!--right column-->
         <div class="column">
             <div class="button_area">
                 <button id="rainfall_btn" type="button" value="rainfall" class="rainfallButton">Rainfall</button>
-                <button id="temperature_btn" type="button" value="temperature_F">Temperature</button>
+                <button id="temperature_btn" type="button" value="temperature_F" class="temperatureButton">Temperature</button>
 
-                <!--rainfall_btn default selected; button keep selected-->
+                <!--switch button style when selected-->
                 <script>
-
                     $(document).ready(function(){
                         $("#rainfall_btn").click(function(){
-                            $(this).css("background-color", "#B43E83").css("color", "white");
-                            $("#temperature_btn").css("background-color", "transparent").css("color", "#222");
+                            $(this).css("background-color", "#340744").css("color", "#E4E5E8");
+                            $("#temperature_btn").css("background-color", "transparent").css("color", "#340744");
                         });
                         $("#temperature_btn").click(function(){
-                            $(this).css("background-color", "#B43E83").css("color", "white");
-                            $("#rainfall_btn").css("background-color", "transparent").css("color", "#222");
+                            $(this).css("background-color", "#340744").css("color", "#E4E5E8");
+                            $("#rainfall_btn").css("background-color", "transparent").css("color", "#340744");
                         });
                     });
                 </script>
-
             </div>
             <div id="mapDiv" style="float: left"></div>
         </div>
@@ -171,26 +169,20 @@
 
 <!-- SECTION 4: GLOBALIZATION & MARRIAGE (TREE DIAGRAM)-->
 <div id="section4" class="container-fluid marriageStyle">
-    <div class="row">
-        <div class="col-med">
-            <h1>How is globalization influencing Indian cuisine?</h1>
-        </div>
-
-        <div class="section nav-section" >
-            <div class="row align-items-center" data-aos="fade-in">
-                <div class="col-md-3" style="padding-right: 3vw; padding-bottom: 100px;">
-                    <h5>Influence:</h5>
-                    <p>
-                        <em>Weddings and Indian Food<br><br></em>
-                    <p>As you can see, from this dataset of an Indian catering company's wedding menu, there are quite a few international dishes as listed options!</p>
-                    <div class="note">
-                        <p>*There will be dishes name on the tree map, with different color indicating international dishes. We will also add more description about the food culture.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-9">
-                    <div class="yiptree"></div>
-                </div>
+    <div class="section nav-section" style="background-position: center top; background-repeat: no-repeat; background-size: contain;">
+        <div class="row align-items-center" data-aos="fade-in">
+            <div class="col-md-3" style="padding-right: 3vw; padding-bottom: 100px;">
+                <h5>Weddings and Indian Food</h5>
+                <p>
+                    <em>How has Indian wedding menu evolved with globalization and expanding food markets?<br><br></em>
+                    On the right is a typical lunch menu from recent weddings. The highlighted ones are non-traditional and contemporary dishes that have been influenced by other cuisines.
+                    <!--                     <b class="small">primary</b>-->
+                    <!--                <b class="small" style="color: #08529d;"> subordinate</b></p>-->
+                <p class="small" style="margin-top: -10px;"><em>[ hover above points to see a photograph of the dish ]</em>
+                </p>
+            </div>
+            <div class="col-md-9">
+                <div class="yiptree"></div>
             </div>
         </div>
     </div>
@@ -244,7 +236,7 @@
             <div id="toolbar">
                 <a href="#section6" id="all" class="button active">All Courses</a>
                 <a href="#section6" id="region" class="button">Courses By Region</a>
-<!--                <a href="#section6" id="course" class="button">Courses By Type</a>-->
+                <!--                <a href="#section6" id="course" class="button">Courses By Type</a>-->
                 <br>
                 <br>
                 <div id="bubble_vis"></div>
@@ -255,6 +247,7 @@
     </div>
 
 </div>
+
 
 
 <!-- BOOTSTRAP -->
@@ -286,7 +279,10 @@
 <!-- OWN JS -->
 <!--<script src="js/milkState_main.js"></script>-->
 <!--<script src="js/milkAnimal_main.js"></script>-->
-<script src="js/marriage_tree.js"></script>
+<!--<script src="js/marriage_tree.js"></script>-->
+<!--<script src="js/pie.js"></script>-->
+<script src="js/marriage_script.js"></script>
+<script src="js/aos.js"></script>
 <script src="js/waffle.js"></script>
 <script src="js/waffle_main.js"></script>
 <script src="js/bubble_tooltip.js"></script>

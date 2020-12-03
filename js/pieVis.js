@@ -4,7 +4,7 @@ class PieVis {
         this.parentElement = parentElement;
         this.cropData = cropData;
         this.displayData = [];
-        this.circleColors = ['#176A61','#b2182b','#d6604d','#f4a582','#fddbc7','#ffffff'];
+        this.circleColors = ['#D6AD60','#FAD02C','#FFEEC6','#7B6B8D','#9A9ABA','#BEAFC2'];
 
         this.initVis()
 
@@ -34,7 +34,8 @@ class PieVis {
             .text(vis.parentElement)
             .attr('transform', `translate(${vis.width / 2}, 20)`)
             .attr('text-anchor', 'middle')
-            .attr('font-size', '12px');
+            .attr('font-size', '12px')
+            .style('fill','#340744');
 
         // tooltip
         vis.tooltip = d3.select("body").append('div')
@@ -108,7 +109,7 @@ class PieVis {
                 //console.log(d);
                 d3.select(this)
                     .attr('stroke-width', '2px')
-                    .attr('stroke', 'black')
+                    .attr('stroke', '#340744')
                 vis.tooltip
                     .style("opacity", 0.85)
                     .style("left", event.pageX + 20 + "px")
@@ -117,7 +118,9 @@ class PieVis {
                         <div style="border: thin solid grey; border-radius: 5px; background: lightgrey; padding: 10px">
                             <h4>${d.data.STATE}</h4>
                             <p>Production: ${d.data.Production} metric tons</p>       
-                        </div>`);
+                        </div>
+                    `);
+
             })
             .on('mouseout', function(event, d){
                 d3.select(this)
@@ -129,7 +132,17 @@ class PieVis {
                 .html(``);
             })
 
-     }
+        changePieColor()
+        function changePieColor(){
+            console.log(stateName)
+            // console.log(vis.displayData[0].STATE)
+            vis.displayData.forEach((d,i)=>{
+                if(stateName === vis.displayData[i].STATE){
+                    console.log('"We got matched state"')
+                }
+            })
 
+        }
+    }
 
 }
