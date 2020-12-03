@@ -117,8 +117,8 @@ class MapVis {
 
     wrangleData() {
         let vis = this;
-        console.log(vis.geoData)
-        console.log(vis.climateData);
+        // console.log(vis.geoData)
+        // console.log(vis.climateData);
 
 
         let filteredData = Array.from(d3.group(vis.climateData, d =>d.STATE), ([key, value]) => ({key, value}))
@@ -133,6 +133,7 @@ class MapVis {
                 temperature_F: +state.value[0].AVG_F,
                 temperature_C: +state.value[0].AVG_C,
                 rainfall: +state.value[0].AVG_Rain,
+                LinkValue: state.value[0].LINK
             }
 
         })
@@ -189,7 +190,7 @@ class MapVis {
                 stateName()
                 function stateName()
                 {
-                    let selectState = vis.displayData[d.id].state;
+                    let selectState = vis.displayData[d.id].LinkValue;
                     getState(selectState);
                 }
 
@@ -203,6 +204,14 @@ class MapVis {
                     .style("left", 0)
                     .style("top", 0)
                     .html(``);
+
+                stateName()
+                function stateName()
+                {
+                    let selectState = "none";
+                    getState(selectState);
+                }
+
             })
 
         // update legend scale

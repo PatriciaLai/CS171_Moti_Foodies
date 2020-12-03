@@ -99,9 +99,10 @@ class PieVis {
         let arcs = vis.pieChartGroup.selectAll(".arc")
             .data(vis.pie(vis.displayData))
 
+
         arcs.enter()
             .append("path")
-            .attr('class', 'arc')
+            .attr('class', (d,i) => {return `arc ${vis.displayData[i].LINK}`})
             .merge(arcs)
             .attr("fill", (d,i) => {return vis.circleColors[i]})
             .attr("d", vis.arc)
@@ -137,8 +138,9 @@ class PieVis {
             console.log(stateName)
             // console.log(vis.displayData[0].STATE)
             vis.displayData.forEach((d,i)=>{
-                if(stateName === vis.displayData[i].STATE){
+                if(stateName === vis.displayData[i].LINK){
                     console.log('"We got matched state"')
+                    d3.selectAll("." + stateName).attr("fill", "#AD2E4F")
                 }
             })
 

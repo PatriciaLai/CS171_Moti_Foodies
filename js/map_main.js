@@ -47,18 +47,17 @@ function initMainPage(dataArray) {
     myPieVisTea = new PieVis('Tea', dataArray[2]);
 }
 
-// console.log(selectState);
-// stateLinked();
-// function stateLinked(){
-//
-// }
-
+// link map and pie-chart
 let stateName;
 getState(state);
 function getState(state) {
     stateName = state;
     //console.log(stateName);
+    myPieVisRice.updateVis();
     myPieVisWheat.updateVis();
-
+    myPieVisMaize.updateVis();
+    myPieVisRagi.updateVis();
+    myPieVisCoffee.updateVis();
+    myPieVisTea.updateVis();
 }
 
