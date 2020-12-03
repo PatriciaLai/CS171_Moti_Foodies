@@ -34,10 +34,16 @@
   margin-top: 10px;
 }
 
-.year {
+.region {
   font-size: 21px;
   fill: #aaa;
   cursor: default;
+}
+
+.course {
+    font-size: 21px;
+    fill: #aaa;
+    cursor: default;
 }
 
 .tooltip {

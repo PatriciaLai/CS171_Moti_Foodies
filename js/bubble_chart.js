@@ -1,11 +1,9 @@
-/* bubbleChart creation function. Returns a function that will
- * instantiate a new bubble chart given a DOM element to display
- * it in and a dataset to visualize.
- *
+/* bubbleChart
  * Organization and style inspired by:
  * https://bost.ocks.org/mike/chart/
- *
+ * Source: https://vallandingham.me/bubble_charts_in_d3.html
  */
+
 function bubbleChart() {
   // Constants for sizing
   let width = 1300;
@@ -14,11 +12,11 @@ function bubbleChart() {
   // tooltip for mouseover functionality
   let tooltip = floatingTooltip('bubble_tooltip', 240);
 
-  // Locations to move bubbles towards, depending
-  // on which view mode is selected.
+  // locations to move bubbles towards
   let center = { x: width / 2, y: height / 3 + 100 };
 
-  let yearCenters = {
+  // locations for region bubbles
+  let regionCenters = {
     1: { x: width / 7 + 75, y: height / 2 }, // N bubbles
     2: { x: width / 7 + 150, y: height / 2 }, // NE
     3: { x: width / 7 + 275, y: height / 2 }, // E
@@ -28,8 +26,16 @@ function bubbleChart() {
     7: { x: width / 7 + 850, y: height / 2 } // NONE!
   };
 
-  // X locations of the year titles.
-  let yearsTitleX = {
+  // locations for diet bubbles
+  let courseCenters = {
+    1: { x: width / 7 + 75, y: height / 2 }, // bubbles
+    2: { x: width / 7 + 375, y: height / 2 }, //
+    3: { x: width / 7 + 800, y: height / 2 } //
+
+  };
+
+  // x locations of the region titles
+  let regionTitleX = {
     1: 150, // N text
     2: width / 7 + 100, // NE
     3: width / 7 + 250, // E
@@ -37,6 +43,13 @@ function bubbleChart() {
     5: width / 7 + 550, // S
     6: width / 7 + 800, // W
     7: width / 7 + 1000 // None
+  };
+
+  // x locations of the diet titles
+  let courseTitleX = {
+    1: 300,  //text
+    2: width / 3 + 200,
+    3: width / 6 + 800
   };
 
   // @v4 strength to apply to the position forces
@@ -47,27 +60,16 @@ function bubbleChart() {
   let bubbles = null;
   let nodes = [];
 
-  // Charge function that is called for each node.
-  // As part of the ManyBody force.
-  // This is what creates the repulsion between nodes.
-  //
-  // Charge is proportional to the diameter of the
-  // circle (which is stored in the radius attribute
-  // of the circle's associated data.
-  //
-  // This is done to allow for accurate collision
-  // detection with nodes of different sizes.
-  //
-  // Charge is negative because we want nodes to repel.
-  // @v4 Before the charge was a stand-alone attribute
-  //  of the force layout. Now we can use it as a separate force!
+  // Charge function that is called for each node. As part of the ManyBody force. This is what creates the repulsion between nodes.
+  // Charge is proportional to the diameter of the circle (which is stored in the radius attribute of the circle's associated data.
+  // This is done to allow for accurate collision detection with nodes of different sizes.
+
+  // make nodes repel
   function charge(d) {
     return -Math.pow(d.radius, 2.0) * forceStrength;
   }
 
-  // Here we create a force layout and
-  // @v4 We create a force simulation now and
-  //  add forces to it.
+  // Create a force simulation and add forces to it
   let simulation = d3V4.forceSimulation()
       .velocityDecay(0.2)
       .force('x', d3V4.forceX().strength(forceStrength).x(center.x))
@@ -75,43 +77,33 @@ function bubbleChart() {
       .force('charge', d3V4.forceManyBody().strength(charge))
       .on('tick', ticked);
 
-  // @v4 Force starts up automatically,
-  //  which we don't want as there aren't any nodes yet.
+  // @v4 Force starts up automatically, which we don't want as there aren't any nodes yet.
   simulation.stop();
 
-  // Nice looking colors - no reason to buck the trend
-  // @v4 scales now have a flattened naming scheme
+  // Add colors for veg/non-veg
   let fillColor = d3V4.scaleOrdinal()
       .domain(['vegetarian', 'non vegetarian'])
       .range(['#E1BC29', '#AA300E']);
 
   /*
-   * This data manipulation function takes the raw data from
-   * the CSV file and converts it into an array of node objects.
-   * Each node will store data and visualization values to visualize
-   * a bubble.
-   *
-   * rawData is expected to be an array of data objects, read in from
-   * one of d3's loading functions like d3.csv.
-   *
-   * This function returns the new node array, with a node in that
-   * array for each element in the rawData input.
+   * This data manipulation function takes the raw data from the CSV file and converts it into an array of node objects.
+   * Each node will store data and visualization values to visualize a bubble.
+   * rawData is expected to be an array of data objects, read in from one of d3's loading functions like d3.csv.
+   * This function returns the new node array, with a node in that array for each element in the rawData input.
    */
+
   function createNodes(rawData) {
     // Use the max total_amount in the data as the max in the scale's domain
     // note we have to ensure the total_amount is a number.
     let maxAmount = d3V4.max(rawData, function (d) { return +d.cook_time; });
 
-    // Sizes bubbles based on area.
-    // @v4: new flattened scale names.
+    // Size bubbles based on cook time
     let radiusScale = d3V4.scalePow()
         .exponent(0.5)
         .range([2, 70])
         .domain([0, maxAmount]);
 
     // Use map() to convert raw data into node data.
-    // Checkout http://learnjsdata.com/ for more on
-    // working with data.
     let myNodes = rawData.map(function (d) {
       return {
         id: d.id,
@@ -120,9 +112,13 @@ function bubbleChart() {
         name: d.name,
         ingredients: d.ingredients,
         diet: d.diet,
-        group: d.diet,
-        year: +d.region2,
+        num_diet: +d.diet,
+        course: d.course,
+        num_course: +d.num_course,
         region: d.region,
+        num_region: +d.num_region,
+        flavor: d.flavor_profile,
+        num_flavor: +d.num_flavor,
         x: Math.random() * 900,
         y: Math.random() * 800
       };
@@ -170,8 +166,8 @@ function bubbleChart() {
     let bubblesE = bubbles.enter().append('circle')
         .classed('bubble', true)
         .attr('r', 0)
-        .attr('fill', function (d) { return fillColor(d.group); })
-        .attr('stroke', function (d) { return d3V4.rgb(fillColor(d.group)).darker(); })
+        .attr('fill', function (d) { return fillColor(d.diet); })
+        .attr('stroke', function (d) { return d3V4.rgb(fillColor(d.diet)).darker(); })
         .attr('stroke-width', 2)
         .on('mouseover', showDetail)
         .on('mouseout', hideDetail);
@@ -207,22 +203,27 @@ function bubbleChart() {
   }
 
   /*
-   * Provides a x value for each node to be used with the split by year
+   * Provides a x value for each node to be used with the split by region
    * x force.
    */
-  function nodeYearPos(d) {
-    return yearCenters[d.year].x;
+  function nodeRegionPos(d) {
+    return regionCenters[d.num_region].x;
   }
 
+  // duplicate above for course type
+  function nodeCoursePos(d) {
+    return courseCenters[d.num_course].x;
+  }
 
   /*
    * Sets visualization in "single group mode".
-   * The year labels are hidden and the force layout
+   * The region labels are hidden and the force layout
    * tick function is set to move all nodes to the
    * center of the visualization.
    */
   function groupBubbles() {
-    hideYearTitles();
+    hideRegionTitles();
+    hideCourseTitles();
 
     // @v4 Reset the 'x' force to draw the bubbles to the center.
     simulation.force('x', d3V4.forceX().strength(forceStrength).x(center.x));
@@ -233,43 +234,99 @@ function bubbleChart() {
 
 
   /*
-   * Sets visualization in "split by year mode".
-   * The year labels are shown and the force layout
+   * Sets visualization in "split by region mode".
+   * The region labels are shown and the force layout
    * tick function is set to move nodes to the
-   * yearCenter of their data's year.
+   * regionCenter of their data's region.
    */
-  function splitBubbles() {
-    showYearTitles();
+  function splitBubblesbyRegion() {
+    showRegionTitles();
+    hideCourseTitles();
 
-    // @v4 Reset the 'x' force to draw the bubbles to their year centers
-    simulation.force('x', d3V4.forceX().strength(forceStrength).x(nodeYearPos));
+    // @v4 Reset the 'x' force to draw the bubbles to their region centers
+    simulation.force('x', d3V4.forceX().strength(forceStrength).x(nodeRegionPos));
 
     // @v4 We can reset the alpha value and restart the simulation
     simulation.alpha(1).restart();
   }
 
+  // duplicate above for courses
+  function splitBubblesbyCourse() {
+    showCourseTitles();
+    hideRegionTitles();
+
+    // @v4 Reset the 'x' force to draw the bubbles to their region centers
+    simulation.force('x', d3V4.forceX().strength(forceStrength).x(nodeCoursePos));
+
+    // @v4 We can reset the alpha value and restart the simulation
+    simulation.alpha(1).restart();
+  }
+
+  function splitBubbles(splitType) {
+
+    hideRegionTitles();
+    hideCourseTitles();
+
+
+    if (splitType === 'region') {
+      showRegionTitles();
+
+      // @v4 Reset the 'x' force to draw the bubbles to their year centers
+      simulation.force('x', d3.forceX().strength(forceStrength).x(nodeRegionPos));
+
+      // @v4 We can reset the alpha value and restart the simulation
+      simulation.alpha(1).restart();
+    }
+    else if (splitType === 'course') {
+      showCourseTitles();
+
+      // @v4 Reset the 'x' force to draw the bubbles to their year centers
+      simulation.force('x', d3.forceX().strength(forceStrength).x(nodeCoursePos));
+
+      // @v4 We can reset the alpha value and restart the simulation
+      simulation.alpha(1).restart();
+    }
+    // else if (splitType == 'all') {
+    //
+    //   // @v4 Reset the 'x' force to draw the bubbles to their year centers
+    //   simulation.force('x', d3.forceX().strength(forceStrength).x(nodeDistributionPos));
+    //
+    //   // @v4 We can reset the alpha value and restart the simulation
+    //   simulation.alpha(1).restart();
+    // }
+  }
+
+
+
+
+
   /*
-   * Hides Year title displays.
+   * Hides Region title displays.
    */
-  function hideYearTitles() {
-    svg.selectAll('.year').remove();
+  function hideRegionTitles() {
+    svg.selectAll('.region').remove();
+  }
+
+  // hide course titles
+  function hideCourseTitles() {
+    svg.selectAll('.course').remove();
   }
 
   /*
-   * Shows Year title displays.
+   * Shows Region title displays.
    */
-  function showYearTitles() {
+  function showRegionTitles() {
     // Another way to do this would be to create
-    // the year texts once and then just hide them.
-    let yearsData = d3V4.keys(yearsTitleX);
-    let years = svg.selectAll('.year')
-        .data(yearsData);
+    // the region texts once and then just hide them.
+    let regionData = d3V4.keys(regionTitleX);
+    let regions = svg.selectAll('.region')
+        .data(regionData);
 
-    years.enter().append('text')
-        .attr('class', 'year')
+    regions.enter().append('text')
+        .attr('class', 'region')
         .attr('x', function (d) {
-          console.log(yearsTitleX[d])
-          return yearsTitleX[d]; })
+          console.log(regionTitleX[d])
+          return regionTitleX[d]; })
         .attr('y', 20)
         .attr('text-anchor', 'middle')
         .text(function (d) {
@@ -300,14 +357,58 @@ function bubbleChart() {
 
   }
 
+  /*
+ * Shows Region title displays.
+ */
+  function showCourseTitles() {
+    // Another way to do this would be to create
+    // the region texts once and then just hide them.
+    let courseData = d3V4.keys(courseTitleX);
+    let courses = svg.selectAll('.course')
+        .data(courseData);
+
+    courses.enter().append('text')
+        .attr('class', 'course')
+        .attr('x', function (d) {
+          console.log(courseTitleX[d])
+          return courseTitleX[d]; })
+        .attr('y', 20)
+        .attr('text-anchor', 'middle')
+        .text(function (d) {
+          console.log(d)
+
+          if (d === "1") {
+            return "Snack";
+          }
+          if (d === "2") {
+            return "Main Course";
+          }
+          if (d === "3") {
+            return "Dessert";
+          }
+
+        });
+
+  }
+
   chart.toggleDisplay = function (displayName) {
-    if (displayName === 'year') {
-      splitBubbles();
-    } else {
+
+    if (displayName === 'region') {
+      splitBubbles('region');
+      console.log("split bubbles by region")
+    }
+    else if (displayName === 'course') {
+      splitBubbles('course');
+      console.log("split bubbles by course")
+    }
+        // else if (displayName === 'distribution') {
+        //   splitBubbles('distribution');
+    // }
+    else {
       groupBubbles();
+      console.log("group bubbles")
     }
   };
-
 
   /*
    * Function called on mouseover to display the
@@ -338,7 +439,7 @@ function bubbleChart() {
   function hideDetail(d) {
     // reset outline
     d3V4.select(this)
-        .attr('stroke', d3V4.rgb(fillColor(d.group)).darker());
+        .attr('stroke', d3V4.rgb(fillColor(d.diet)).darker());
 
     tooltip.hideTooltip();
   }
@@ -346,17 +447,28 @@ function bubbleChart() {
   /*
    * Externally accessible function (this is attached to the
    * returned chart function). Allows the visualization to toggle
-   * between "single group" and "split by year" modes.
+   * between "single group" and "split by region" modes.
    *
-   * displayName is expected to be a string and either 'year' or 'all'.
+   * displayName is expected to be a string and either 'region' or 'all'.
    */
+
   chart.toggleDisplay = function (displayName) {
-    if (displayName === 'year') {
-      splitBubbles();
-    } else {
+
+    if (displayName === 'region') {
+      splitBubbles('region');
+      console.log("split bubbles by region")
+    }
+    else if (displayName === 'course') {
+      splitBubbles('course');
+      console.log("split bubbles by course")
+    }
+    else {
       groupBubbles();
+      console.log("group bubbles")
     }
   };
+
+
 
 
   // return the chart function from closure.
@@ -407,7 +519,7 @@ function setupButtons() {
 }
 
 // Load the data.
-d3V4.csv('data/indian_food_copy_2.csv', display);
+d3V4.csv('data/indian_food.csv', display);
 
 // setup the buttons.
 setupButtons();

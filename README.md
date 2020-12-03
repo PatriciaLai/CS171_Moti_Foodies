@@ -20,7 +20,10 @@ Links:
     js/waffle.js
     js/waffle_main.js 
     
-Data Sources:
-    [insert here]
-    [insert here]
-    [insert here]
+Sources:
+    https://www.census2011.co.in/religion.php
+    https://gist.github.com/tomcardoso/1d44732cc7f3d97d6bf7#file-data-csv
+    https://vallandingham.me/bubble_chart/
+    https://gist.github.com/tomcardoso/1d44732cc7f3d97d6bf7
+    
+    
