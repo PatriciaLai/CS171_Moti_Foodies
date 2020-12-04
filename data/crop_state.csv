@@ -1,35 +1,35 @@
-﻿STATE,Crop,Production,LINK
-Karnataka,Coffee,449995,Karnataka
-Kerala,Coffee,130012,Kerala
-Tamil Nadu,Coffee,35165,Tamil_Nadu
-Other states,Coffee,22625,Other_states
-Karnataka,Maize,48308900,Karnataka
-Bihar,Maize,32232829,Bihar
-Telangana ,Maize,30559315,Telangana 
-Madhya Pradesh,Maize,22546783,Madhya_Pradesh
-Uttar Pradesh,Maize,22377151,Uttar_Pradesh
-Other states,Maize,117316825.6,Other_states
-Karnataka,Ragi,23538643,Karnataka
-Tamil Nadu,Ragi,3507431,Tamil_Nadu
-Uttaranchal,Ragi,2375091,Uttaranchal
-Maharashtra,Ragi,2370535,Maharashtra
-Andhra Pradesh,Ragi,1159489,Andhra_Pradesh
-Other states,Ragi,2180212.16,Other_states
-West Bengal,Rice,258092849,West_Bengal
-Uttar Pradesh,Rice,218793359,Uttar_Pradesh
-Punjab,Rice,179702000,Punjab
-Andhra Pradesh,Rice,143742455,Andhra_Pradesh
-Orissa,Rice,119422742,Orissa
-Other states,Rice,685716978.4,Other_states
-Assam,Tea,886914,Assam
-West Bengal,Tea,374861,West_Bengal
-Tamil Nadu,Tea,275522,Tamil_Nadu
-Kerala,Tea,121079.3,Kerala
-Nagaland,Tea,14902,Nagaland
-Karnataka,Tea,11397,Karnataka
-Uttar Pradesh,Wheat,469911750,Uttar_Pradesh
-Punjab,Wheat,276946000,Punjab
-Haryana,Wheat,158647000,Haryana
-Madhya Pradesh,Wheat,147153856,Madhya_Pradesh
-Rajasthan,Wheat,94669124,Rajasthan
-Other states,Wheat,185497926.8,Other_states
+﻿STATE,Crop,Production,LINK,percentage
+Karnataka,Coffee,449995,Karnataka,70.55
+Kerala,Coffee,130012,Kerala,20.38
+Tamil Nadu,Coffee,35165,Tamil_Nadu,5.51
+Other states,Coffee,22625,Other_states,3.55
+Karnataka,Maize,48308900,Karnataka,17.67
+Bihar,Maize,32232829,Bihar,11.79
+Telangana ,Maize,30559315,Telangana ,11.18
+Madhya Pradesh,Maize,22546783,Madhya_Pradesh,8.25
+Uttar Pradesh,Maize,22377151,Uttar_Pradesh,8.19
+Other states,Maize,117316825.6,Other_states,42.92
+Karnataka,Ragi,23538643,Karnataka,67.00
+Tamil Nadu,Ragi,3507431,Tamil_Nadu,9.98
+Uttaranchal,Ragi,2375091,Uttaranchal,6.76
+Maharashtra,Ragi,2370535,Maharashtra,6.75
+Andhra Pradesh,Ragi,1159489,Andhra_Pradesh,3.30
+Other states,Ragi,2180212.16,Other_states,6.21
+West Bengal,Rice,258092849,West_Bengal,16.08
+Uttar Pradesh,Rice,218793359,Uttar_Pradesh,13.63
+Punjab,Rice,179702000,Punjab,11.19
+Andhra Pradesh,Rice,143742455,Andhra_Pradesh,8.95
+Orissa,Rice,119422742,Orissa,7.44
+Other states,Rice,685716978.4,Other_states,42.71
+Assam,Tea,886914,Assam,52.65
+West Bengal,Tea,374861,West_Bengal,22.25
+Tamil Nadu,Tea,275522,Tamil_Nadu,16.35
+Kerala,Tea,121079.3,Kerala,7.19
+Nagaland,Tea,14902,Nagaland,0.88
+Karnataka,Tea,11397,Karnataka,0.68
+Uttar Pradesh,Wheat,469911750,Uttar_Pradesh,35.26
+Punjab,Wheat,276946000,Punjab,20.78
+Haryana,Wheat,158647000,Haryana,11.90
+Madhya Pradesh,Wheat,147153856,Madhya_Pradesh,11.04
+Rajasthan,Wheat,94669124,Rajasthan,7.10
+Other states,Wheat,185497926.8,Other_states,13.92

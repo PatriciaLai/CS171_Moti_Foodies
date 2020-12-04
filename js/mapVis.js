@@ -148,36 +148,14 @@ class MapVis {
         let vis = this;
         //console.log(clickedValue)
 
-
-
-
-
         // update map class
-        // for (var key in vis.displayData){
-        //     vis.states.attr('class', (d) => {return `state ${vis.displayData[key].LinkValue}`})
-        // }
-
-        // Object.keys(vis.displayData).forEach(function(key){
-        //     vis.states.attr('class', function() {return `state ${vis.displayData[key].LinkValue}`})
-        // })
-
-        // vis.states.attr('class', function(){
-        //     vis.filteredData.forEach( d =>{
-        //         let stateClassName = d.value[0].LINK
-        //         //console.log(stateClassName);
-        //         return stateClassName
-        //     })
-        // })
-
         let stateClassName = [];
         vis.filteredData.forEach( d =>{
             stateClassName.push(d.value[0].LINK)
         })
-        console.log(stateClassName);
+        //console.log(stateClassName);
 
         vis.states.attr('class', (d,i) =>{return `arc ${stateClassName[i]}`})
-
-
 
 
         // get color scale max & min value
@@ -282,7 +260,7 @@ class MapVis {
         // link map and pie chart - change map state color
         changeMapColor()
         function changeMapColor(){
-            console.log(stateNameOnPie)
+            //console.log(stateNameOnPie)
 
             // another way to loop object, can also use Object.keys(vis.displayData).forEach(function(key){}
             for (var key in vis.displayData){

@@ -16,8 +16,8 @@ class PieVis {
 
         // == SVG == //
         vis.margin = {top: 10, right: 10, bottom: 10, left: 10};
-        vis.width = 150
-        vis.height = 150
+        vis.width = 140
+        vis.height = 140
 
         // init drawing area
         vis.svg = d3.select("#" + vis.parentElement).append("svg")
@@ -87,7 +87,6 @@ class PieVis {
         let arcs = vis.pieChartGroup.selectAll(".arc")
             .data(vis.pie(vis.displayData))
 
-
         arcs.enter()
             .append("path")
             .attr('class', (d,i) => {return `arc ${vis.displayData[i].LINK}`})
@@ -106,7 +105,8 @@ class PieVis {
                     .html(`
                         <div style="border: thin solid grey; border-radius: 5px; background: lightgrey; padding: 10px">
                             <h4>${d.data.STATE}</h4>
-                            <p>Production: ${d.data.Production} metric tons</p>       
+                            <p>Production: ${d.data.Production} metric tons</p>
+                             <p>Percentage: ${d.data.percentage} %</p>      
                         </div>
                     `);
 
@@ -142,7 +142,7 @@ class PieVis {
         // link map and pie chart - change pie slice color
         changePieColor()
         function changePieColor(){
-            console.log(stateNameOnMap)
+            //console.log(stateNameOnMap)
             // console.log(vis.displayData[0].STATE)
             vis.displayData.forEach((d,i)=>{
                 if(stateNameOnMap === vis.displayData[i].LINK){
