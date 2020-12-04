@@ -24,11 +24,10 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li><a href="#section1" style="font-weight: bolder;">Hindustani Khana</a></li>
-                    <li><a href="#section2">Climate & Indian Food</a></li>
-<!--                    <li><a href="#section3">Section 3</a></li>-->
-                    <li><a href="#section4">Globalization and Food</a></li>
-                    <li><a href="#section5">Religion and Food</a></li>
-                    <li><a href="#section6">Explore the Indian Cuisines</a></li>
+                    <li><a href="#section2">Climate</a></li>
+                    <li><a href="#section4">Globalization</a></li>
+                    <li><a href="#section5">Religion</a></li>
+                    <li><a href="#section6">Exploration</a></li>
                 </ul>
             </div>
         </div>
@@ -90,83 +89,6 @@
     </div>
 </div>
 
-
-
-<!--&lt;!&ndash; SECTION 3: MILK INDUSTRY (BAR CHART)&ndash;&gt;-->
-<!--<div id="section3" class="container-fluid">-->
-<!--&lt;!&ndash;    <div class="row">&ndash;&gt;-->
-<!--    <div class="col-med">-->
-<!--        <h1>How does the dairy industry influence Indian cuisine?</h1>-->
-<!--    </div>-->
-
-<!--        <div style="height: 70vh">-->
-<!--            <div style = "width: 40vw">-->
-<!--                &lt;!&ndash; left column&ndash;&gt;-->
-<!--                <div class="col-6" style="height: 100%">-->
-<!--                    <div class="align-self-center">-->
-<!--                        <div>-->
-<!--                            <h3>Statewise Milk Production in India</h3>-->
-<!--                        </div>-->
-<!--                        <div>-->
-<!--                            &lt;!&ndash; drop down menu &ndash;&gt;-->
-<!--                            <div class="row justify-content-center">-->
-<!--                                <div class="align-self-center">-->
-<!--                                    <div class="user-control">-->
-<!--                                        <div class="form-group">-->
-<!--                                            <label for="state-category">Choose Category:</label>-->
-<!--                                            <select id="state-category" class="form-control" onchange="dataManipulation()">-->
-<!--                                                <option value="all">All States</option>-->
-<!--                                                &lt;!&ndash;                        <option value="Water Park">Water Park</option>&ndash;&gt;-->
-<!--                                                &lt;!&ndash;                        <option value="Museum">Museum</option>&ndash;&gt;-->
-<!--                                                &lt;!&ndash;                        <option value="Theme Park">Theme Park</option>&ndash;&gt;-->
-<!--                                            </select>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-
-<!--                            &lt;!&ndash; Parent container of our bar chart &ndash;&gt;-->
-<!--                            <div class="row">-->
-<!--                                <div class="col-8 offset-2">-->
-<!--                                    <div id="my_dataviz2"></div>-->
-<!--                                    <div id="tooltipBarState" class="hidden">-->
-<!--                                        <p><span id="BarStateValue"></span></p>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                &lt;!&ndash; right column&ndash;&gt;-->
-<!--                <div class="col-6" style="height: 100%">-->
-<!--                    <div class="row justify-content-center">-->
-<!--                        <div class="align-self-center">-->
-<!--                            <div>-->
-<!--                                <h3>Species Distribution</h3>-->
-<!--                                <p>Cows are the primary source of milk, however, in various parts of India milk is sourced from goats, buffaloes, camels, and yaks.</p>-->
-<!--                            </div>-->
-<!--                            &lt;!&ndash; Parent container of our bar chart &ndash;&gt;-->
-<!--                            <div class="row">-->
-<!--                                <div class="col-8 offset-2">-->
-<!--                                    <div id="my_dataviz"></div>-->
-<!--                                    <div id="tooltipBarSpecies" class="hidden">-->
-<!--                                        <p><span id="BarSpeciesValue"></span></p>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--                <div class="note">*There will be one more bar chart for species distribution. </div>-->
-
-<!--            </div>-->
-<!--        </div>-->
-
-<!--    </div>-->
-<!--</div>-->
-
-
 <!-- SECTION 4: GLOBALIZATION & MARRIAGE (TREE DIAGRAM)-->
 <div id="section4" class="container-fluid marriageStyle">
     <div class="section nav-section" style="background-position: center top; background-repeat: no-repeat; background-size: contain;">
@@ -188,35 +110,89 @@
     </div>
 </div>
 
+<!--&lt;!&ndash; SECTION 2: CLIMATE (MAP + LINKED BAR CHART) &ndash;&gt;-->
+<!--<div id="section2" class="container-fluid">-->
+<!--    <div class="row">-->
+
+<!--        &lt;!&ndash;left column&ndash;&gt;-->
+<!--        <div class="column">-->
+<!--            <div>-->
+<!--                <h1 style="padding-bottom: 12px">What's the climate impacts on agriculture and food supply in India?</h1>-->
+<!--                <h5 style="line-height: 1.5; padding-bottom: 10px">India is a land of diversity, not only culturally but also for its topography and climate. The variety of temperature and rainfall have a major impact on divers cash crops grown in India, and lead to a rich food culture here.</h5>-->
+<!--            </div>-->
+<!--            <div id= "Rice" style="float: left"></div>-->
+<!--            <div id= "Wheat" style="float: left"></div>-->
+<!--            <div id= "Maize" style="float: left"></div>-->
+<!--            <div id= "Ragi" style="float: left"></div>-->
+<!--            <div id= "Coffee" style="float: left"></div>-->
+<!--            <div id= "Tea" style="float: left"></div>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash;right column&ndash;&gt;-->
+<!--        <div class="column">-->
+<!--            <div class="button_area">-->
+<!--                <button id="rainfall_btn" type="button" value="rainfall" class="rainfallButton">Rainfall</button>-->
+<!--                <button id="temperature_btn" type="button" value="temperature_F" class="temperatureButton">Temperature</button>-->
+
+<!--                &lt;!&ndash;switch button style when selected&ndash;&gt;-->
+<!--                <script>-->
+<!--                    $(document).ready(function(){-->
+<!--                        $("#rainfall_btn").click(function(){-->
+<!--                            $(this).css("background-color", "#340744").css("color", "#E4E5E8");-->
+<!--                            $("#temperature_btn").css("background-color", "transparent").css("color", "#340744");-->
+<!--                        });-->
+<!--                        $("#temperature_btn").click(function(){-->
+<!--                            $(this).css("background-color", "#340744").css("color", "#E4E5E8");-->
+<!--                            $("#rainfall_btn").css("background-color", "transparent").css("color", "#340744");-->
+<!--                        });-->
+<!--                    });-->
+<!--                </script>-->
+<!--            </div>-->
+<!--            <div id="mapDiv" style="float: left"></div>-->
+<!--        </div>-->
+
+<!--    </div>-->
+<!--</div>-->
+
 <!-- SECTION 5: RELIGION (WAFFLE CHART)-->
 <div id="section5" class="container-fluid">
+
     <div class="row">
-        <div class="col-xs-6">
-            <h1>How does religion influence food in India?</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-6">
+
+        <!--left column-->
+        <div class="column col-9">
+            <div>
+                <h1 style="padding-bottom: 12px">How does religion influence food in India?</h1>
+                <h5 style="line-height: 1.5; padding-bottom: 10px">India has a diverse mix of religions, with a Hindu majority (79.80%).</h5>
+                <h5 style="line-height: 1.5; padding-bottom: 10px">Between 23-37% of Hindus are vegetarian. Most Hindus do not eat beef and most Muslims do not eat pork. These dietary restrictions influence the ingredients used within dishes.</h5>
+                <br>
+            </div>
             <div id="religion_chart"></div>
-            <br>
-            <p>India has a diverse mix of religions, with a Hindu majority (79.80%).</p>
-            <br>
-            <p>Between 23-37% of Hindus are vegetarian. Most Hindus do not eat beef and most Muslims do not eat pork. These dietary restrictions influence the ingredients used within dishes.</p>
         </div>
 
-        <div class="col-xs-6">
-            <div class ="row">
+
+        <!--right column-->
+        <div class="column col-3" style = "Padding-right:0">
+
+            <div class = "row">
                 <h4>Hindu-inspired dish</h4>
-                <p>For [insert name of holiday], a Hindu holiday, <a href="https://ministryofcurry.com/sheer-khurma-instant-pot/">[insert Dish Name]</a>
-                    is prepared.</p>
-                <img src="img/hindu_holiday_placeholder.jpg" alt="Hindu Holiday Dish" style="width:128px;height:128px;">
+                <h5 style="line-height: 1.5; padding-bottom: 10px">For Diwali, a Hindu holiday, <a href="https://www.sanjanafeasts.co.uk/blog/2020/11/perfect-gulab-jamun/">Gulab Jamun</a>
+                    is prepared.</h5>
+                <img src="img/gulab_jamun.jpeg" alt="Gulab Jamun" style="width:128px;height:128px;">
             </div>
 
-            <div class ="row">
+            <div class = "row">
                 <h4>Muslim-inspired dish</h4>
-                <p>For Eid, a Muslim holiday, <a href="https://ministryofcurry.com/sheer-khurma-instant-pot/">Sheer Khurma</a>
-                    is prepared.</p>
+                <h5 style="line-height: 1.5; padding-bottom: 10px">For Eid, a Muslim holiday, <a href="https://ministryofcurry.com/sheer-khurma-instant-pot/">Sheer Khurma</a>
+                    is prepared.</h5>
                 <img src="img/sheer_khurma.jpg" alt="Sheer Khurma" style="width:128px;height:128px;">
+            </div>
+
+            <div class = "row">
+                <h4>Christian-inspired dish</h4>
+                <h5 style="line-height: 1.5; padding-bottom: 10px">For Christmas, a Christian holiday, <a href="https://secretindianrecipe.com/recipe/achappam-kerala-style-rosette-cookies">Achappam</a>
+                    is prepared.</h5>
+                <img src="img/achappam_rosette.jpeg" alt="Achappam" style="width:128px;height:128px;">
             </div>
 
         </div>
@@ -230,7 +206,7 @@
 
     <div class="row">
 
-        <div class="col-xs-6">
+        <div class="col-3">
             <h1>Explore the cuisines!</h1>
             <br>
             <div id="toolbar">
@@ -239,10 +215,15 @@
                 <!--                <a href="#section6" id="course" class="button">Courses By Type</a>-->
                 <br>
                 <br>
-                <div id="bubble_vis"></div>
-                <div id="my_bubble_legend"></div>
+<!--                <div id="bubble_vis"></div>-->
+<!--                <div id="my_bubble_legend"></div>-->
             </div>
         </div>
+        <div class="col-9">
+            <div id="bubble_vis"></div>
+            <div id="my_bubble_legend"></div>
+        </div>
+
 
     </div>
 

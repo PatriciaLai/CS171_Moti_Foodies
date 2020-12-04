@@ -126,15 +126,42 @@ let WaffleChart = function() {
         let width = (_obj.size * _obj.columns) + (_obj.columns * _obj.gap) - _obj.gap;
         let height = (_obj.size * _obj.rows) + (_obj.rows * _obj.gap) - _obj.gap;
 
+        // margin2 = {top: 20, right: 20, bottom: 20, left: 20};
+        // let width = $("#" + vis.parentElement).width() - margin2.left - margin2.right;
+        // let height = $("#" + vis.parentElement).height() - margin2.top - margin2.bottom;
+
+
         if ($_useWidth) {
             width = d3V3.select(_obj.selector).node().getBoundingClientRect().width;
         }
 
+        // let svg = d3V3.select(_obj.selector)
+        //     .append("svg")
+        //     .attr("viewBox", `0 0 750 1500`);
+
+        // let svg = d3V3.select(_obj.selector)
+        //     .append("svg")
+        //     .attr("class", "waffle")
+        //     .attr("width", width)
+        //     .attr("height", height);
+
+        // let svg = d3V3.select(_obj.selector)
+        //     .append("svg")
+        //     .attr("class", "waffle")
+        //     .attr("width", '100%')
+        //     .attr("height", '100%')
+        //     .attr('viewBox','0 0 '+Math.min(width,height)+' '+Math.min(width,height))
+        //     .attr('preserveAspectRatio','xMinYMin');
+
+        // https://stackoverflow.com/questions/17626555/responsive-d3-chart
+
         let svg = d3V3.select(_obj.selector)
             .append("svg")
             .attr("class", "waffle")
-            .attr("width", width)
-            .attr("height", height);
+            .attr("width", '100%')
+            .attr("height", '100%')
+            .attr('viewBox','0 0 '+Math.min(width+50)+' '+Math.min(width,height))
+            .attr('preserveAspectRatio','xMinYMin');
 
         let g = svg.append("g")
             .attr("transform", "translate(0,0)");
