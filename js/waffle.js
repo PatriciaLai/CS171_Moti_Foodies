@@ -72,12 +72,14 @@ let WaffleChart = function() {
             domain.push(d[$_keys[0]]);
         });
 
-        let main_color = "#03B5AA";
-
-        let color = d3V3.scale.linear()
-            .domain([1, _obj.data.length - 1])
-            .interpolate(d3V3.interpolateRgb)
-            .range(["#D9B8C4", "#402A2C"]);
+        let hindu_color = "#340744";
+        let muslim_color = "#FAD02C";
+        let christian_color = "#D6AD60";
+        let sikh_color = "#7B6B8D";
+        let buddhist_color = "#9A9ABA";
+        let jain_color = "#BEAFC2";
+        let other_color = "#FFEEC6";
+        let not_stated_color = "#F7ECD3";
 
         // add label
 
@@ -103,15 +105,52 @@ let WaffleChart = function() {
                 return "legend_item legend_item_" + (i + 1);
             });
 
+        // let legendIcon = legendItem.append("div")
+        //     .attr("class", "legend_item_icon")
+        //     .style("background-color", function(d, i) {
+        //         if (i === 0) {
+        //             return hindu_color;
+        //         } else {
+        //             return color(i);
+        //         }
+        //     });
+
         let legendIcon = legendItem.append("div")
             .attr("class", "legend_item_icon")
             .style("background-color", function(d, i) {
                 if (i === 0) {
-                    return main_color;
-                } else {
-                    return color(i);
+                    return hindu_color;
+                }
+
+                else if (i === 1) {
+                    return muslim_color;
+                }
+
+                else if (i === 2) {
+                    return christian_color;
+                }
+
+                else if (i === 3) {
+                    return sikh_color;
+                }
+
+                else if (i === 4) {
+                    return buddhist_color;
+                }
+
+                else if (i === 5) {
+                    return jain_color;
+                }
+
+                else if (i === 6) {
+                    return other_color;
+                }
+
+                else {
+                    return not_stated_color;
                 }
             });
+
 
         if (_obj.rounded) {
             legendIcon.style("border-radius", "50%");
@@ -177,12 +216,41 @@ let WaffleChart = function() {
             .attr("width", _obj.size)
             .attr("height", _obj.size)
             .attr("fill", function(d) {
+
                 if (d.groupIndex === 0) {
-                    return main_color;
-                } else {
-                    return color(d.groupIndex);
+                    return hindu_color;
                 }
+
+                else if (d.groupIndex === 1) {
+                    return muslim_color;
+                }
+
+                else if (d.groupIndex === 2) {
+                    return christian_color;
+                }
+
+                else if (d.groupIndex === 3) {
+                    return sikh_color;
+                }
+
+                else if (d.groupIndex === 4) {
+                    return buddhist_color;
+                }
+
+                else if (d.groupIndex === 5) {
+                    return jain_color;
+                }
+
+                else if (d.groupIndex === 6) {
+                    return other_color;
+                }
+
+                else {
+                    return not_stated_color;
+                }
+
             })
+
             .attr("x", function(d, i) {
                 let col = Math.floor(i / _obj.rows);
                 return (col * (_obj.size)) + (col * _obj.gap);

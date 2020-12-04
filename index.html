@@ -36,11 +36,14 @@
 
 <!-- SECTION 1: HOMEPAGE-->
 <div id="section1" class="container-fluid homepage">
-    <div class="title row justify-content-center text-center">
-        <h1 style="font-size: 60px; color: #D6AD60">Hindustani Khana</h1>
-        <h2 style="color: #D6AD60">"Indian Food"</h2>
-        <h3>Exploring food culture in India</h3>
+    <div class="title row justify-content-center text-center" style="Padding-top: 120px">
+        <h1 style="font-size: 105px; color: #D6AD60">Hindustani Khana</h1>
+<!--        <h2 style="color: #D6AD60">"Indian Food"</h2>-->
+        <h3>Exploring food culture in India: A focus on <span style="color: #FAD02C">climate</span>, <span style="color: #FAD02C">globalization</span>, and <span style="color: #FAD02C">religion</span></h3>
 <!--        <h3 style="padding-left: 100px">- Exploring food culture in India</h3>-->
+
+
+
     </div>
 <!--    <img src="img/home-bg.jpg">-->
 </div>
@@ -160,38 +163,47 @@
     <div class="row">
 
         <!--left column-->
-        <div class="column col-9">
+        <div class="column col-lg-9" style = "Padding-right:40px">
             <div>
                 <h1 style="padding-bottom: 12px">How does religion influence food in India?</h1>
-                <h5 style="line-height: 1.5; padding-bottom: 10px">India has a diverse mix of religions, with a Hindu majority (79.80%).</h5>
-                <h5 style="line-height: 1.5; padding-bottom: 10px">Between 23-37% of Hindus are vegetarian. Most Hindus do not eat beef and most Muslims do not eat pork. These dietary restrictions influence the ingredients used within dishes.</h5>
+            </div>
+            <div id="religion_chart" style = "Padding-top: 50px"></div>
+
+            <div style = "Padding-top: 20px">
+
+                <h5 style="line-height: 1.5; padding-right: 50px">India has a diverse mix of religions, with a Hindu majority (79.80%).</h5>
+                <h5 style="line-height: 1.5; padding-right: 50px"><b style="color:#340744">Between 23-37% of Hindus are vegetarian.</b> Most Hindus do not eat beef and most Muslims do not eat pork. These dietary restrictions influence the ingredients used within dishes.</h5>
+
                 <br>
             </div>
-            <div id="religion_chart"></div>
+
         </div>
 
 
         <!--right column-->
-        <div class="column col-3" style = "Padding-right:0">
+        <div class="column col-3" style = "Padding-left:50px">
 
-            <div class = "row">
-                <h4>Hindu-inspired dish</h4>
-                <h5 style="line-height: 1.5; padding-bottom: 10px">For Diwali, a Hindu holiday, <a href="https://www.sanjanafeasts.co.uk/blog/2020/11/perfect-gulab-jamun/">Gulab Jamun</a>
-                    is prepared.</h5>
+            <br>
+            <br>
+
+            <div class = "row" style = "Padding-bottom: 0px">
+<!--                <h4>Hindu-inspired dish</h4>-->
+                <h4 style="line-height: 1.5; padding-bottom: 10px"><a href="https://www.sanjanafeasts.co.uk/blog/2020/11/perfect-gulab-jamun/">Gulab Jamun</a>
+                    is prepared for Diwali, a Hindu holiday</h4>
                 <img src="img/gulab_jamun.jpeg" alt="Gulab Jamun" style="width:128px;height:128px;">
             </div>
 
-            <div class = "row">
-                <h4>Muslim-inspired dish</h4>
-                <h5 style="line-height: 1.5; padding-bottom: 10px">For Eid, a Muslim holiday, <a href="https://ministryofcurry.com/sheer-khurma-instant-pot/">Sheer Khurma</a>
-                    is prepared.</h5>
+            <div class = "row" style = "Padding-bottom: 0px">
+<!--                <h4>Muslim-inspired dish</h4>-->
+                <h4 style="line-height: 1.5; padding-bottom: 10px"><a href="https://ministryofcurry.com/sheer-khurma-instant-pot/">Sheer Khurma</a>
+                    is prepared for Eid, a Muslim holiday</h4>
                 <img src="img/sheer_khurma.jpg" alt="Sheer Khurma" style="width:128px;height:128px;">
             </div>
 
-            <div class = "row">
-                <h4>Christian-inspired dish</h4>
-                <h5 style="line-height: 1.5; padding-bottom: 10px">For Christmas, a Christian holiday, <a href="https://secretindianrecipe.com/recipe/achappam-kerala-style-rosette-cookies">Achappam</a>
-                    is prepared.</h5>
+            <div class = "row" style = "Padding-bottom: 0px">
+<!--                <h4>Christian-inspired dish</h4>-->
+                <h4 style="line-height: 1.5; padding-bottom: 10px"><a href="https://secretindianrecipe.com/recipe/achappam-kerala-style-rosette-cookies">Achappam</a>
+                    is prepared for Christmas, a Christian holiday</h4>
                 <img src="img/achappam_rosette.jpeg" alt="Achappam" style="width:128px;height:128px;">
             </div>
 
@@ -209,14 +221,28 @@
         <div class="col-3">
             <h1>Explore the cuisines!</h1>
             <br>
-            <div id="toolbar">
+            <div id="toolbar" style = "Padding-bottom: 30px">
+<!--                <button id="rainfall_btn" type="button" value="rainfall" class="rainfallButton">Rainfall</button>-->
                 <a href="#section6" id="all" class="button active">All Courses</a>
                 <a href="#section6" id="region" class="button">Courses By Region</a>
                 <!--                <a href="#section6" id="course" class="button">Courses By Type</a>-->
                 <br>
                 <br>
-<!--                <div id="bubble_vis"></div>-->
-<!--                <div id="my_bubble_legend"></div>-->
+
+<!--                &lt;!&ndash;switch button style when selected&ndash;&gt;-->
+<!--                <script>-->
+<!--                    $(document).ready(function(){-->
+<!--                        $("#all").click(function(){-->
+<!--                            $(this).css("background-color", "#340744").css("color", "#E4E5E8");-->
+<!--                            $("#all").css("background-color", "transparent").css("color", "#340744");-->
+<!--                        });-->
+<!--                        $("#region").click(function(){-->
+<!--                            $(this).css("background-color", "#340744").css("color", "#E4E5E8");-->
+<!--                            $("#region").css("background-color", "transparent").css("color", "#340744");-->
+<!--                        });-->
+<!--                    });-->
+<!--                </script>-->
+
             </div>
         </div>
         <div class="col-9">

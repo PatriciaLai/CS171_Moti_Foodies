@@ -7,7 +7,7 @@
 function bubbleChart() {
   // Constants for sizing
   let width = 1300;
-  let height = 615;
+  let height = 550;
 
   // tooltip for mouseover functionality
   let tooltip = floatingTooltip('bubble_tooltip', 240);
@@ -83,7 +83,7 @@ function bubbleChart() {
   // Add colors for veg/non-veg
   let fillColor = d3V4.scaleOrdinal()
       .domain(['vegetarian', 'non vegetarian'])
-      .range(['#E1BC29', '#AA300E']);
+      .range(['#FAD02C', '#9A9ABA']);
 
   /*
    * This data manipulation function takes the raw data from the CSV file and converts it into an array of node objects.
