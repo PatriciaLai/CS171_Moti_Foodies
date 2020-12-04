@@ -3,24 +3,24 @@ Karnataka,Coffee,449995,Karnataka
 Kerala,Coffee,130012,Kerala
 Tamil Nadu,Coffee,35165,Tamil_Nadu
 Other states,Coffee,22625,Other_states
-Other states,Maize,117316825.6,Other_states
 Karnataka,Maize,48308900,Karnataka
 Bihar,Maize,32232829,Bihar
 Telangana ,Maize,30559315,Telangana 
 Madhya Pradesh,Maize,22546783,Madhya_Pradesh
 Uttar Pradesh,Maize,22377151,Uttar_Pradesh
+Other states,Maize,117316825.6,Other_states
 Karnataka,Ragi,23538643,Karnataka
 Tamil Nadu,Ragi,3507431,Tamil_Nadu
 Uttaranchal,Ragi,2375091,Uttaranchal
 Maharashtra,Ragi,2370535,Maharashtra
-Other states,Ragi,2180212.16,Other_states
 Andhra Pradesh,Ragi,1159489,Andhra_Pradesh
-Other states,Rice,685716978.4,Other_states
+Other states,Ragi,2180212.16,Other_states
 West Bengal,Rice,258092849,West_Bengal
 Uttar Pradesh,Rice,218793359,Uttar_Pradesh
 Punjab,Rice,179702000,Punjab
 Andhra Pradesh,Rice,143742455,Andhra_Pradesh
 Orissa,Rice,119422742,Orissa
+Other states,Rice,685716978.4,Other_states
 Assam,Tea,886914,Assam
 West Bengal,Tea,374861,West_Bengal
 Tamil Nadu,Tea,275522,Tamil_Nadu
@@ -29,7 +29,7 @@ Nagaland,Tea,14902,Nagaland
 Karnataka,Tea,11397,Karnataka
 Uttar Pradesh,Wheat,469911750,Uttar_Pradesh
 Punjab,Wheat,276946000,Punjab
-Other states,Wheat,185497926.8,Other_states
 Haryana,Wheat,158647000,Haryana
 Madhya Pradesh,Wheat,147153856,Madhya_Pradesh
 Rajasthan,Wheat,94669124,Rajasthan
+Other states,Wheat,185497926.8,Other_states

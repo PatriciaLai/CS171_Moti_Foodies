@@ -12,7 +12,7 @@ class PieVis {
 
     initVis() {
         let vis = this;
-        console.log(vis.cropData)
+        //console.log(vis.cropData)
 
         // == SVG == //
         vis.margin = {top: 10, right: 10, bottom: 10, left: 10};
@@ -62,25 +62,13 @@ class PieVis {
             .outerRadius(outerRadius);
 
 
-        // call next method in pipeline
         vis.wrangleData();
 
     }
 
     wrangleData(){
         let vis = this
-        console.log(vis.cropData);
-
-        // let cropState = Array.from(d3.group(vis.cropData, d =>d.Crop), ([key, value]) => ({key, value}))
-        // let cropFilteredData = cropState.filter(d=>{
-        //     if (d.key === this.parentElement){return d.value;}
-        // });
-        //
-        // cropFilteredData.forEach((d,i)=>{
-        //     vis.displayData[i] = d.value[i]
-        //     })
-        //
-        // console.log(cropFilteredData);
+        //console.log(vis.cropData);
 
         vis.displayData = vis.cropData.filter((d)=>{
             return d.Crop === vis.parentElement;
@@ -122,6 +110,15 @@ class PieVis {
                         </div>
                     `);
 
+                // get state name on pie
+                stateName()
+                function stateName()
+                {
+                    let selectStateOnPie = d.data.LINK;
+                    //console.log(selectStateOnPie)
+                    getStateOnPie(selectStateOnPie);
+                }
+
             })
             .on('mouseout', function(event, d){
                 d3.select(this)
@@ -131,16 +128,26 @@ class PieVis {
                 .style("left", 0)
                 .style("top", 0)
                 .html(``);
+
+                stateName()
+                function stateName()
+                {
+                    let selectStateOnPie = "none";
+                    getStateOnPie(selectStateOnPie);
+                }
+
             })
 
+
+        // link map and pie chart - change pie slice color
         changePieColor()
         function changePieColor(){
-            console.log(stateName)
+            console.log(stateNameOnMap)
             // console.log(vis.displayData[0].STATE)
             vis.displayData.forEach((d,i)=>{
-                if(stateName === vis.displayData[i].LINK){
-                    console.log('"We got matched state"')
-                    d3.selectAll("." + stateName).attr("fill", "#AD2E4F")
+                if(stateNameOnMap === vis.displayData[i].LINK){
+                    console.log('"We got matched state for pie"')
+                    d3.selectAll(".pie-chart").selectAll("." + stateNameOnMap).attr("fill", "#AD2E4F")
                 }
             })
 

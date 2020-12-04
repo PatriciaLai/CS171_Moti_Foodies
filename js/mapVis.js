@@ -4,6 +4,7 @@ class MapVis {
         this.parentElement = parentElement;
         this.geoData = geoData;
         this.climateData = climateData;
+        this.filteredData = {};
         this.displayData = {};
 
         this.initVis()
@@ -121,10 +122,10 @@ class MapVis {
         // console.log(vis.climateData);
 
 
-        let filteredData = Array.from(d3.group(vis.climateData, d =>d.STATE), ([key, value]) => ({key, value}))
-        //console.log(filteredData);
+        vis.filteredData = Array.from(d3.group(vis.climateData, d =>d.STATE), ([key, value]) => ({key, value}))
+        console.log(vis.filteredData);
 
-        filteredData.forEach( state => {
+        vis.filteredData.forEach( state => {
             let stateName = state.key
 
             // populate the final data structure
@@ -145,16 +146,48 @@ class MapVis {
 
     updateVis(){
         let vis = this;
-        console.log(clickedValue)
+        //console.log(clickedValue)
 
 
+
+
+
+        // update map class
+        // for (var key in vis.displayData){
+        //     vis.states.attr('class', (d) => {return `state ${vis.displayData[key].LinkValue}`})
+        // }
+
+        // Object.keys(vis.displayData).forEach(function(key){
+        //     vis.states.attr('class', function() {return `state ${vis.displayData[key].LinkValue}`})
+        // })
+
+        // vis.states.attr('class', function(){
+        //     vis.filteredData.forEach( d =>{
+        //         let stateClassName = d.value[0].LINK
+        //         //console.log(stateClassName);
+        //         return stateClassName
+        //     })
+        // })
+
+        let stateClassName = [];
+        vis.filteredData.forEach( d =>{
+            stateClassName.push(d.value[0].LINK)
+        })
+        console.log(stateClassName);
+
+        vis.states.attr('class', (d,i) =>{return `arc ${stateClassName[i]}`})
+
+
+
+
+        // get color scale max & min value
         vis.maxValue = 0;
         Object.keys(vis.displayData).forEach(function(key){
             if (vis.displayData[key][clickedValue]> vis.maxValue){
                 vis.maxValue = vis.displayData[key][clickedValue];
             }
         })
-        console.log(vis.maxValue)
+        //console.log(vis.maxValue)
 
         vis.minValue = vis.maxValue;
         Object.keys(vis.displayData).forEach(function(key){
@@ -162,7 +195,7 @@ class MapVis {
                 vis.minValue = vis.displayData[key][clickedValue];
             }
         })
-        console.log(vis.minValue)
+        //console.log(vis.minValue)
 
         // set the domain of colorScale
         vis.colorScale
@@ -187,11 +220,12 @@ class MapVis {
                      </div>
                     `);
 
+                // get state name on map
                 stateName()
                 function stateName()
                 {
-                    let selectState = vis.displayData[d.id].LinkValue;
-                    getState(selectState);
+                    let selectStateOnMap = vis.displayData[d.id].LinkValue;
+                    getStateOnMap(selectStateOnMap);
                 }
 
             })
@@ -205,11 +239,12 @@ class MapVis {
                     .style("top", 0)
                     .html(``);
 
+                // remove highlight color on pie slices
                 stateName()
                 function stateName()
                 {
-                    let selectState = "none";
-                    getState(selectState);
+                    let selectStateOnMap = "none";
+                    getStateOnMap(selectStateOnMap);
                 }
 
             })
@@ -242,6 +277,30 @@ class MapVis {
 
         // call the legend axis inside the legend axis group
         vis.svg.select(".legend-axis").call(vis.axis);
+
+
+        // link map and pie chart - change map state color
+        changeMapColor()
+        function changeMapColor(){
+            console.log(stateNameOnPie)
+
+            // another way to loop object, can also use Object.keys(vis.displayData).forEach(function(key){}
+            for (var key in vis.displayData){
+                // console.log(key);
+                // console.log(vis.displayData[key])
+                if (stateNameOnPie === vis.displayData[key].LinkValue){
+                    console.log('"We got matched state for map"')
+                    d3.selectAll(".statesGroup").selectAll("." + stateNameOnPie).attr("fill", "#AD2E4F")
+                }
+            }
+
+            // if(stateNameOnPie === vis.displayData[id][LinkValue]){
+            //     console.log('"We got matched state"')
+            //     //d3.selectAll("." + stateNameOnMap).attr("fill", "#AD2E4F")
+            // }
+
+
+        }
 
 
 

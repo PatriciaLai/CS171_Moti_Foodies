@@ -48,11 +48,13 @@ function initMainPage(dataArray) {
 }
 
 // link map and pie-chart
-let stateName;
-getState(state);
-function getState(state) {
-    stateName = state;
-    //console.log(stateName);
+let stateNameOnMap;
+let stateNameOnPie;
+
+getStateOnMap(state);
+function getStateOnMap(state) {
+    stateNameOnMap = state;
+
     myPieVisRice.updateVis();
     myPieVisWheat.updateVis();
     myPieVisMaize.updateVis();
@@ -61,3 +63,9 @@ function getState(state) {
     myPieVisTea.updateVis();
 }
 
+getStateOnPie(state);
+function getStateOnPie(state){
+    stateNameOnPie = state;
+
+    myMapVis.updateVis();
+}
