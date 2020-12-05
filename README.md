@@ -1,8 +1,8 @@
 Links:
 
-    Website Link: [add later]
+    Website Link: https://haquesaurus.github.io/CS171_Moti_Foodies/
     Video Link: [add later]
-    Process Book Link: [add later]
+    Process Book Link: https://docs.google.com/document/d/1l1sBdUGVR3VOxBWHaRyQp5cefYYNaBXX0Z8NK1_wrNs/edit?usp=sharing
   
   Our Code:
 
@@ -13,11 +13,11 @@ Links:
     js/aos.js
     js/bubble_chart.js
     js/bubble_tooltip.js
-    js/bubble_chart_legend.js
-    js/map_main.js    
     js/mapVis.js
-    js/pieVis
+    js/map_main.js  
     js/marriage_script.js
+    js/marriage_tree.js
+    js/pieVis
     js/waffle.js
     js/waffle_main.js 
     
