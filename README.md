@@ -16,7 +16,6 @@ Links:
     js/mapVis.js
     js/map_main.js  
     js/marriage_script.js
-    js/marriage_tree.js
     js/pieVis
     js/waffle.js
     js/waffle_main.js 
