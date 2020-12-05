@@ -13,18 +13,18 @@ function bubbleChart() {
 
   // Set center locations for courses
   let courseCenters = {
-    'Starter': [(width / 4), (height / 2) ],
-    'Main Course': [(width / 2) - 100, (height/2)],
-    'Snack': [(width / 2) + 100, (height/2)],
-    'Dessert': [(width - 200), (height / 2)]
+    'Starter': [(width / 12) + 100, (height / 2) ],
+    'Main Course': [(width / 4) + 50, (height/2)],
+    'Snack': [(5 * width/12), (height/2)],
+    'Dessert': [(7 * width/12), (height / 2)]
   };
 
   // Set center locations for course titles
   let courseTitleX = {
-    'Starter': 200,
-    'Main Course': width/2 - 125,
-    'Snack': width/2 + 100,
-    'Dessert': width - 200
+    'Starter': (width/12),
+    'Main Course': (width/4),
+    'Snack': (5 * width/12),
+    'Dessert': (7 * width/12)
   };
 
   // Set center locations for diet
