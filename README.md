@@ -4,7 +4,7 @@ Links:
     Video Link: [add later]
     Process Book Link: https://docs.google.com/document/d/1l1sBdUGVR3VOxBWHaRyQp5cefYYNaBXX0Z8NK1_wrNs/edit?usp=sharing
   
-  Our Code:
+  Code:
 
     index.html
     css/bubble_chart.css
