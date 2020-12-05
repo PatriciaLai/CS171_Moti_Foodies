@@ -21,6 +21,20 @@ Links:
     js/waffle.js
     js/waffle_main.js 
     
+Libraries:
+
+    https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css
+    https://fonts.gstatic.com
+    https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap
+    https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
+    https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js
+    https://d3js.org/d3-scale-chromatic.v1.min.js
+    https://d3js.org/topojson.v2.min.js
+    https://d3js.org/d3-geo.v1.min.js
+    https://d3js.org/d3.v6.min.js
+    https://d3js.org/d3.v4.min.js
+    https://d3js.org/d3.v3.min.js
+    
 Sources:
 
     https://www.census2011.co.in/religion.php
