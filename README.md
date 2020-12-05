@@ -1,6 +1,6 @@
 Links:
 
-    Website Link: https://haquesaurus.github.io/CS171_Moti_Foodies/](https://haquesaurus.github.io/CS171_Moti_Foodies/
+    Website Link: https://haquesaurus.github.io/CS171_Moti_Foodies/
     Video Link: [add later]
     Process Book Link: https://docs.google.com/document/d/1l1sBdUGVR3VOxBWHaRyQp5cefYYNaBXX0Z8NK1_wrNs/edit?usp=sharing
   
