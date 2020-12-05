@@ -7,7 +7,7 @@ let legend_svg = d3V4.select("#my_bubble_legend")
     .attr("height", legend_height);
 
 let size = d3V4.scalePow()
-    .exponent(0.5)
+    .exponent(0.7)
     .range([2, 70])
     .domain([0, 720]);
 

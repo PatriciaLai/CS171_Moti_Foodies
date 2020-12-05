@@ -67,15 +67,23 @@
 }
 
 .region {
-  font-size: 21px;
-    font-family: "Roboto Thin", serif;
-  fill: #E4E5E8;
+  font-size: 18px;
+  font-family: "Roboto Thin", serif;
+  fill: #9A9ABA;
   cursor: default;
 }
 
 .course {
-    font-size: 21px;
-    fill: #aaa;
+    font-size: 18px;
+    font-family: "Roboto Thin", serif;
+    fill: #9A9ABA;
+    cursor: default;
+}
+
+.diet {
+    font-size: 18px;
+    font-family: "Roboto Thin", serif;
+    fill: #9A9ABA;
     cursor: default;
 }
 
