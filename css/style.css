@@ -1,26 +1,25 @@
-/* PATRICIA STYLING */
+/* = COLOR PALETTE =  */
+/*
+Background & Text - #340744, #E4E5E8
+Purple- #340744, #774C75, #7B6B8D, #9A9ABA, #BEAFC2
+Yellow- #FAD02C, #D6AD60, #FFEEC6, #F7ECD3,
+Gray - #B1B1B1, #E4E5E8
+*/
 
-/* = color palette =  */
-/* #45958C - green*/
-/* #B43E83 - purple*/
-/* #E83F26 - orange*/
-/* #E99C3A - gold*/
-/* #F3E4AE - light yellow*/
-
-/* = body preset = */
+/* = BODY PRESET = */
 body {
     position: relative;
+    font-family: 'Roboto', sans-serif;
 }
 
 #section1 {padding-top:200px; padding-left:100px; height:100vh;color: #BEAFC2;background-color: #340744;}
-#section2 {padding-top:50px; padding-left:100px; height:110vh;color: #340744; background-color: #E4E5E8;}
-/*#section3 {padding-top:70px; padding-left:100px; height:100vh;color: #BEAFC2; background-color: #340744;}*/
-#section4 {padding-top:70px; padding-left:100px; height:150vh;color: #E4E5E8; background-color: #340744;}
-#section5 {padding-top:70px; padding-left:100px; height:150vh;color: #340744; background-color: #E4E5E8;}
-#section6 {padding-top:70px; padding-left:100px; height:200vh;color: #E4E5E8; background-color: #340744;}
-/*#section7 {padding-top:70px; padding-left:100px; height:1100px;color: #222; background-color: whitesmoke;}*/
+#section2 {padding-top:50px; padding-left:100px; height:140vh;color: #340744; background-color: #E4E5E8;}
+#section3 {padding-top:70px; padding-left:100px; height:150vh;color: #E4E5E8; background-color: #340744;}
+#section4 {padding-top:70px; padding-left:100px; height:130vh;color: #340744; background-color: #E4E5E8;}
+#section5 {padding-top:70px; padding-left:100px; height:200vh;color: #E4E5E8; background-color: #340744;}
 
-/* = top bar = */
+
+/* = TOP MENU BAR = */
 /* bar color */
 .navbar-default{
     background-color: #260326;
@@ -41,34 +40,85 @@ body {
     background-color: #774C75;
 }
 
-/* = homepage-transparent background = */
-.homepage{
-    position: relative;
-    width: 100%;
-}
-.homepage img{
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    max-width: 100%;
-    margin: auto;
-    z-index: 1;
-    opacity: .3;
+/* font */
+.barButton{
+    letter-spacing: 0.05em !important;
 }
 
-/* = two column design = */
+
+/* = HOMEPAGE = */
+h1{
+    font-size: 98px;
+    color: #D6AD60;
+    text-align: center;
+}
+
+h3{
+    font-size: 24px;
+    text-align: center;
+}
+
+/*!* = homepage-transparent background = *!*/
+/*.homepage{*/
+/*    position: relative;*/
+/*    width: 100%;*/
+/*}*/
+/*.homepage img{*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    right: 0;*/
+/*    bottom: 0;*/
+/*    left: 0;*/
+/*    max-width: 100%;*/
+/*    margin: auto;*/
+/*    z-index: 1;*/
+/*    opacity: .3;*/
+/*}*/
+
+
+/* = COLUMN DESIGN = */
 .row{
-    padding: 40px 0px;
+    padding: 20px 0px;
 }
 .column{
     float: left;
     width: 50%;
-    Padding-right:30px;
+    Padding-right:20px;
 }
 
-/* = button = */
+.column.treeText{
+    float: left;
+    width: 30%;
+    Padding-right:80px;
+}
+.column.treeChart{
+    float: left;
+    width: 70%;
+}
+
+.column.sectionText{
+    float: left;
+    width: 50%;
+    Padding-right:80px;
+}
+.column.sectionMap{
+    float: left;
+    width: 50%;
+}
+
+.column.dishPic{
+    float: left;
+    width: 30%;
+    Padding-right:10px;
+}
+
+.column.dishInfo{
+    float: left;
+    width: 70%;
+    Padding-right:50px;
+}
+
+/* = BUTTON = */
 button{
     padding: 5px 10px;
     border-radius: 4px;
@@ -90,14 +140,49 @@ button:focus {
     color:#340744;
 }
 
-
-
-/* OLD STYLING */
-/*body {*/
-/*    font-family: "Roboto", serif;*/
-/*    font-size: 16px;*/
-/*    color: #333;*/
+/* = hyperlink = */
+/*a:Link{*/
+/*    color:#340744;*/
 /*}*/
+/*a:visited {*/
+/*    color: #340744;*/
+/*}*/
+/*a:hover {*/
+/*    color: #D6AD60;*/
+/*    text-decoration: none;*/
+/*}*/
+
+
+/* = TEXT = */
+/* title */
+h2 {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.1em !important;
+    padding-bottom: 15px;
+}
+
+/* body */
+h5 {
+    font-family: "Roboto", sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 1.4;
+    padding-bottom: 5px
+}
+
+/* annotate */
+h6 {
+    font-family: "Roboto light", sans-serif !important;
+    font-size: 12px !important;
+    line-height: 1.2;
+    padding-bottom: 10px;
+    font-style: italic;
+}
+
+
+/* RELIGION WAFFLE CHART */
 
 .religion_chart {
     margin: 40px;
@@ -133,35 +218,8 @@ button:focus {
 
 
 
-/* MARRIAGE STYLING - NUPUR */
+/* = TREE CHART = */
 /* General */
-/*body{*/
-/*    background-color: #340744 !important;*/
-/*    font-family: 'Roboto', sans-serif;*/
-/*}*/
-
-/* TEXT */
-
-/*h1 {*/
-/*    font-family: 'Roboto', sans-serif !important;*/
-/*    color: #d6ad60;*/
-/*    font-size: 48px !important;*/
-/*    font-weight: 700 !important;*/
-/*    letter-spacing: 0.3em !important;*/
-/*    margin-right: -0.3em !important;*/
-/*    text-align: right;*/
-/*}*/
-
-/*h3 {*/
-/*    font-family: 'Roboto', sans-serif !important;*/
-/*    color: white;*/
-/*    font-size: 36px !important;*/
-/*    font-weight: 700 !important;*/
-/*    letter-spacing: 0.2em !important;*/
-/*    margin-bottom: 30px;*/
-/*    margin-right: -0.2em !important;*/
-/*    text-align: right;*/
-/*}*/
 
 .btn {
     font-family: 'Roboto', sans-serif;
@@ -197,35 +255,22 @@ h3.cursive {
     font-weight: 300 !important;
 }
 
-/*h5 {*/
-/*    font-family: 'Roboto', sans-serif !important;*/
-/*    color: white;*/
-/*    font-size: 26px !important;*/
-/*    line-height: 32px !important;*/
-/*    font-weight: 700 !important;*/
-/*    letter-spacing: 0.1em !important;*/
-/*}*/
-
-
 em {
     color: #fad02c;
 }
 
-b {
-    font-family: 'Roboto', sans-serif;
-    color: white;
-    font-weight: 700;
-    text-align: right;
-}
+/*b {*/
+/*    font-family: 'Roboto', sans-serif;*/
+/*    color: white;*/
+/*    font-weight: 700;*/
+/*    text-align: right;*/
+/*}*/
 
 #q1{
     z-index:99;
 }
 
-p,
-form
-/*.tooltip*/
-{
+form {
     font-family: 'Roboto', sans-serif;
     color: #ffffff !important;
     font-size: 12px !important;
@@ -264,7 +309,7 @@ a.hyprtxt {
     height: auto;
 }
 
-/* IMAGES */
+/* = IMAGES =  */
 
 img.icon {
     width: 80%;
@@ -319,11 +364,6 @@ div.section {
     stroke-width: 1.5px;
     opacity: 70%;
 }
-
-/*.yipbaraxis line,*/
-/*.yipbaraxis path{*/
-/*    stroke: #8293b6;*/
-/*}*/
 
 .yipbaraxis text{
     fill: #cbcbcb;

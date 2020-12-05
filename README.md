@@ -10,14 +10,14 @@ Links:
     css/bubble_chart.css
     css/reset.css
     css/style.css 
+    js/aos.js
     js/bubble_chart.js
     js/bubble_tooltip.js
     js/bubble_chart_legend.js
+    js/map_main.js    
     js/mapVis.js
-    js/map_main.js
-    js/marriage_tree.js
-    js/milkAnimal_main.js
-    js/milkState_main.js
+    js/pieVis
+    js/marriage_script.js
     js/waffle.js
     js/waffle_main.js 
     
@@ -29,5 +29,7 @@ Sources:
     https://gist.github.com/tomcardoso/1d44732cc7f3d97d6bf7
     https://edtimes.in/india-has-70-non-vegetarian-population-but-is-considered-vegetarian-why/
     https://www.kaggle.com/nehaprabhavalkar/indian-food-101
-    
+    https://www.kaggle.com/amdirfan/analyze-on-crop-production
+    https://www.indiacoffee.org/coffee-statistics.html
+    http://www.teaboard.gov.in/pdf/Tea_Statistics_2001_02_pdf8607.pdf
     

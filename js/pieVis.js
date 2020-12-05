@@ -16,8 +16,8 @@ class PieVis {
 
         // == SVG == //
         vis.margin = {top: 10, right: 10, bottom: 10, left: 10};
-        vis.width = 140
-        vis.height = 140
+        vis.width = 150
+        vis.height = 150
 
         // init drawing area
         vis.svg = d3.select("#" + vis.parentElement).append("svg")
