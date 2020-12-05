@@ -62,6 +62,13 @@ class PieVis {
             .outerRadius(outerRadius);
 
 
+        // Pie chart info tooltip
+        vis.cropTooltipInfo = d3.select("#cropTooltip").append("div")
+            .attr('class', 'cropInfoTooltip')
+            .style("opacity", 0)
+            //.append('text')
+
+
         vis.wrangleData();
 
     }
@@ -103,12 +110,19 @@ class PieVis {
                     .style("left", event.pageX + 20 + "px")
                     .style("top", event.pageY + "px")
                     .html(`
-                        <div style="border: thin solid grey; border-radius: 5px; background: lightgrey; padding: 10px">
+                        <div style="border: thin solid #774C75; border-radius: 5px; background: #e6dce8; padding: 10px">
                             <h4>${d.data.STATE}</h4>
                             <p>Production: ${d.data.Production} metric tons</p>
                              <p>Percentage: ${d.data.percentage} %</p>      
                         </div>
-                    `);
+                    `)
+                vis.cropTooltipInfo
+                    .style("opacity", 1)
+                    .html(`
+                    <h5 style="padding: 10px; border: thin solid #774C75; border-radius: 5px">${d.data.INFO}</h5>
+                    `)
+                ;
+
 
                 // get state name on pie
                 stateName()
@@ -127,7 +141,9 @@ class PieVis {
                 .style("opacity", 0)
                 .style("left", 0)
                 .style("top", 0)
-                .html(``);
+                .html(``)
+
+                vis.cropTooltipInfo.style("opacity", 0).html(``);
 
                 stateName()
                 function stateName()
@@ -137,6 +153,7 @@ class PieVis {
                 }
 
             })
+
 
 
         // link map and pie chart - change pie slice color

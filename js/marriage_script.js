@@ -124,7 +124,7 @@ function tree(){
             })
 
             .attr("font-size", function (d){
-                console.log(d.data.link)
+                //console.log(d.data.link)
                 if(d.data.importance == 8){
                     return 25;
                 } else if (d.data.importance == 6){
@@ -138,9 +138,34 @@ function tree(){
 
                     window.open(d.data.link)
                 })
+            .on("mouseover", function (d) {
+
+                // Use D3 to select element, change color and size
+                d3.select(this)
+                    .attr('fill', '#BEAFC2');
+            })
+            .on("mouseout", function (d) {
+                d3.select(this)
+                    .attr("fill", function(d){
+                        if(d.data.importance == 12){
+                            return "#ffeec6";
+                        } else if (d.data.importance == 10){
+                            return "#ffffff";
+                        } else if (d.data.importance == 8){
+                            return "#fad02c";
+                        } else {
+                            return "#ffffff";
+                        };
+
+                    })
+            })
+
+
+
+
             // .on("mouseover", function (d){
             //     var textselector = d.data.Food;
-            //     d3V4.selectAll('text')
+            //     d3V4.selectAll('.nodemain')
             //         // .attr("opacity", 1)
             //         .attr("fill", function(d) {
             //                 if (d.data.Food == textselector) {
@@ -212,7 +237,7 @@ function tree(){
         nodeUpdate.transition()
             .duration(duration)
             .attr("transform", function(d) {
-                console.log(d)
+                //console.log(d)
                 return "translate(" + d.y + "," + d.x + ")";
             });
 

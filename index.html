@@ -50,35 +50,37 @@
 <!--    <img src="img/home-bg.jpg">-->
 </div>
 
+
 <!-- SECTION 2: CLIMATE (MAP + LINKED BAR CHART) -->
 <div id="section2" class="container-fluid">
     <div class="row">
 
+        <h2>How does climate influence agriculture and crop cultivation and food consumption in India?</h2>
         <!--left column-->
         <div class="column sectionText">
             <div>
-                <h2>How does climate influence agriculture and crop cultivation and food consumption in India?</h2>
-                <h5>India is a land of diversity, not only culturally but also for its topography and climate. The variations in temperature and rainfall have a major impact on the diversity in cash crops grown across the country and lead to a rich food culture.</h5>
-                <h5>Crop cultivation has a direct relation to the staple food consumption in different parts. A healthy diet constitutes grains, millets and cereals grown in the region suitable to its climate.</h5>
+                <h5 style="font-weight: 400">
+                    India is culturally and topographically diverse.
+                    The variations in temperature and rainfall have a major impact on the diversity in crop cultivation and food consumption across the country.
+                </h5>
                 <h6>* Please hover over on the pie slices or map to understand the dominant crop variety grown in different states in India</h6>
+                <div id="cropTooltip" style="width: 100%; height: 70px"></div>
             </div>
-            <div>
-<!--                <h5>Wheat is a prevalent staple in most of the northern parts of India. Uttarpradesh is a major wheat producing state. </h5>-->
-            </div>
-            <div>
+            <!--pie chart area-->
+            <div style="padding-bottom: 50px">
                 <div id= "Rice" style="float: left"></div>
                 <div id= "Wheat" style="float: left"></div>
                 <div id= "Maize"></div>
                 <div id= "Ragi" style="float: left"></div>
                 <div id= "Coffee" style="float: left"></div>
-                <div id= "Tea" style="float: left"></div>
+                <div id= "Tea"></div>
             </div>
 
         </div>
 
         <!--right column-->
         <div class="column sectionMap">
-            <div class="button_area" style="padding-top: 30px">
+            <div class="button_area" style="padding-top: 10px">
                 <button id="rainfall_btn" type="button" value="rainfall" class="rainfallButton">Rainfall</button>
                 <button id="temperature_btn" type="button" value="temperature_F" class="temperatureButton">Temperature</button>
 
@@ -110,16 +112,15 @@
         <!--left column-->
         <div class="column treeText">
             <h5>
-                On the right is tree map of dishes served in a lunch menu from an Indian wedding.
-                Indian weddings are richly traditional and there is great importance to the variety of food with an assortment of spices and other rich ingredients.
-                In recent times, there have been an inclusion of contemporary, continental and global
-                cuisines (highlighted) along with traditional Indian dishes.
+                On the right is a tree map of dishes offered on an Indian catering company’s wedding lunch menu.
+                Indian weddings are richly traditional.
+                There is great importance to the variety of foods and assortment of spices and other rich ingredients.
+                Over the years, there has been an increasing amount of contemporary, continental and global cuisines offered along with traditional Indian dishes.
             </h5>
             <h6>* Please click the nodes to interact with the chart, and learn the recipe by clicking the name of the dish</h6>
 
             <h5 style="margin-top: 40px; color: #fad02c">-- Contemporary dish</h5>
             <h5 style="margin-top: -10px;">-- Traditional Dish</h5>
-
         </div>
 
         <!--right column-->
@@ -135,29 +136,29 @@
 <div id="section4" class="container-fluid" style="padding-top: 50px">
 
     <div class="row">
-
+        <h2 style="padding-bottom: 12px">How does religion influence food in India?</h2>
         <!--left column-->
         <div class="column col-lg-9">
             <div>
-                <h2 style="padding-bottom: 12px">How does religion influence food in India?</h2>
-                <h5>India has a diverse mix of religions, with a Hindu majority (79.80%).
+                <h5 style="font-weight: 400">India has a diverse mix of religions, with a Hindu majority (79.80%).
                     <b style="color:#340744">Between 23-37% of Hindus are vegetarian.</b>  Most Hindus do not eat beef and most Muslims do not eat pork. These dietary restrictions influence the ingredients used within dishes.
                 </h5>
             </div>
             <div id="religion_chart" style = "Padding-top: 50px"></div>
+            <h6>Source: <a href="https://censusindia.gov.in/2011-Common/CensusData2011.html ">2011 Indian Census Data</a></h6>
         </div>
 
         <!--right column-->
         <div class="column col-3" style = "padding-left:50px">
 
             <!--Hindu holiday dish-->
-            <div class = "row" style = "padding: 40px; padding-bottom: 0px; padding-top: 125px">
+            <div class = "row" style = "padding: 40px; padding-bottom: 0px; padding-top: 80px">
                 <div class="column dishPic">
                     <img src="img/gulab_jamun.jpeg" alt="Gulab Jamun" style="width:128px;height:128px;">
                 </div>
                 <div class="column dishInfo">
                     <h4 ><a href="https://www.sanjanafeasts.co.uk/blog/2020/11/perfect-gulab-jamun/"><b>Gulab Jamun</b></a></h4>
-                    <h5>Gulab Jamun is a sweet delicacy, especially prepared during Diwali,the Hindu festival of light. They are made with milk solids, sugar syrup and flavored with spices.</h5>
+                    <h5 class="dishDesc">Gulab Jamun is a sweet delicacy, especially prepared during Diwali, the Hindu festival of light. They are made with milk solids, sugar syrup and flavored with spices.</h5>
                 </div>
             </div>
 
@@ -168,7 +169,7 @@
                 </div>
                 <div class="column dishInfo">
                     <h4><a href="https://ministryofcurry.com/sheer-khurma-instant-pot/"><b>Sheer Khurma</b></a></h4>
-                    <h5>Sheer Kurma is a speciality for Muslims on the festival of Eid. Dry fruits, vermicelli, thickened milk and sugar are the key ingredients. </h5>
+                    <h5 class="dishDesc">Sheer Kurma is a speciality for Muslims on the festival of Eid. Dry fruits, vermicelli, thickened milk and sugar are the key ingredients. </h5>
                 </div>
             </div>
 
@@ -179,7 +180,7 @@
                 </div>
                 <div class="column dishInfo">
                     <h4><a href="https://secretindianrecipe.com/recipe/achappam-kerala-style-rosette-cookies"><b>Achappam</b></a></h4>
-                    <h5>Achappam are Rosette cookies, traditionally made during Christmas  in the state of Kerala. Rice flour, coconut milk, sugar and eggs are essentials.</h5>
+                    <h5 class="dishDesc">Achappam are Rosette cookies, traditionally made during Christmas  in the state of Kerala. Rice flour, coconut milk, sugar and eggs are essentials.</h5>
                 </div>
             </div>
         </div>
@@ -192,19 +193,20 @@
     <div class="row">
 
         <div class="col-3">
-            <h2>Explore the cuisines!</h2>
+            <h2>Explore an assortment of dishes in the Indian cuisine!</h2>
             <h5>Interact with this chart to explore nuances of Indian dishes, their type, ingredients, cooking time and see them by region.</h5>
             <br>
             <div id="toolbar" style = "Padding-bottom: 30px">
                 <a href="#section5" id="all" class="button active">All Dishes</a>
                 <a href="#section5" id="course" class="button">By Course</a>
                 <a href="#section5" id="diet" class="button">By Diet</a>
+                <a href="#section5" id="flavor" class="button">By Flavor</a>
                 <a href="#section5" id="region" class="button">By Region</a>
             </div>
         </div>
         <div class="col-9">
             <div id="bubble_vis"></div>
-            <div id="my_bubble_legend"></div>
+<!--            <div id="my_bubble_legend"></div>-->
         </div>
     </div>
 </div>

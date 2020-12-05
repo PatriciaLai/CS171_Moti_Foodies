@@ -13,36 +13,18 @@ function bubbleChart() {
 
   // Set center locations for courses
   let courseCenters = {
-    'Starter': [(width / 12) + 100, (height / 2) ],
-    'Main Course': [(width / 4) + 50, (height/2)],
-    'Snack': [(5 * width/12), (height/2)],
-    'Dessert': [(7 * width/12), (height / 2)]
+    'Starter': [(width / 4), (height / 2) ],
+    'Main Course': [(width / 2) - 100, (height/2)],
+    'Snack': [(width / 2) + 100, (height/2)],
+    'Dessert': [(width - 200), (height / 2)]
   };
 
   // Set center locations for course titles
   let courseTitleX = {
-    'Starter': (width/12),
-    'Main Course': (width/4),
-    'Snack': (5 * width/12),
-    'Dessert': (7 * width/12)
-  };
-
-  // Set center locations for courses
-  let flavorCenters = {
-    'Bitter': [(width / 12) + 100, (height / 2) ],
-    'Sweet': [(width / 4) + 50, (height/2)],
-    'Spicy': [(5 * width/12), (height/2)],
-    'Sour': [(7 * width/12) - 100, (height / 2)],
-    'None specified': [(9 * width/12) - 50, (height / 2)]
-  };
-
-  // Set center locations for course titles
-  let flavorTitleX = {
-    'Bitter': (width/12),
-    'Sweet': (width/4),
-    'Spicy': (5 * width/12),
-    'Sour': (7 * width/12),
-    'None specified': (9 * width/12)
+    'Starter': 200,
+    'Main Course': width/2 - 125,
+    'Snack': width/2 + 100,
+    'Dessert': width - 200
   };
 
   // Set center locations for diet
@@ -147,7 +129,7 @@ function bubbleChart() {
         // state: d.state,
         diet: d.diet,
         region: d.region,
-        flavor: d.flavor,
+        // flavor: d.flavor_profile,
         year: d.year,
         x: Math.random() * 900,
         y: Math.random() * 800
@@ -166,8 +148,6 @@ function bubbleChart() {
   function getFilteredData(data, category, group) {
     if (category === "course")
       return data.filter(function(d) { return d.course == group; });
-    if (category === "flavor")
-      return data.filter(function(d) { return d.flavor == group; });
     if (category === "region")
       return data.filter(function(d) { return d.region == group; });
     if (category === "diet")
@@ -259,10 +239,6 @@ function bubbleChart() {
     return courseCenters[d.course][0];
   }
 
-  function nodeFlavorPos(d) {
-    return flavorCenters[d.flavor][0];
-  }
-
   function nodeDietPos(d) {
     return dietCenters[d.diet][0];
   }
@@ -282,7 +258,6 @@ function bubbleChart() {
   // When groupBubbles() is run, hide the existing titles
   function groupBubbles() {
     hideCourseTitles();
-    hideFlavorTitles();
     hideDietTitles();
     hideRegionTitles();
 
@@ -304,7 +279,6 @@ function bubbleChart() {
   function splitBubbles(splitType) {
 
     hideCourseTitles();
-    hideFlavorTitles();
     hideDietTitles();
     hideRegionTitles();
 
@@ -314,15 +288,6 @@ function bubbleChart() {
 
       // Reset the 'x' force to draw the bubbles to their year centers
       simulation.force('x', d3V4.forceX().strength(forceStrength).x(nodeCoursePos));
-
-      // We can reset the alpha value and restart the simulation
-      simulation.alpha(1).restart();
-    }
-    else if (splitType === 'flavor') {
-      showFlavorTitles();
-
-      // Reset the 'x' force to draw the bubbles to their year centers
-      simulation.force('x', d3V4.forceX().strength(forceStrength).x(nodeFlavorPos));
 
       // We can reset the alpha value and restart the simulation
       simulation.alpha(1).restart();
@@ -356,14 +321,6 @@ function bubbleChart() {
     svg.selectAll('.course').remove();
   }
 
-  function hideFlavorTitles() {
-
-    svg.selectAll('.flavor')
-        .text(function(d) { console.log(d); });
-
-    svg.selectAll('.flavor').remove();
-  }
-
   function hideDietTitles() {
     svg.selectAll('.diet')
       .text(function(d) { console.log(d); });
@@ -394,19 +351,6 @@ function bubbleChart() {
       .attr('y', 40)
       .attr('text-anchor', 'middle')
       .text(function (d) { return d; });
-  }
-
-  function showFlavorTitles() {
-    let flavorData = d3V4.keys(flavorTitleX);
-    let flavors = svg.selectAll('.flavor')
-        .data(flavorData);
-
-    flavors.enter().append('text')
-        .attr('class', 'flavor')
-        .attr('x', function (d) { return flavorTitleX[d]; })
-        .attr('y', 40)
-        .attr('text-anchor', 'middle')
-        .text(function (d) { return d; });
   }
 
   function showDietTitles() {
@@ -465,9 +409,6 @@ function bubbleChart() {
                   '<span class="name">Course: </span><span class="value">' +
                   d.course + '</span><br/>' +
 
-                  '<span class="name">Flavor: </span><span class="value">' +
-                  d.flavor + '</span><br/>' +
-
                   '<span class="name">Region: </span><span class="value">' +
                   d.region + '</span>';
 
@@ -497,10 +438,7 @@ function bubbleChart() {
 
     if (displayName === 'course') {
       splitBubbles('course');
-    }
-    else if (displayName === 'flavor') {
-      splitBubbles('flavor');
-    }
+    } 
     else if (displayName === 'diet') {
       splitBubbles('diet');
     }
