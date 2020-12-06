@@ -32,7 +32,7 @@ function bubbleChart() {
     'Bitter': [(width / 12) + 100, (height / 2) ],
     'Sweet': [(width / 4) + 50, (height/2)],
     'Sour': [(5 * width/12), (height/2)],
-    'Spicy': [(7 * width/12), (height / 2)],
+    'Spicy': [(7 * width/12) - 25, (height / 2)],
     'None specified': [(9 * width/12) - 50, (height / 2)]
   };
 
