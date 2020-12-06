@@ -12,7 +12,7 @@ function tree(){
         .classed("yipsvg-container", true)
         .append("svg")
         .attr("preserveAspectRatio", "xMinYMin meet")
-        .attr("viewBox", "-200 0 1600 1000")
+        .attr("viewBox", "-200 0 1800 1000")
         .classed("svg-content-responsive", true);
 
 
