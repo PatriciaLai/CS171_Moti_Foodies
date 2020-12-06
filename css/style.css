@@ -12,11 +12,12 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-#section1 {padding-top:200px; padding-left:100px; height:100vh;color: #BEAFC2;background-color: #340744;}
-#section2 {padding-top:50px; padding-left:100px; height:140vh;color: #340744; background-color: #E4E5E8;}
-#section3 {padding-top:70px; padding-left:100px; height:140vh;color: #E4E5E8; background-color: #340744;}
-#section4 {padding-top:70px; padding-left:100px; height:130vh;color: #340744; background-color: #E4E5E8;}
-#section5 {padding-top:70px; padding-left:100px; height:200vh;color: #E4E5E8; background-color: #340744;}
+#section1 {padding-top:0px; padding-left:100px; height:100vh;color: #BEAFC2;background-color: #340744;}
+#section1-2 {padding-top:0px; padding-left:100px; padding-right:100px;height:100vh;color: #BEAFC2;background-color: #340744;}
+#section2 {padding-top:50px; padding-left:100px; padding-right:100px; height:850px;color: #340744; background-color: #E4E5E8;}
+#section3 {padding-top:70px; padding-left:100px; padding-right:100px; height:950px;color: #E4E5E8; background-color: #340744;}
+#section4 {padding-top:70px; padding-left:100px; height:850px;color: #340744; background-color: #E4E5E8;}
+#section5 {padding-top:70px; padding-left:100px; padding-right:100px;height:1200px;color: #E4E5E8; background-color: #340744;}
 
 
 /* = TOP MENU BAR = */
@@ -58,7 +59,7 @@ h3{
     text-align: center;
 }
 
-/*!* = homepage-transparent background = *!*/
+/* = homepage-transparent background = */
 /*.homepage{*/
 /*    position: relative;*/
 /*    width: 100%;*/
@@ -72,9 +73,35 @@ h3{
 /*    max-width: 100%;*/
 /*    margin: auto;*/
 /*    z-index: 1;*/
-/*    opacity: .3;*/
+/*    opacity: 1;*/
 /*}*/
 
+.pattern img{
+    position: absolute;
+    right: 0;
+    height:10%;
+    margin: auto;
+    z-index: 1;
+    max-height: 100%;
+}
+
+h4{
+    font-family: 'Roboto', sans-serif ;
+    font-size: 24px;
+    letter-spacing: 0.05em;
+}
+.firstHomePage img{
+    width: 600px;
+}
+
+.firstHomePage{
+    padding-top: 150px;
+    align-items: center;
+}
+
+.SecondHomePage{
+    padding: 100px;
+}
 
 /* = COLUMN DESIGN = */
 .row{
@@ -117,6 +144,24 @@ h3{
     width: 70%;
     Padding-right:50px;
 }
+
+.column.footer{
+    float: left;
+    width: 30%;
+    padding: 20px 80px;
+}
+
+
+/* = FOOTER = */
+
+.footerSection p{
+    font-size: 12px;
+}
+.footerSection{
+    border-top: solid #E4E5E8 1px;
+    /*margin-right: 60px;*/
+}
+
 
 /* = BUTTON = */
 button{
@@ -165,6 +210,7 @@ h2 {
     padding-bottom: 15px;
 }
 
+
 /* body */
 h5 {
     font-family: "Roboto", sans-serif !important;
@@ -195,7 +241,7 @@ p.source{
 }
 
 
-/* RELIGION WAFFLE CHART */
+/* = RELIGION WAFFLE CHART = */
 
 .religion_chart {
     margin: 40px;
@@ -228,7 +274,6 @@ p.source{
     height: 10px;
     width: 10px;
 }
-
 
 
 /* = TREE CHART = */
