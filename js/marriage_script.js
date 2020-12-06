@@ -136,8 +136,14 @@ function tree(){
             .attr('cursor', 'pointer')
             .on("click", function (d) {
 
-                    window.open(d.data.link)
-                })
+                if(d.data.importance == 8) {
+                    return window.open(d.data.link)
+                } else if(d.data.importance == 6) {
+                    return window.open(d.data.link)
+                } else {
+                    return "#ffffff";
+                }
+            })
             .on("mouseover", function (d) {
 
                 // Use D3 to select element, change color and size
