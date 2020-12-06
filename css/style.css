@@ -15,7 +15,7 @@ body {
 #section1 {padding-top:0px; padding-left:100px; height:100vh;color: #BEAFC2;background-color: #340744;}
 #section1-2 {padding-top:0px; padding-left:100px; padding-right:100px;height:100vh;color: #E4E5E8;background-color: #340744;}
 #section2 {padding-top:50px; padding-left:100px; padding-right:100px; height:850px;color: #340744; background-color: #E4E5E8;}
-#section3 {padding-top:70px; padding-left:100px; padding-right:100px; height:950px;color: #E4E5E8; background-color: #340744;}
+#section3 {padding-top:70px; padding-left:100px; padding-right:100px; height:850px;color: #E4E5E8; background-color: #340744;}
 #section4 {padding-top:70px; padding-left:100px; height:850px;color: #340744; background-color: #E4E5E8;}
 #section5 {padding-top:70px; padding-left:100px; padding-right:100px;height:1200px;color: #E4E5E8; background-color: #340744;}
 
@@ -460,7 +460,7 @@ div.section {
     display: inline-block;
     position: relative;
     width: 100%;
-    padding-bottom: 80%;
+    padding-bottom: 60%;
     /* aspect ratio */
     vertical-align: top;
     overflow: hidden;
