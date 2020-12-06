@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>171 Moti Foodies</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Load CSS libraries -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/bubble_chart.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<!-- NAVIGATION BAR AREA-->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="barButton"><a href="#section1" style="font-weight: bolder;">Hindustani Khana</a></li>
+                    <li class="barButton"><a href="#section2">Climate</a></li>
+                    <li class="barButton"><a href="#section3">Globalization</a></li>
+                    <li class="barButton"><a href="#section4">Religion</a></li>
+                    <li class="barButton"><a href="#section5">Exploration</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- SECTION 1-1: HOMEPAGE-->
+<div id="section1" class="container-fluid homepage">
+    <div class="row justify-content-center" style="height: 100vh">
+
+        <div class="column">
+            <div class="row justify-content-center">
+                <div class="firstHomePage">
+                    <img src="img/title.png">
+                    <h4 style="color: #FAD02C">Exploring Indian Food Culture</h4>
+                    <h6>*Hindustani Khana means ‘Indian Food’ in Hindi </h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="column pattern">
+            <img src="img/Coverimage2.png">
+        </div>
+
+    </div>
+</div>
+
+<!-- SECTION 1-2: HOMEPAGE-->
+<div id="section1-2" class="container-fluid homepage">
+    <div class="row">
+
+        <div class="column">
+            <div class="row">
+                <div class="SecondHomePage">
+                    <h3 style="padding-bottom: 30px">“Athithi Devo Bhava”</h3>
+                    <h5>
+                        “Athithi Devo Bhava” is a popular belief in India and is Sanskrit for "Guests are equivalent to God."
+                        Food has important cultural connotations in India. Indians honor their visiting friends and relatives by serving them their favorite foods.
+                    </h5>
+                    <h5 style="color: #FAD02C">
+                        India is a land of diversity in many respects.
+                        This story will explore the influences for food in India under three broad categories: Climate and Agriculture, Globalization, and Religion.
+                    </h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="column pattern">
+            <img src="img/Coverimage.png">
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- SECTION 2: CLIMATE (MAP + LINKED BAR CHART) -->
+<div id="section2" class="container-fluid">
+    <div class="row">
+
+        <h2>How does climate influence agriculture and food consumption in India?</h2>
+        <!--left column-->
+        <div class="column sectionText">
+            <div>
+                <h5 style="font-weight: 400">
+                    India is culturally and topographically diverse.
+                    The variations in temperature and rainfall have a major impact on the diversity in crop cultivation and food consumption across the country.
+                </h5>
+                <h6>* Please hover over on the pie slices or map to understand the dominant crop variety grown in different states in India</h6>
+                <div id="cropTooltip" style="width: 100%; height: 70px"></div>
+            </div>
+            <!--pie chart area-->
+            <div style="padding-top: 30px">
+                <div id= "Rice" style="float: left"></div>
+                <div id= "Wheat" style="float: left"></div>
+                <div id= "Maize"></div>
+                <div id= "Ragi" style="float: left"></div>
+                <div id= "Coffee" style="float: left"></div>
+                <div id= "Tea"></div>
+            </div>
+
+        </div>
+
+        <!--right column-->
+        <div class="column sectionMap">
+            <div class="button_area" style="padding-top: 10px">
+                <button id="rainfall_btn" type="button" value="rainfall" class="rainfallButton">Rainfall</button>
+                <button id="temperature_btn" type="button" value="temperature_F" class="temperatureButton">Temperature</button>
+
+                <!--switch button style when selected-->
+                <script>
+                    $(document).ready(function(){
+                        $("#rainfall_btn").click(function(){
+                            $(this).css("background-color", "#340744").css("color", "#E4E5E8");
+                            $("#temperature_btn").css("background-color", "transparent").css("color", "#340744");
+                        });
+                        $("#temperature_btn").click(function(){
+                            $(this).css("background-color", "#340744").css("color", "#E4E5E8");
+                            $("#rainfall_btn").css("background-color", "transparent").css("color", "#340744");
+                        });
+                    });
+                </script>
+            </div>
+            <div id="mapDiv" style="float: left"></div>
+        </div>
+
+    </div>
+</div>
+
+<!-- SECTION 3: GLOBALIZATION & MARRIAGE (TREE DIAGRAM)-->
+<div id="section3" class="container-fluid" style="padding-top: 50px">
+    <div class="row" data-aos="fade-in">
+        <h2 style="padding-bottom: 40px">How has globalization expanded food preferences for the Indian community?</h2>
+
+        <!--left column-->
+        <div class="column treeText">
+            <h5>
+                On the right is a tree map of dishes offered on an Indian catering company’s wedding lunch menu.
+                Indian weddings are richly traditional.
+                There is great importance to the variety of foods and assortment of spices and other rich ingredients.
+                Over the years, there has been an increasing amount of contemporary, continental and global cuisines offered along with traditional Indian dishes.
+            </h5>
+            <h6>* Please click the nodes to interact with the chart, and learn the recipe by clicking the name of the dish</h6>
+
+            <h5 style="margin-top: 40px; color: #fad02c">-- Contemporary dish</h5>
+            <h5 style="margin-top: -10px;">-- Traditional Dish</h5>
+        </div>
+
+        <!--right column-->
+        <div class="column treeChart">
+            <div class="yiptree"></div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- SECTION 4: RELIGION (WAFFLE CHART)-->
+<div id="section4" class="container-fluid" style="padding-top: 50px">
+
+    <div class="row">
+        <h2 style="padding-bottom: 12px">How does religion influence food in India?</h2>
+        <!--left column-->
+        <div class="column col-lg-9">
+            <div>
+                <h5 style="font-weight: 400">India has a diverse mix of religions, with a Hindu majority (79.80%).
+                    <b style="color:#340744">Between 23-37% of Hindus are vegetarian.</b>  Most Hindus do not eat beef and most Muslims do not eat pork. These dietary restrictions influence the ingredients used within dishes.
+                </h5>
+            </div>
+            <div id="religion_chart" style = "Padding-top: 50px"></div>
+            <h6>Source: <a href="https://censusindia.gov.in/2011-Common/CensusData2011.html ">2011 Indian Census Data</a></h6>
+        </div>
+
+        <!--right column-->
+        <div class="column col-3" style = "padding-left:50px">
+
+            <!--Hindu holiday dish-->
+            <div class = "row" style = "padding: 40px; padding-bottom: 0px; padding-top: 80px">
+                <div class="column dishPic">
+                    <img src="img/gulab_jamun.jpeg" alt="Gulab Jamun" style="width:128px;height:128px;">
+                </div>
+                <div class="column dishInfo">
+                    <h4 ><a href="https://www.sanjanafeasts.co.uk/blog/2020/11/perfect-gulab-jamun/"><b>Gulab Jamun</b></a></h4>
+                    <h5 class="dishDesc">Gulab Jamun is a sweet delicacy, especially prepared during Diwali, the Hindu festival of light. They are made with milk solids, sugar syrup and flavored with spices.</h5>
+                </div>
+            </div>
+
+            <!--Muslim holiday dish-->
+            <div class = "row" style = "padding: 40px;Padding-bottom: 0px">
+                <div class="column dishPic">
+                    <img src="img/sheer_khurma.jpg" alt="Sheer Khurma" style="width:128px;height:128px;">
+                </div>
+                <div class="column dishInfo">
+                    <h4><a href="https://ministryofcurry.com/sheer-khurma-instant-pot/"><b>Sheer Khurma</b></a></h4>
+                    <h5 class="dishDesc">Sheer Kurma is a speciality for Muslims on the festival of Eid. Dry fruits, vermicelli, thickened milk and sugar are the key ingredients. </h5>
+                </div>
+            </div>
+
+            <!--Christian holiday dish-->
+            <div class = "row" style = "padding: 40px;Padding-bottom: 0px">
+                <div class="column dishPic">
+                    <img src="img/achappam_rosette.jpeg" alt="Achappam" style="width:128px;height:128px;">
+                </div>
+                <div class="column dishInfo">
+                    <h4><a href="https://secretindianrecipe.com/recipe/achappam-kerala-style-rosette-cookies"><b>Achappam</b></a></h4>
+                    <h5 class="dishDesc">Achappam are Rosette cookies, traditionally made during Christmas  in the state of Kerala. Rice flour, coconut milk, sugar and eggs are essentials.</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SECTION 5: FOOD EXPLORATION (BUBBLE CHART)-->
+<div id="section5" class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-3">
+            <h2>Explore an assortment of dishes in the Indian cuisine!</h2>
+            <h5>
+                Interact with this chart to explore nuances of Indian dishes by course type, diet, flavor, and region of origin.
+                The larger the bubble, the longer the cook time.
+            </h5>
+            <br>
+            <div id="toolbar" style = "Padding-bottom: 30px">
+                <a href="#section5" id="all" class="button active">All Dishes</a>
+                <a href="#section5" id="course" class="button">By Course</a>
+                <a href="#section5" id="diet" class="button">By Diet</a>
+                <a href="#section5" id="flavor" class="button">By Flavor</a>
+                <a href="#section5" id="region" class="button">By Region</a>
+            </div>
+        </div>
+        <div class="col-9">
+            <div id="bubble_vis"></div>
+        </div>
+        <div style="padding-bottom: 100px">
+            <h6>Source: <a href="https://www.kaggle.com/nehaprabhavalkar/indian-food-101" target="_blank">Indian Food 101, Kaggle.com</a></h6>
+        </div>
+    </div>
+
+    <div class="row footerSection">
+        <div class="column footer">
+            <p>Harvard CS171 : Visualization</p>
+            <p>An introductory course at Harvard SEAS focusing on key design principles and techniques for visualizing data.</p>
+        </div>
+
+        <div class="column footer">
+            <p>Key Resources</p>
+            <p>Climate: <a href="https://www.kaggle.com/rajanand/rainfall-in-india" target="_blank">Rainfall in India</a>, <a href="https://en.climate-data.org/asia/india-129/" target="_blank">Temperature in India</a></p>
+            <p>Crops: <a href="https://www.kaggle.com/amdirfan/analyze-on-crop-production" target="_blank">Crop production</a></p>
+            <p>Globalization: <a href="https://www3.hilton.com/resources/media/hi/HHQHIHI/en_US/pdf/en_HHQHIHI_Wedding_Menu_Dec_2015.pdf" target="_blank">Indian wedding menu</a></p>
+            <p>Religion: <a href="https://www.census2011.co.in/religion.php" target="_blank">Religion: India Census 2011</a></p>
+            <p>Indian Food: <a href="https://www.kaggle.com/nehaprabhavalkar/indian-food-101" target="_blank">Indian Food 101</a></p>
+        </div>
+
+        <div class="column footer">
+            <p>Dec, 2020</p>
+            <p>Visualization & Story by</p>
+            <p>
+                Patricia Lai, Audrey Haque, Nupur Gurjar
+            </p>
+            <p>Graduate students, Master in Design Engineering, Harvard University Graduate School of Design</p>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- BOOTSTRAP -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+<!--<script src="js/d3.min.js"></script>-->
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script>
+    d3V3 = d3
+    window.d3 = null
+    console.log('v4', d3V3.version)
+</script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+    d3V4 = d3
+    window.d3 = null
+    console.log('v4', d3V4.version)
+</script>
+<script src="https://d3js.org/d3.v6.min.js"></script>
+
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+<script src="https://d3js.org/d3-geo.v1.min.js"></script>
+
+<!-- OWN JS -->
+<script src="js/marriage_script.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/waffle.js"></script>
+<script src="js/waffle_main.js"></script>
+<script src="js/bubble_tooltip.js"></script>
+<script src="js/bubble_chart.js"></script>
+<script src="js/bubble_chart_legend.js"></script>
+<script src="js/mapVis.js"></script>
+<script src="js/map_main.js"></script>
+<script src="js/pieVis.js"></script>
+
+</body>
+</html>
+

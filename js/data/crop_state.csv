@@ -1,0 +1,35 @@
+﻿STATE,Crop,Production,LINK,percentage,INFO
+Karnataka,Coffee,449995,Karnataka,70.55,"Coffee cultivation requires cool, warm, tropical climate and Karnataka is the top producer . Like tea, coffe has a cultural importance and is consumed widely in South India. "
+Kerala,Coffee,130012,Kerala,20.38,"Coffee cultivation requires cool, warm, tropical climate and Karnataka is the top producer . Like tea, coffe has a cultural importance and is consumed widely in South India. "
+Tamil Nadu,Coffee,35165,Tamil_Nadu,5.51,"Coffee cultivation requires cool, warm, tropical climate and Karnataka is the top producer . Like tea, coffe has a cultural importance and is consumed widely in South India. "
+Other states,Coffee,22625,Other_states,3.55,"Coffee cultivation requires cool, warm, tropical climate and Karnataka is the top producer . Like tea, coffe has a cultural importance and is consumed widely in South India. "
+Karnataka,Maize,48308900,Karnataka,17.67,"Maize is grown across three growing seasons, and highly used as grain and fodder. "
+Bihar,Maize,32232829,Bihar,11.79,"Maize is grown across three growing seasons, and highly used as grain and fodder. "
+Telangana ,Maize,30559315,Telangana ,11.18,"Maize is grown across three growing seasons, and highly used as grain and fodder. "
+Madhya Pradesh,Maize,22546783,Madhya_Pradesh,8.25,"Maize is grown across three growing seasons, and highly used as grain and fodder. "
+Uttar Pradesh,Maize,22377151,Uttar_Pradesh,8.19,"Maize is grown across three growing seasons, and highly used as grain and fodder. "
+Other states,Maize,117316825.6,Other_states,42.92,"Maize is grown across three growing seasons, and highly used as grain and fodder. "
+Karnataka,Ragi,23538643,Karnataka,67,"Ragi or buckwheat is an important millet which is grown in drier parts of south India and in some parts of north India, also considered as ‘farmer’s food’. "
+Tamil Nadu,Ragi,3507431,Tamil_Nadu,9.98,"Ragi or buckwheat is an important millet which is grown in drier parts of south India and in some parts of north India, also considered as ‘farmer’s food’. "
+Uttaranchal,Ragi,2375091,Uttaranchal,6.76,"Ragi or buckwheat is an important millet which is grown in drier parts of south India and in some parts of north India, also considered as ‘farmer’s food’. "
+Maharashtra,Ragi,2370535,Maharashtra,6.75,"Ragi or buckwheat is an important millet which is grown in drier parts of south India and in some parts of north India, also considered as ‘farmer’s food’. "
+Andhra Pradesh,Ragi,1159489,Andhra_Pradesh,3.3,"Ragi or buckwheat is an important millet which is grown in drier parts of south India and in some parts of north India, also considered as ‘farmer’s food’. "
+Other states,Ragi,2180212.16,Other_states,6.21,"Ragi or buckwheat is an important millet which is grown in drier parts of south India and in some parts of north India, also considered as ‘farmer’s food’. "
+West Bengal,Rice,258092849,West_Bengal,16.08,Rice is grown and consumed mostly in the eastern and southern parts of the country favorable to warm temperatures and high rainfall.
+Uttar Pradesh,Rice,218793359,Uttar_Pradesh,13.63,Rice is grown and consumed mostly in the eastern and southern parts of the country favorable to warm temperatures and high rainfall.
+Punjab,Rice,179702000,Punjab,11.19,Rice is grown and consumed mostly in the eastern and southern parts of the country favorable to warm temperatures and high rainfall.
+Andhra Pradesh,Rice,143742455,Andhra_Pradesh,8.95,Rice is grown and consumed mostly in the eastern and southern parts of the country favorable to warm temperatures and high rainfall.
+Orissa,Rice,119422742,Orissa,7.44,Rice is grown and consumed mostly in the eastern and southern parts of the country favorable to warm temperatures and high rainfall.
+Other states,Rice,685716978.4,Other_states,42.71,Rice is grown and consumed mostly in the eastern and southern parts of the country favorable to warm temperatures and high rainfall.
+Assam,Tea,886914,Assam,52.65,"Tea cultivation requires heavy rainfall and warm, humid climatic conditions, due to which Assam is a top producer. This beverage has widespread cultural significance. "
+West Bengal,Tea,374861,West_Bengal,22.25,"Tea cultivation requires heavy rainfall and warm, humid climatic conditions, due to which Assam is a top producer. This beverage has widespread cultural significance. "
+Tamil Nadu,Tea,275522,Tamil_Nadu,16.35,"Tea cultivation requires heavy rainfall and warm, humid climatic conditions, due to which Assam is a top producer. This beverage has widespread cultural significance. "
+Kerala,Tea,121079.3,Kerala,7.19,"Tea cultivation requires heavy rainfall and warm, humid climatic conditions, due to which Assam is a top producer. This beverage has widespread cultural significance. "
+Nagaland,Tea,14902,Nagaland,0.88,"Tea cultivation requires heavy rainfall and warm, humid climatic conditions, due to which Assam is a top producer. This beverage has widespread cultural significance. "
+Karnataka,Tea,11397,Karnataka,0.68,"Tea cultivation requires heavy rainfall and warm, humid climatic conditions, due to which Assam is a top producer. This beverage has widespread cultural significance. "
+Uttar Pradesh,Wheat,469911750,Uttar_Pradesh,35.26,Wheat is a staple in most of the northern parts of India. Uttar Pradesh is a major wheat producing state. 
+Punjab,Wheat,276946000,Punjab,20.78,Wheat is a staple in most of the northern parts of India. Uttar Pradesh is a major wheat producing state. 
+Haryana,Wheat,158647000,Haryana,11.9,Wheat is a staple in most of the northern parts of India. Uttar Pradesh is a major wheat producing state. 
+Madhya Pradesh,Wheat,147153856,Madhya_Pradesh,11.04,Wheat is a staple in most of the northern parts of India. Uttar Pradesh is a major wheat producing state. 
+Rajasthan,Wheat,94669124,Rajasthan,7.1,Wheat is a staple in most of the northern parts of India. Uttar Pradesh is a major wheat producing state. 
+Other states,Wheat,185497926.8,Other_states,13.92,Wheat is a staple in most of the northern parts of India. Uttar Pradesh is a major wheat producing state. 
